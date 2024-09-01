@@ -5,50 +5,85 @@
     justify-content: space-between;
     align-items: center;
     height:76px;
-    background-color: lightcoral;
+    background-color: white;
+    color: black;
+    font-size: medium;
+    font-weight: 402;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the header stays on top of other elements */
+    background-color: white; /* Set background color to avoid transparency issues */
+    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a shadow for better visibility */
+}
+.middle-section:hover{
+    cursor: pointer;
+    color: rgb(12, 54, 12);
 }
 .aeropower-logo img,.pes-logo img {
+
     max-width: 100px;  /* Adjust to your desired maximum width */
     max-height: 100px;  /* Adjust to your desired maximum height */
     height: auto;  /* Ensures the height scales proportionally */
     width: auto;   /* Ensures the width scales proportionally */
+    
 }
-.middle-section{
-    display:flex;
+.middle-section {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap:20px;
+    gap: 20px;
 }
-.impression-block{
-    display:flex;
+
+.impression-block {
+    margin: 20px;
+    display: flex;
     flex-direction: row;
-    background-color:lightblue;
+    background-color: white;
     height: 450px;
     align-items: center;
-    
+    border-radius: 10px;
+    overflow: hidden; /* Necesario para que el border-radius funcione */
 }
-.team-photo-block{
-    flex:1;
-    overflow: hidden;
+
+.team-photo-block {
+    flex: 1; /* Para que la imagen ocupe la mitad del contenedor */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
 }
-.team-photo{
+
+.team-photo {
+    width: 195%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que se escale correctamente */
+}
+
+.team-photo-block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-height: 450px;  /* Ensures the image height doesn't exceed the container */
-    object-fit: cover;
+    height: 100%;
+    background: linear-gradient(to right, rgb(255, 255, 255,0), rgb(255, 255, 255)); /* Ajusta el color de desvanecimiento aquí */
+    pointer-events: none; /* Permite que los clics pasen a través del pseudo-elemento */
 }
+
 .what-is-aeropower {
-    flex: 1;
     padding: 20px;
-  }
+    flex: 1; /* Para que el texto ocupe la otra mitad del contenedor */
+    z-index: 1; /* Asegura que el texto esté encima de cualquier otro contenido */
+}
+
+
 .this-is-what-we-do-block{
     margin-top: 20px;
-    background-color: lightcoral;
+    background-color: white;
     display: flex;
     height: 600px;
     padding:10px 20px;
     justify-content: center; /* Horizontally centers the content */
     align-items: center; /* Vertically centers the content */
+    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a shadow for better visibility */
     overflow: hidden; /* add this */
 }
 .this-is-what-we-do-grid{
@@ -79,9 +114,12 @@
    align-items:center ;
    justify-content: space-between;
    height: 200px;
-   background-color: blueviolet;
-   margin-top: 10px;
-   margin-right: 10px;
+   background-color: white;
+   margin-top: 20px;
+   margin-right: 20px;
+   margin-bottom: 20px;
+   margin-left: 20px;
+   border-radius: 20px;
 }
 .mission{
     display: flex;
@@ -89,7 +127,7 @@
     align-items: center;
     justify-content: center;
     height: 150px;
-    background-color: aqua;
+    background-color: white;
 }
 .vision-mission-image {
     max-width: 50%;
@@ -105,13 +143,14 @@
 .competitions-grid{
     display:flex;
     flex-direction: column;
-    background-color: blue;
+    background-color: white;
     text-align: center;
     width:  1000px;
 }
 .child1{
     min-height: 55px;
-    background-color: aquamarine;
+    background-color: white;
+   vertical-align: middle;
 }
 .child2{
     display: flex;
@@ -121,17 +160,29 @@
     padding-left: 150px;
     padding-right: 150px;
     height: 55px;
+    background-color: rgba(0, 0, 0, 0.515);
+    color: white;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 20px;
 }
 .competition-block{
     display: flex;
     height: 700px;
+    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a shadow for better visibility */
 }
 .competition-video{
     flex:1;
-    background-color: bisque;
+    background-color: white;
 }
 .footer-block{
+    margin-top: 20px;
     height: 270px;
-    background-color: chartreuse;
+    background-color: black;
     display: flex;
+    color:white;
+}
+.competition-title{
+    font-size: 20px;
+    font-weight: 400;
 }

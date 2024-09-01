@@ -3,11 +3,12 @@
 body {
     margin: 0;
     font-family: 'Montserrat';
+    background-color: rgb(240, 240, 240);
 }
 
 /* Apply custom font to paragraphs */
 p {
-    font-family: 'Inter';
+    font-family: 'Montserrat';
     margin-top: 0;
     margin-bottom: 0;
 }
