@@ -1,0 +1,137 @@
+.header{
+    display:flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    height:76px;
+    background-color: lightcoral;
+}
+.aeropower-logo img,.pes-logo img {
+    max-width: 100px;  /* Adjust to your desired maximum width */
+    max-height: 100px;  /* Adjust to your desired maximum height */
+    height: auto;  /* Ensures the height scales proportionally */
+    width: auto;   /* Ensures the width scales proportionally */
+}
+.middle-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+.impression-block{
+    display:flex;
+    flex-direction: row;
+    background-color:lightblue;
+    height: 450px;
+    align-items: center;
+    
+}
+.team-photo-block{
+    flex:1;
+    overflow: hidden;
+}
+.team-photo{
+    width: 100%;
+    max-height: 450px;  /* Ensures the image height doesn't exceed the container */
+    object-fit: cover;
+}
+.what-is-aeropower {
+    flex: 1;
+    padding: 20px;
+  }
+.this-is-what-we-do-block{
+    margin-top: 20px;
+    background-color: lightcoral;
+    display: flex;
+    height: 600px;
+    padding:10px 20px;
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    overflow: hidden; /* add this */
+}
+.this-is-what-we-do-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  
+    grid-template-rows: repeat(2, minmax(200px, 1fr)); /* adjust the row heights */
+
+}
+.this-is-what-we-do-grid img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* add this */
+}
+.this-is-what-we-do{
+    max-width: 60%;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensures the text is vertically centered */
+    text-align: center; /* Centers the text horizontally */
+}
+.mission-vision-block{
+    display:flex;
+    flex-direction: row;
+   align-items:center ;
+   justify-content: space-between;
+   height: 200px;
+   background-color: blueviolet;
+   margin-top: 10px;
+   margin-right: 10px;
+}
+.mission{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background-color: aqua;
+}
+.vision-mission-image {
+    max-width: 50%;
+    max-height: 150px;
+    height: auto;
+    object-fit: cover;
+}
+.vision-mission-image img {
+    width: 50%;
+    height: 150px;
+    object-fit: contain;
+}
+.competitions-grid{
+    display:flex;
+    flex-direction: column;
+    background-color: blue;
+    text-align: center;
+    width:  1000px;
+}
+.child1{
+    min-height: 55px;
+    background-color: aquamarine;
+}
+.child2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 150px;
+    padding-right: 150px;
+    height: 55px;
+}
+.competition-block{
+    display: flex;
+    height: 700px;
+}
+.competition-video{
+    flex:1;
+    background-color: bisque;
+}
+.footer-block{
+    height: 270px;
+    background-color: chartreuse;
+    display: flex;
+}

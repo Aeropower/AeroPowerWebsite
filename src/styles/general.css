@@ -1,0 +1,13 @@
+
+/* Apply custom font to the body */
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+/* Apply custom font to paragraphs */
+p {
+    font-family: 'Inter';
+    margin-top: 0;
+    margin-bottom: 0;
+}
