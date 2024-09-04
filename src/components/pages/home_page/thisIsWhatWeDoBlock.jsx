@@ -1,6 +1,7 @@
 import React from 'react'
 import TeamWork1 from '../../../assets/images/team-work1.jpg';
 const thisIsWhatWeDoBlock = () => {
+
     return (
         <div className="this-is-what-we-do-block">
             <div className="this-is-what-we-do">
@@ -15,6 +16,7 @@ const thisIsWhatWeDoBlock = () => {
                     académico. La final de la CWC tendrá como sede en la ciudad de Minneapolis, Minnesota en mayo del 2024.
                 </p>
             </div>
+            <div style={{ margin: '20px' }}>
             <div className="this-is-what-we-do-grid">
                 <div>
                     <img src={TeamWork1} alt="Dog 1" />
@@ -29,6 +31,8 @@ const thisIsWhatWeDoBlock = () => {
                     <img src={TeamWork1} alt="Dog 2" />
                 </div>
             </div>
+            </div>
+            
         </div>
     )
 }

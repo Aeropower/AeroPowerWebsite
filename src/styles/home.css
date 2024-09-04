@@ -27,6 +27,12 @@
     width: auto;   /* Ensures the width scales proportionally */
     
 }
+.aeropower-logo-word img{
+    max-width: 200px;  /* Adjust to your desired maximum width */
+    max-height: 200px;  /* Adjust to your desired maximum height */
+    height: auto;  /* Ensures the height scales proportionally */
+    width: auto;   /* Ensures the width scales proportionally */
+}
 .middle-section {
     display: flex;
     flex-direction: row;
@@ -80,25 +86,29 @@
     background-color: white;
     display: flex;
     height: 600px;
-    padding:10px 20px;
-    justify-content: center; /* Horizontally centers the content */
-    align-items: center; /* Vertically centers the content */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a shadow for better visibility */
-    overflow: hidden; /* add this */
+    padding: 20px; /* Añade padding interno alrededor del contenedor */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px gray;
+    overflow: hidden;
 }
 .this-is-what-we-do-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-  
-    grid-template-rows: repeat(2, minmax(200px, 1fr)); /* adjust the row heights */
+    grid-template-rows: repeat(2, minmax(200px, 1fr)); /* Ajusta la altura de las filas */
+    
 
 }
 .this-is-what-we-do-grid img{
-    width: 100%;
+    max-width: 100%;
+    max-height: 230px;
     height: auto;
     object-fit: cover;
-    aspect-ratio: 1 / 1; /* add this */
+    aspect-ratio: 1 / 1; /* Mantiene una relación de aspecto cuadrada */
+    margin: 0; /* Elimina cualquier margen superior e inferior */
+    padding: 0; /* Elimina cualquier padding */
+    display: block; /* Elimina el espacio en línea inferior generado por las imágenes */
 }
 .this-is-what-we-do{
     max-width: 60%;
@@ -175,14 +185,52 @@
     flex:1;
     background-color: white;
 }
-.footer-block{
-    margin-top: 20px;
-    height: 270px;
-    background-color: black;
-    display: flex;
-    color:white;
-}
 .competition-title{
     font-size: 20px;
     font-weight: 400;
+}
+.footer-block {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centers content vertically */
+    height: 230px;
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+ 
+    justify-content: center;
+    height: 100%;
+}
+
+.aeropower-logo-word img {
+    max-width: 150px; /* Adjust to make logos bigger */
+    max-height: 150px;
+    height: auto;
+    width: auto;
+}
+.uprm-logo img{
+    max-width: 100px; /* Adjust to make logos bigger */
+    max-height: 100px;
+    height: auto;
+    width: auto;
+}
+a {
+    text-decoration: none; /* Removes underline from links */
+}
+
+.contact-us,
+.logo-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.contact-icon {
+    font-size: 30px; /* Makes icons bigger */
+    margin: 0 10px; /* Adds some space around icons */
+    color: inherit; /* Inherit color for consistency */
 }

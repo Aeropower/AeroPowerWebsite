@@ -1,23 +1,19 @@
 import React from 'react'
 import LogoAeropower from "../../assets/images/logo-aeropower.png";
 import LogoPes from "../../assets/images/logo-pes.png";
-
+import { Link } from 'react-router-dom';
 function header() {
   return (
-    
-      <div className="header">
-        <div className="aeropower-logo"><img src={LogoAeropower} alt="Aeropower Logo"/></div>
-        <div className="middle-section">
-            <div>Home</div>
-            <div>Meet the Team</div>
-            <div>Divisions & Subdivisions</div>
-            <div>Blog</div>
-        </div>
-        <div className="pes-logo"><img src={LogoPes} alt="PES logo"/></div>
-
+    <div className="header">
+      <div className="aeropower-logo"><img src={LogoAeropower} alt="Aeropower Logo"/></div>
+      <div className="middle-section">
+          <Link to="/">Home</Link>
+          <Link to="/meetTeam">Meet the Team</Link>
+          <Link to="/divisions">Divisions & Subdivisions</Link>
+          <Link to="/blog">Blog</Link>
+      </div>
+      <a href="https://www.ieee.org/" className="pes-logo"><img src={LogoPes} alt="PES logo"/></a>
     </div>
-
-    
   )
 }
 
