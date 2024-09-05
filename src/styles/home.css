@@ -42,7 +42,7 @@
 }
 
 .impression-block {
-    margin: 20px;
+    
     display: flex;
     flex-direction: row;
     background-color: white;
@@ -55,12 +55,15 @@
 .team-photo-block {
     flex: 1; /* Para que la imagen ocupe la mitad del contenedor */
     position: relative; /* Necesario para posicionar el pseudo-elemento */
+    margin-bottom: 0;
 }
 
-.team-photo {
-    width: 195%;
+.team-photo img{
+    width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta la imagen para que se escale correctamente */
+    max-height: 100%;
+    min-height: 50%;
 }
 
 .team-photo-block::after {
@@ -68,12 +71,12 @@
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, rgb(255, 255, 255,0), rgb(255, 255, 255)); /* Ajusta el color de desvanecimiento aquí */
     pointer-events: none; /* Permite que los clics pasen a través del pseudo-elemento */
 }
-
 .what-is-aeropower {
     padding: 20px;
     flex: 1; /* Para que el texto ocupe la otra mitad del contenedor */
@@ -206,12 +209,7 @@
     height: 100%;
 }
 
-.aeropower-logo-word img {
-    max-width: 150px; /* Adjust to make logos bigger */
-    max-height: 150px;
-    height: auto;
-    width: auto;
-}
+
 .uprm-logo img{
     max-width: 100px; /* Adjust to make logos bigger */
     max-height: 100px;
@@ -234,3 +232,31 @@ a {
     margin: 0 10px; /* Adds some space around icons */
     color: inherit; /* Inherit color for consistency */
 }
+.image-wrapper {
+        animation: fade 1s ease-in-out;
+        /* Ajusta las propiedades de la animación si lo deseas */
+}
+        
+        
+@keyframes fade {
+            0% {
+              opacity: 0;
+              transform: translateY(-20px);
+            }
+            25% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            75% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            100% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+          }
+  .elemento {
+ animation: fade 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+          
