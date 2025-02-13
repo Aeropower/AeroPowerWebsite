@@ -1,38 +1,54 @@
-.header{
-    display:flex;
+.header {
+    display: flex;
     flex-direction: row;
     padding: 10px 20px;
     justify-content: space-between;
     align-items: center;
-    height:76px;
+    height: 76px;
     background-color: white;
     color: black;
     font-size: medium;
     font-weight: 402;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures the header stays on top of other elements */
-    background-color: white; /* Set background color to avoid transparency issues */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a shadow for better visibility */
+    z-index: 1000;
+    /* Ensures the header stays on top of other elements */
+    background-color: white;
+    /* Set background color to avoid transparency issues */
+    box-shadow: 0 4px 2px -2px gray;
+    /* Optional: Add a shadow for better visibility */
 }
-.middle-section:hover{
+
+.middle-section:hover {
     cursor: pointer;
     color: rgb(12, 54, 12);
 }
-.aeropower-logo img,.pes-logo img {
 
-    max-width: 100px;  /* Adjust to your desired maximum width */
-    max-height: 100px;  /* Adjust to your desired maximum height */
-    height: auto;  /* Ensures the height scales proportionally */
-    width: auto;   /* Ensures the width scales proportionally */
-    
+.aeropower-logo img,
+.pes-logo img {
+
+    max-width: 100px;
+    /* Adjust to your desired maximum width */
+    max-height: 100px;
+    /* Adjust to your desired maximum height */
+    height: auto;
+    /* Ensures the height scales proportionally */
+    width: auto;
+    /* Ensures the width scales proportionally */
+
 }
-.aeropower-logo-word img{
-    max-width: 200px;  /* Adjust to your desired maximum width */
-    max-height: 200px;  /* Adjust to your desired maximum height */
-    height: auto;  /* Ensures the height scales proportionally */
-    width: auto;   /* Ensures the width scales proportionally */
+
+.aeropower-logo-word img {
+    max-width: 200px;
+    /* Adjust to your desired maximum width */
+    max-height: 200px;
+    /* Adjust to your desired maximum height */
+    height: auto;
+    /* Ensures the height scales proportionally */
+    width: auto;
+    /* Ensures the width scales proportionally */
 }
+
 .middle-section {
     display: flex;
     flex-direction: row;
@@ -42,26 +58,30 @@
 }
 
 .impression-block {
-    
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     background-color: white;
-    height: 450px;
+    height: auto;
     align-items: center;
-    border-radius: 10px;
-    overflow: hidden; /* Necesario para que el border-radius funcione */
+    overflow: hidden;
+    /* Necesario para que el border-radius funcione */
 }
 
 .team-photo-block {
-    flex: 1; /* Para que la imagen ocupe la mitad del contenedor */
-    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    flex: 1;
+    /* Para que la imagen ocupe la mitad del contenedor */
+    position: relative;
+    /* Necesario para posicionar el pseudo-elemento */
     margin-bottom: 0;
+    min-width: 300px;
 }
 
-.team-photo img{
+.team-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para que se escale correctamente */
+    object-fit: cover;
+    /* Ajusta la imagen para que se escale correctamente */
     max-height: 100%;
     min-height: 50%;
 }
@@ -73,68 +93,85 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgb(255, 255, 255,0), rgb(255, 255, 255)); /* Ajusta el color de desvanecimiento aquí */
-    pointer-events: none; /* Permite que los clics pasen a través del pseudo-elemento */
+    height: auto;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0)80%, rgb(255, 255, 255));
+    pointer-events: none;
+    /* Permite que los clics pasen a través del pseudo-elemento */
 }
+
 .what-is-aeropower {
     padding: 20px;
-    flex: 1; /* Para que el texto ocupe la otra mitad del contenedor */
-    z-index: 1; /* Asegura que el texto esté encima de cualquier otro contenido */
+    flex: 1;
+    /* Para que el texto ocupe la otra mitad del contenedor */
+    z-index: 1;
+    /* Asegura que el texto esté encima de cualquier otro contenido */
 }
 
 
-.this-is-what-we-do-block{
+.this-is-what-we-do-block {
     margin-top: 20px;
     background-color: white;
     display: flex;
-    height: 600px;
-    padding: 20px; /* Añade padding interno alrededor del contenedor */
+    height: auto;
+    padding: 20px;
+    /* Añade padding interno alrededor del contenedor */
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 2px -2px gray;
     overflow: hidden;
 }
-.this-is-what-we-do-grid{
+
+.this-is-what-we-do-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-    grid-template-rows: repeat(2, minmax(200px, 1fr)); /* Ajusta la altura de las filas */
-    
+    grid-template-rows: repeat(2, minmax(200px, 1fr));
+    /* Ajusta la altura de las filas */
+
 
 }
-.this-is-what-we-do-grid img{
+
+.this-is-what-we-do-grid img {
     max-width: 100%;
     max-height: 230px;
     height: auto;
     object-fit: cover;
-    aspect-ratio: 1 / 1; /* Mantiene una relación de aspecto cuadrada */
-    margin: 0; /* Elimina cualquier margen superior e inferior */
-    padding: 0; /* Elimina cualquier padding */
-    display: block; /* Elimina el espacio en línea inferior generado por las imágenes */
+    aspect-ratio: 1 / 1;
+    /* Mantiene una relación de aspecto cuadrada */
+    margin: 0;
+    /* Elimina cualquier margen superior e inferior */
+    padding: 0;
+    /* Elimina cualquier padding */
+    display: block;
+    /* Elimina el espacio en línea inferior generado por las imágenes */
 }
-.this-is-what-we-do{
+
+.this-is-what-we-do {
     max-width: 60%;
     margin-right: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Ensures the text is vertically centered */
-    text-align: center; /* Centers the text horizontally */
+    justify-content: center;
+    /* Ensures the text is vertically centered */
+    text-align: center;
+    /* Centers the text horizontally */
 }
-.mission-vision-block{
-    display:flex;
+
+.mission-vision-block {
+    display: flex;
     flex-direction: row;
-   align-items:center ;
-   justify-content: space-between;
-   height: 200px;
-   background-color: white;
-   margin-top: 20px;
-   margin-right: 20px;
-   margin-bottom: 20px;
-   margin-left: 20px;
-   border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    background-color: white;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
 }
-.mission{
+
+.mission {
     display: flex;
     flex: 1;
     align-items: center;
@@ -142,30 +179,35 @@
     height: 150px;
     background-color: white;
 }
+
 .vision-mission-image {
     max-width: 50%;
     max-height: 150px;
     height: auto;
     object-fit: cover;
 }
+
 .vision-mission-image img {
     width: 50%;
     height: 150px;
     object-fit: contain;
 }
-.competitions-grid{
-    display:flex;
+
+.competitions-grid {
+    display: flex;
     flex-direction: column;
     background-color: white;
     text-align: center;
-    width:  1000px;
+    width: 1000px;
 }
-.child1{
+
+.child1 {
     min-height: 55px;
     background-color: white;
-   vertical-align: middle;
+    vertical-align: middle;
 }
-.child2{
+
+.child2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -175,28 +217,34 @@
     height: 55px;
     background-color: rgba(0, 0, 0, 0.515);
     color: white;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 20px;
 }
-.competition-block{
+
+.competition-block {
     display: flex;
     height: 700px;
-    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a shadow for better visibility */
+    box-shadow: 0 4px 2px -2px gray;
+    /* Optional: Add a shadow for better visibility */
 }
-.competition-video{
-    flex:1;
-    background-color: white;
+
+.competition-video {
+    flex: 1;
+    background-color: black;
 }
-.competition-title{
+
+.competition-title {
     font-size: 20px;
     font-weight: 400;
 }
+
 .footer-block {
     margin: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Centers content vertically */
+    align-items: center;
+    /* Centers content vertically */
     height: 230px;
 }
 
@@ -204,20 +252,23 @@
 .footer-right {
     display: flex;
     flex-direction: column;
- 
+
     justify-content: center;
     height: 100%;
 }
 
 
-.uprm-logo img{
-    max-width: 100px; /* Adjust to make logos bigger */
+.uprm-logo img {
+    max-width: 100px;
+    /* Adjust to make logos bigger */
     max-height: 100px;
     height: auto;
     width: auto;
 }
+
 a {
-    text-decoration: none; /* Removes underline from links */
+    text-decoration: none;
+    /* Removes underline from links */
 }
 
 .contact-us,
@@ -227,36 +278,44 @@ a {
     justify-content: center;
     margin-top: 10px;
 }
+
 .contact-icon {
-    font-size: 30px; /* Makes icons bigger */
-    margin: 0 10px; /* Adds some space around icons */
-    color: inherit; /* Inherit color for consistency */
+    font-size: 30px;
+    /* Makes icons bigger */
+    margin: 0 10px;
+    /* Adds some space around icons */
+    color: inherit;
+    /* Inherit color for consistency */
 }
+
 .image-wrapper {
-        animation: fade 1s ease-in-out;
-        /* Ajusta las propiedades de la animación si lo deseas */
+    animation: fade 1s ease-in-out;
+    /* Ajusta las propiedades de la animación si lo deseas */
 }
-        
-        
+
+
 @keyframes fade {
-            0% {
-              opacity: 0;
-              transform: translateY(-20px);
-            }
-            25% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            75% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            100% {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-          }
-  .elemento {
- animation: fade 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
-          
+
+.elemento {
+    animation: fade 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
