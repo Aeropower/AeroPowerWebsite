@@ -11,23 +11,14 @@ const competitionBlock = () => {
                     <div className="competitions">Project Outreach</div>
                 </div>
                 <div className="video-row">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/FtkoJrZdJhY"
-                        title="Prepare for Tomorrow's Wind Energy Career Today with the Collegiate Wind Competition (CWC)"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/C_iIaec6Dtg?si=PubxdslwRm2mTBym"
-                        title="BLADES OF GLORY: An Energy.gov Mini-Doc"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
+                    <div className="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/FtkoJrZdJhY"
+                            title="Prepare for Tomorrow's Wind Energy Career Today with the Collegiate Wind Competition (CWC)"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 </div>
 
             </div>

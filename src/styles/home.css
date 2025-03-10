@@ -336,8 +336,23 @@ video {
     animation: fade 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 
+@media (max-width: 768px) {
+    .this-is-what-we-do-grid {
+        grid-template-columns: 1fr;
+        /* Switch to one column */
+        grid-template-rows: auto;
+    }
+
+    .team-photo-block {
+        min-width: 100%;
+        /* Remove fixed min-width */
+    }
+}
+
 .video-row {
     display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
     justify-content: space-between;
     /* space-around or center if you prefer */
     align-items: center;

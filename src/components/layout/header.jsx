@@ -5,14 +5,12 @@ import { Link } from 'react-router-dom';
 function header() {
   return (
     <div className="header">
-      <div className="aeropower-logo"><img src={LogoAeropower} alt="Aeropower Logo"/></div>
+      <div className="aeropower-logo"><img src={LogoAeropower} alt="Aeropower Logo" /></div>
       <div className="middle-section">
-          <Link to="/">Home</Link>
-          <Link to="/meetTeam">Meet the Team</Link>
-          <Link to="/divisions">Divisions & Subdivisions</Link>
-          <Link to="/blog">Blog</Link>
+        <Link to="/">Home</Link>
+        <Link to="/divisions">Divisions & Subdivisions</Link>
       </div>
-      <a href="https://www.ieee.org/" className="pes-logo"><img src={LogoPes} alt="PES logo"/></a>
+      <a href="https://www.ieee.org/" className="pes-logo"><img src={LogoPes} alt="PES logo" /></a>
     </div>
   )
 }
