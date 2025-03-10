@@ -6,12 +6,12 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="footer-block">
-      <div className="footer-left">
-        <div className="aeropower-logo-word">
-          <img src={LogoAeropower} alt="Aeropower Logo" />
+    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-100">
+      <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
+        <div className="mb-2">
+          <img src={LogoAeropower} alt="Aeropower Logo" className="w-32" />
         </div>
-        <div>
+        <div className="text-center md:text-left">
           <p>
             Wind Energy Research Team<br />
             University of Puerto Rico, Mayagüez Campus<br />
@@ -19,23 +19,24 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="footer-right">
-        <div className="uprm-logo">
+
+      <div className="flex flex-col items-center md:items-end">
+        <div className="mb-4">
           <a href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
-            <img src={LogoUPRM} alt="UPRM Logo" />
+            <img src={LogoUPRM} alt="UPRM Logo" className="w-24" />
           </a>
         </div>
-        <div>
-          <div className="contact-us">
-            <div><MdContactSupport style={{ color: 'green' }} /></div>
-            <div><p>Contact us!</p></div>
+        <div className="flex flex-col items-center">
+          <div className="flex items-center mb-2">
+            <MdContactSupport className="text-green-500 mr-2" />
+            <p>Contact us!</p>
           </div>
-          <div className="logo-contact">
+          <div className="flex gap-3">
             <a href="mailto:your-email@example.com" target="_blank" rel="noopener noreferrer">
-              <MdEmail className="contact-icon" />
+              <MdEmail className="text-gray-700 text-2xl" />
             </a>
             <a href="https://www.instagram.com/aeropoweruprm/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="contact-icon" />
+              <FaInstagram className="text-gray-700 text-2xl" />
             </a>
           </div>
         </div>
