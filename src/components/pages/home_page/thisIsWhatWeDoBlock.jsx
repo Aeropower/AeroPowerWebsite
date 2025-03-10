@@ -1,30 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import TeamWork1 from '../../../assets/images/team-work1.jpg';
-import { TbEar } from 'react-icons/tb';
 import Dog1 from '../../../assets/images/dog.jpg';
 import Dog2 from '../../../assets/images/dog2.jpg';
+
 const ThisIsWhatWeDoBlock = () => {
   const images = [TeamWork1, Dog1, Dog2, TeamWork1, Dog1, Dog2];
-  
-  // Definición del estado para las imágenes visibles
-  const [visibleImages, setVisibleImages] = useState(images.slice(0, 4));
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // useEffect para manejar la rotación de imágenes
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleImages((prevImages) => {
-        const newImages = [...prevImages.slice(2), ...prevImages.slice(0, 2)];
-        return newImages;
-      });
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
-    // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
-    <div className="this-is-what-we-do-block">
-      <div className="this-is-what-we-do">
-        <p className="this-is-what-we-do-description">
+    <div className="flex flex-col md:flex-row items-center p-4">
+      <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
+        <p className="text-center md:text-left text-lg">
           ¡Involúcrate en el primer y único equipo del Colegio que diseñará, manufactura y probará una turbina eólica (de viento)!
           Aeropower es un proyecto de la IEEE Power & Energy Society (PES) con el fin de proveer oportunidades a
           colegiales para que se desarrollen dentro del campo de la energía renovable. Estamos buscando
@@ -35,17 +28,16 @@ const ThisIsWhatWeDoBlock = () => {
           académico. La final de la CWC tendrá como sede en la ciudad de Minneapolis, Minnesota en mayo del 2024.
         </p>
       </div>
-      <div style={{ margin: '20px' }}>
-        <div className="this-is-what-we-do-grid">
-          {visibleImages.map((image, index) => (
-            <div key={index} className="images-wrapper">
-              <img src={image} alt={`Image ${index + 1}`} />
-            </div>
-          ))}
-        </div>
+
+      <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+        <img
+          src={images[currentImageIndex]}
+          alt={`Image ${currentImageIndex + 1}`}
+          className="w-64 h-64 md:w-80 md:h-80 rounded-lg shadow-lg object-cover"
+        />
       </div>
     </div>
   );
-}
+};
 
 export default ThisIsWhatWeDoBlock;
