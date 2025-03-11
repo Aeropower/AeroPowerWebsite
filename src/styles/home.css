@@ -217,18 +217,29 @@
     height: 55px;
     width: 80%;
     max-width: 800px;
-    background-color: rgba(0, 0, 0, 0.515);
+    background-color: rgba(0, 6, 130, 0.522);
     color: white;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .competitions {
     flex: 1;
     text-align: center;
+    padding: 5px;
+    border-radius: 20px;
 }
 
+.competitions.selected {
+    font-weight: bold; /* Make text bold */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.competitions:hover {
+    background-color: rgba(91, 211, 95, 0.29);
+}
 
 .competition-block {
     display: flex;
@@ -238,34 +249,11 @@
     /* Optional: Add a shadow for better visibility */
 }
 
-.competition-video {
-    flex: 1;
-    background-color: black;
-}
-
 .competition-title {
     font-size: 20px;
     font-weight: 400;
+    margin-top: 10px;
 }
-
-.footer-block {
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Centers content vertically */
-    height: 230px;
-}
-
-.footer-left,
-.footer-right {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    height: 100%;
-}
-
 
 .uprm-logo img {
     max-width: 100px;
@@ -347,29 +335,69 @@ video {
         min-width: 100%;
         /* Remove fixed min-width */
     }
+
+    .video-row.has-content {
+        grid-template-columns: 1fr;
+        /* Stack on smaller screens */
+    }
+
+    .child2 {
+        width: 95%;
+        /* Full width on mobile */
+        margin: 0 auto;
+    }
+}
+
+.video-container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .video-row {
     display: flex;
     flex-wrap: wrap;
     /* Allow wrapping on smaller screens */
-    justify-content: space-between;
-    /* space-around or center if you prefer */
     align-items: center;
-    gap: 50px;
-    /* spacing between videos */
     margin: 0 auto;
     /* center the row if needed */
     width: 100%;
     /* or a max-width if you want a fixed container width */
     max-width: 1000px;
-    /* optional, to prevent videos from stretching too wide */
-    /* padding, background-color, etc. as you see fit */
-    margin-top: 50px;
+    padding: 30px 0;
 }
 
-.video-row iframe {
-    flex: 1;
-    /* each video takes equal width */
-    /* or set a fixed width/height if you want more control */
+.video-row.has-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Split into two columns */
+}
+
+.content-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    /* Optional fade-in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

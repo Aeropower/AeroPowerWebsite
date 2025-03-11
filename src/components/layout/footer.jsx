@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-100">
+    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95">
       <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
         <div className="mb-2">
           <img src={LogoAeropower} alt="Aeropower Logo" className="w-32" />
