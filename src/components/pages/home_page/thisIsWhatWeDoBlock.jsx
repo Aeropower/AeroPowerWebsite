@@ -17,9 +17,15 @@ const ThisIsWhatWeDoBlock = () => {
   return (
     <div className="flex flex-col md:flex-row items-center p-4 bg-white mt-6 shadow-md">
       <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
-        <h2 className="text-2xl font-bold mb-4 text-center">This is what we do!</h2>
         <p className="text-center md:text-left text-lg">
-          What we do info...
+          ¡Involúcrate en el primer y único equipo del Colegio que diseñará, manufactura y probará una turbina eólica (de viento)!
+          Aeropower es un proyecto de la IEEE Power & Energy Society (PES) con el fin de proveer oportunidades a
+          colegiales para que se desarrollen dentro del campo de la energía renovable. Estamos buscando
+          estudiantes talentosos de TODOS los departamentos para formar parte del equipo. Tenemos como meta
+          competir y representar a Puerto Rico en la Collegiate Wind Competition (CWC), competencia auspiciada por
+          el Depto. de Energía de E.E.U.U.
+          Aeropower competirá contra otras 31 universidades de todo Norteamérica por la duración de todo el año
+          académico. La final de la CWC tendrá como sede en la ciudad de Minneapolis, Minnesota en mayo del 2024.
         </p>
       </div>
 
