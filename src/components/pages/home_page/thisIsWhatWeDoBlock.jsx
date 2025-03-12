@@ -15,7 +15,7 @@ const ThisIsWhatWeDoBlock = () => {
   }, [images.length]);
 
   return (
-    <div className="flex flex-col md:flex-row items-center p-4">
+    <div className="flex flex-col md:flex-row items-center p-4 bg-white mt-6 shadow-md">
       <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
         <p className="text-center md:text-left text-lg">
           ¡Involúcrate en el primer y único equipo del Colegio que diseñará, manufactura y probará una turbina eólica (de viento)!
