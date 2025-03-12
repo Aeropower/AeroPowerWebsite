@@ -16,7 +16,7 @@ const CompetitionBlock = () => {
     return (
         <div className="competition-block">
             <div className="competitions-grid">
-                <p className="competition-title">Collegiate Wind Competition (CWC)</p>
+                <h2 className="text-2xl font-bold mb-4 mt-4">Collegiate Wind Competition</h2>
                 <div className="child2">
                     {['Wind Turbine', 'Wind Farm', 'Project Outreach'].map((competition) => (
                         <div
