@@ -225,6 +225,9 @@
     margin-right: auto;
     border-radius: 20px;
     cursor: pointer;
+   font-size: 18px;
+   font-weight: 400;
+
 }
 
 .competitions {
@@ -232,6 +235,8 @@
     text-align: center;
     padding: 5px;
     border-radius: 20px;
+    margin-left: 5%;
+    margin-right:5%;
 }
 
 .competitions.selected {
