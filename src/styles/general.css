@@ -15,3 +15,7 @@ p {
     margin-top: 0;
     margin-bottom: 0;
 }
+/* Cambia el color del bullet activo a verde oscuro */
+.swiper-pagination-bullet-active {
+    background-color: #006400 !important; /* Verde oscuro */
+}
