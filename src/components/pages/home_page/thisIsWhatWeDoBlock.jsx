@@ -17,6 +17,7 @@ const ThisIsWhatWeDoBlock = () => {
   return (
     <div className="flex flex-col md:flex-row items-center p-4 bg-white mt-6 shadow-md">
       <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
+      <h2 className="text-2xl font-bold mb-4 text-center">This is what we do!</h2>
         <p className="text-center md:text-left text-lg">
           ¡Involúcrate en el primer y único equipo del Colegio que diseñará, manufactura y probará una turbina eólica (de viento)!
           Aeropower es un proyecto de la IEEE Power & Energy Society (PES) con el fin de proveer oportunidades a
