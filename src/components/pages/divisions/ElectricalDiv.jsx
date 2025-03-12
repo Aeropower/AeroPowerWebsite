@@ -1,32 +1,68 @@
 import React from 'react';
-import Dog2 from "../../../assets/images/dog2.jpg"; // Ensure this path is correct
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with a video
 
 const ElectricalDiv = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mb-6 flex flex-col md:flex-row items-center">
-      {/* Image Section (Top on small screens, Right on larger screens) */}
-      <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2">
+    <div className="bg-white p-6 rounded-lg shadow-md mb-6 flex flex-col md:flex-row items-center w-full">
+      {/* Image Section (Left on larger screens, Top on small screens) */}
+      <div className="w-full md:w-1/2 flex justify-center order-1 md:order-1">
         <img
           src={Dog2}
           alt="Electrical Division"
-          className="w-48 h-auto rounded-lg" // Adjust width as needed
+          className="w-48 h-auto rounded-lg"
         />
       </div>
 
-      {/* Text Section (Bottom on small screens, Left on larger screens) */}
-      <div className="w-full md:w-1/2 md:pr-6 mt-6 md:mt-0 order-2 md:order-1">
-        <h2 className="text-2xl font-semibold mb-4">División Eléctrica</h2>
-        <p className="text-gray-700">
-          La División Eléctrica es responsable de todos los aspectos eléctricos de la turbina. Los miembros investigan, diseñan y prueban componentes eléctricos como circuitos, microcontroladores y sensores utilizando herramientas como programación, diseño de circuitos y modelado CAD. Al combinar la creatividad y la experiencia en ingeniería, el equipo desarrolla soluciones innovadoras para mejorar la eficiencia, la confiabilidad y el rendimiento de los sistemas de turbinas eólicas. Las tareas clave incluyen la colaboración con otras divisiones para definir parámetros de diseño, garantizar el cableado y las conexiones adecuadas y configurar sistemas de monitoreo remoto para realizar un seguimiento del rendimiento, diagnosticar problemas y controlar las operaciones de la turbina.
-        </p>
-        <div className="mt-4">
-          <h3 className="text-xl font-medium">Miembros del Equipo</h3>
-          <ul className="list-disc list-inside">
-            <li>Josue Colon - Lider División Eléctrica</li>
-            <li>Jae Doe - Analista de Sistemas</li>
-            <li>Joe Doe - Especialista en Mantenimiento</li>
-          </ul>
-        </div>
+      {/* Swiper Container - Adjusted for Proper Responsiveness */}
+      <div className="w-full md:w-1/2 md:pl-6 mt-6 md:mt-0 order-2 md:order-2 flex flex-col">
+        {/* Division Title */}
+        <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">
+          División Eléctrica
+        </h2>
+
+        {/* Swiper - Text Only */}
+        <Swiper
+          modules={[Pagination, Scrollbar, A11y]}
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          className="w-full min-h-[120px]"
+        >
+          <SwiperSlide>
+            <div className="w-full text-center md:text-left">
+              <h3 className="text-lg md:text-xl font-medium">Diseño de Circuitos</h3>
+              <p className="text-gray-700">
+                Desarrollo y simulación de circuitos eléctricos para optimizar el rendimiento de la turbina.
+              </p>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="w-full text-center md:text-left">
+              <h3 className="text-lg md:text-xl font-medium">Programación de Microcontroladores</h3>
+              <p className="text-gray-700">
+                Implementación de software embebido para el control de los sistemas eléctricos.
+              </p>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="w-full text-center md:text-left">
+              <h3 className="text-lg md:text-xl font-medium">Monitoreo Remoto</h3>
+              <p className="text-gray-700">
+                Configuración de sensores y sistemas de monitoreo para evaluar el desempeño en tiempo real.
+              </p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+
+        
       </div>
     </div>
   );

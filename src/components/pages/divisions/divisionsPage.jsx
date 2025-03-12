@@ -13,11 +13,11 @@ const meetTeamPage = () => {
     <div>
       <Header/>
       <WindFarmDevDiv/>
-      <ElectricalDiv/>
       <BusinessOpsDiv />
+      <ElectricalDiv/>
       <MechanicalDiv/>
-      <SoftwareDiv/>
       <ProjectManagementDiv/>
+      <SoftwareDiv/>
      <Footer />
     </div>
   )
