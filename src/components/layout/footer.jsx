@@ -3,6 +3,7 @@ import LogoAeropower from "../../assets/images/aeropower-word-logo.png";
 import LogoUPRM from "../../assets/images/logo-rum.png";
 import { MdContactSupport, MdEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
 
 const Footer = () => {
   return (
@@ -15,7 +16,7 @@ const Footer = () => {
           <p>
             Wind Energy Research Team<br />
             University of Puerto Rico, Mayagüez Campus<br />
-            Copyright ©2024
+            Copyright ©2025
           </p>
         </div>
       </div>
@@ -32,8 +33,8 @@ const Footer = () => {
             <p>Contact us!</p>
           </div>
           <div className="flex gap-3">
-            <a href="mailto:your-email@example.com" target="_blank" rel="noopener noreferrer">
-              <MdEmail className="text-gray-700 text-2xl" />
+            <a href="https://www.linkedin.com/company/aeropower-uprm/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+              <CiLinkedin className="text-gray-700 text-2xl" />
             </a>
             <a href="https://www.instagram.com/aeropoweruprm/" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="text-gray-700 text-2xl" />
