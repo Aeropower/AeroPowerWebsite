@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
 import LogoAeropower from "../../assets/images/logo-aeropower.png";
@@ -7,6 +7,20 @@ import LogoPes from "../../assets/images/logo-pes.png";
 function Header() {
   const location = useLocation(); // Get current URL
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
+
+  // Close menu on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [menuOpen]);
 
   return (
     <header className="header">
