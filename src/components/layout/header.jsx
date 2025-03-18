@@ -1,42 +1,72 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
 import LogoAeropower from "../../assets/images/logo-aeropower.png";
 import LogoPes from "../../assets/images/logo-pes.png";
 
 function Header() {
-  const location = useLocation(); // Get the current URL path
+  const location = useLocation(); // Get current URL
+  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
 
   return (
-    <div className="header flex justify-between items-center px-8 py-4 border-b border-gray-200">
-      {/* Left Logo */}
-      <div className="aeropower-logo">
-        <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
+    <header className="header">
+      {/* Desktop Navigation */}
+      <div className="desktop-nav">
+        <div className="aeropower-logo">
+          <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
+        </div>
+
+        <nav className="middle-section">
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/divisions"
+            className={`nav-link ${location.pathname === "/divisions" ? "active" : ""}`}
+          >
+            Divisions & Subdivisions
+          </Link>
+          <Link
+            to="/sponsors"
+            className={`nav-link ${location.pathname === "/sponsors" ? "active" : ""}`}
+          >
+            Sponsors
+          </Link>
+        </nav>
+
+        <a href="https://www.ieee.org/" className="pes-logo">
+          <img src={LogoPes} alt="PES logo" className="h-12" />
+        </a>
       </div>
 
-      {/* Navigation Links */}
-      <div className="middle-section flex space-x-8">
-        <Link 
-          to="/" 
-          className={`relative mt-4 text-md font-normal text-gray-500 hover:text-green-800
-            ${location.pathname === "/" ? "text-green-800 font-medium after:absolute after:-bottom-2 after:left-0 after:w-full after:h-1 after:bg-green-800 after:rounded-lg" : ""}`}
-        >
-          Home
-        </Link>
+      {/* Mobile Navigation */}
+      <div className="mobile-nav">
+        <div className="aeropower-logo">
+          <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
+        </div>
+        <div className="mobile-header">
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
 
-        <Link 
-          to="/divisions" 
-          className={`relative mt-4 text-md font-normal text-gray-500 hover:text-green-800
-            ${location.pathname === "/divisions" ? "text-green-800 font-medium after:absolute after:-bottom-2 after:left-0 after:w-full after:h-1 after:bg-green-800 after:rounded-lg" : ""}`}
-        >
-          Divisions & Subdivisions
-        </Link>
+        {/* Slide-in Menu */}
+        <nav className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/divisions" onClick={() => setMenuOpen(false)}>Divisions & Subdivisions</Link>
+          <Link to="/sponsors" onClick={() => setMenuOpen(false)}>Sponsors</Link>
+        </nav>
+
+        <div className="pes-logo">
+          <a href="https://www.ieee.org/">
+            <img src={LogoPes} alt="PES logo" className="h-12" />
+          </a>
+        </div>
       </div>
-
-      {/* Right Logo */}
-      <a href="https://www.ieee.org/" className="pes-logo">
-        <img src={LogoPes} alt="PES logo" className="h-12" />
-      </a>
-    </div>
+    </header>
   );
 }
 

@@ -8,19 +8,19 @@ import MechanicalDiv from './MechanicalDiv';
 import SoftwareDiv from './SoftwareDiv';
 import ProjectManagementDiv from './ProjectManagementDiv';
 
-const meetTeamPage = () => {
+const DivisionsPage = () => {
   return (
     <div>
-      <Header/>
-      <WindFarmDevDiv/>
+      <Header />
+      <WindFarmDevDiv />
       <BusinessOpsDiv />
-      <ElectricalDiv/>
-      <MechanicalDiv/>
-      <ProjectManagementDiv/>
-      <SoftwareDiv/>
-     <Footer />
+      <ElectricalDiv />
+      <MechanicalDiv />
+      <ProjectManagementDiv />
+      <SoftwareDiv />
+      <Footer />
     </div>
   )
 }
 
-export default meetTeamPage;
+export default DivisionsPage;

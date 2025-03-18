@@ -2,7 +2,7 @@ import React from 'react';
 import { TbTargetArrow } from "react-icons/tb";
 import { FaEye } from "react-icons/fa";
 
-const ThisIsWhatWeDoBlock = () => {
+const MissionVisionBlock = () => {
   return (
     <div className="flex flex-col md:flex-row p-4 gap-8 bg-white mt-6 box-shadow mb-6 shadow-md">
       {/* Mission Section */}
@@ -34,4 +34,4 @@ const ThisIsWhatWeDoBlock = () => {
   );
 };
 
-export default ThisIsWhatWeDoBlock;
+export default MissionVisionBlock;
