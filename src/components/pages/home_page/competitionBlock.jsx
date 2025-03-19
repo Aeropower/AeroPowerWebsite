@@ -17,6 +17,7 @@ const CompetitionBlock = () => {
         <div className="competition-block">
             <div className="competitions-grid">
                 <h2 className="text-2xl font-bold mb-4 mt-4">Collegiate Wind Competition</h2>
+                {/* Competition Selection Buttons */}
                 <div className="child2">
                     {['Wind Turbine', 'Project Development', 'Connection Creation'].map((competition) => (
                         <div
@@ -28,6 +29,7 @@ const CompetitionBlock = () => {
                         </div>
                     ))}
                 </div>
+                {/* Competition Content and Video */}
                 <div className={`video-row ${selectedCompetition ? 'has-content' : ''}`}>
                     {selectedCompetition && (
                         <div className="content-container text-2xl"> {/* Added text-lg class */}
