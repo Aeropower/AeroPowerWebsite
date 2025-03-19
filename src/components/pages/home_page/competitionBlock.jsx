@@ -16,8 +16,7 @@ const CompetitionBlock = () => {
     return (
         <div className="competition-block">
             <div className="competitions-grid">
-                <h2 className="text-2xl font-bold mb-4 mt-4">Collegiate Wind Competition</h2>
-                {/* Competition Selection Buttons */}
+                <h2 className="text-2xl font-bold mb-4 mt-4 text-center">Collegiate Wind Competition</h2>
                 <div className="child2">
                     {['Wind Turbine', 'Project Development', 'Connection Creation'].map((competition) => (
                         <div
@@ -29,19 +28,26 @@ const CompetitionBlock = () => {
                         </div>
                     ))}
                 </div>
-                {/* Competition Content and Video */}
-                <div className={`video-row ${selectedCompetition ? 'has-content' : ''}`}>
-                    {selectedCompetition && (
-                        <div className="content-container text-2xl"> {/* Added text-lg class */}
-                            {competitionContent[selectedCompetition]}
+                <div className="video-row">
+                    <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mx-auto gap-8">
+                        <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-center">
+                            <div className="video-container w-full max-w-sm md:max-w-lg">
+                                <iframe
+                                    src="https://www.youtube.com/embed/FtkoJrZdJhY"
+                                    title="Prepare for Tomorrow's Wind Energy Career Today with the Collegiate Wind Competition (CWC)"
+                                    allowFullScreen
+                                    className="w-full h-48 md:h-96 rounded-lg shadow-lg"
+                                ></iframe>
+                            </div>
                         </div>
-                    )}
-                    <div className="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/FtkoJrZdJhY"
-                            title="Prepare for Tomorrow's Wind Energy Career Today with the Collegiate Wind Competition (CWC)"
-                            allowFullScreen
-                        ></iframe>
+
+                        {selectedCompetition && (
+                            <div className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left max-w-sm md:max-w-none">
+                                <div className="content-container text-2xl">
+                                    {competitionContent[selectedCompetition]}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
