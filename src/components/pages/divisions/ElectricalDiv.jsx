@@ -9,30 +9,30 @@ import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with a vide
 const ElectricalDiv = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mb-6 flex flex-col md:flex-row items-center w-full">
-      {/* Image Section (Left on larger screens, Top on small screens) */}
-      <div className="w-full md:w-1/2 flex justify-center order-1 md:order-1">
-        <img
-          src={Dog2}
-          alt="Electrical Division"
-          className="w-48 h-auto rounded-lg"
-        />
+      {/* Static Image (Replace with video later) */}
+      <div className="md:w-1/2 flex justify-center">
+        <img src={Dog2} alt="Electrical Division" className="w-48 h-auto rounded-lg" />
       </div>
 
       {/* Swiper Container - Adjusted for Proper Responsiveness */}
-      <div className="w-full md:w-1/2 md:pl-6 mt-6 md:mt-0 order-2 md:order-2 flex flex-col">
+      <div className="md:w-1/2 md:pl-6 mt-6 md:mt-0 flex flex-col w-full">
         {/* Division Title */}
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">
           División Eléctrica
         </h2>
+        <p className="text-gray-700">
+          La División Eléctrica se enfoca en el diseño, simulación y optimización de circuitos eléctricos para mejorar el rendimiento de las turbinas eólicas. También trabajamos en la programación de microcontroladores y sistemas de monitoreo remoto para garantizar un funcionamiento eficiente y seguro.
+        </p>
+        <h3 className="text-2xl mt-3 font-semibold text-gray-900 mb-4 text-center md:text-left">Subdivisions</h3>
 
-        {/* Swiper - Text Only */}
+        {/* Swiper Wrapper with Fixed Height for Visibility */}
         <Swiper
           modules={[Pagination, Scrollbar, A11y]}
           spaceBetween={20}
           slidesPerView={1}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          className="w-full min-h-[120px]"
+          className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>
             <div className="w-full text-center md:text-left">
@@ -61,8 +61,6 @@ const ElectricalDiv = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-
-        
       </div>
     </div>
   );
