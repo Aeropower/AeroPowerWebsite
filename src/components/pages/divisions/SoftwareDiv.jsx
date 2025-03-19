@@ -15,15 +15,19 @@ const SoftwareDiv = () => {
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">
           División de Software
         </h2>
+        <p className="text-gray-700">
+          La División de Software se enfoca en el desarrollo de aplicaciones web, software embebido y interfaces de usuario para sistemas de control y monitoreo de turbinas eólicas. Utilizamos tecnologías modernas para garantizar la eficiencia y usabilidad de nuestros sistemas.
+        </p>
+        <h3 className="text-2xl mt-3 font-semibold text-gray-900 mb-4 text-center md:text-left">Subdivisions</h3>
 
-        {/* Swiper - Text Only */}
+        {/* Swiper Wrapper with Fixed Height for Visibility */}
         <Swiper
           modules={[Pagination, Scrollbar, A11y]}
           spaceBetween={20}
           slidesPerView={1}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          className="w-full min-h-[120px]"
+          className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>
             <div className="w-full text-center md:text-left">
@@ -52,11 +56,9 @@ const SoftwareDiv = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-
-      
       </div>
 
-      {/* Image Section (Right on larger screens, Top on small screens) */}
+      {/* Static Image (Replace with video later) */}
       <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 mt-6 md:mt-0">
         <img
           src={Dog2}
