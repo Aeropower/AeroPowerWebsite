@@ -9,7 +9,7 @@ const CompetitionBlock = () => {
 
     const competitionContent = {
         'Wind Turbine': 'Design, build, and present a unique, wind-driven power system.',
-        'Project Development': 'Research wind resource data, transmission infrastructure,and environmental factors to create a site plan and financial analysis for a hypothetical wind farm.',
+        'Project Development': 'Research wind resource data, transmission infrastructure, and environmental factors to create a site plan and financial analysis for a hypothetical wind farm.',
         'Connection Creation': 'Partner with wind industry professionals, raise awareness of wind energy in your local community, and work with local media to promote your team’s accomplishments.'
     };
 
@@ -17,8 +17,8 @@ const CompetitionBlock = () => {
         <div className="competition-block">
             <div className="competitions-grid">
                 <h2 className="text-2xl font-bold mb-4 mt-4 text-center">Collegiate Wind Competition</h2>
-                <div className="child2">
-                    {['Wind Turbine', 'Project Development', 'Connection Creation'].map((competition) => (
+                <div className="competition-tabs">
+                    {Object.keys(competitionContent).map((competition) => (
                         <div
                             key={competition}
                             className={`competitions ${selectedCompetition === competition ? 'selected' : ''}`}
