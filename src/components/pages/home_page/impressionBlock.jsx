@@ -5,7 +5,7 @@ import TypewriterText from "../../../styles/TypewriterText"; // Import the typew
 const ImpressionBlock = () => (
   <div className="impression-block">
     <div className="team-photo-block">
-      <img className="team-photo" src={TeamPhoto} alt="Team Photo" />
+      <img className="team-photo" src={TeamPhoto} alt="Team Photo" loading="lazy" />
     </div>
     <div className="text-container">
       <TypewriterText

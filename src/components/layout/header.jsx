@@ -27,7 +27,7 @@ function Header() {
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <div className="aeropower-logo">
-          <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
+          <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" loading="lazy" />
         </div>
 
         <nav className="middle-section">
@@ -52,7 +52,7 @@ function Header() {
         </nav>
 
         <a href="https://www.ieee.org/" className="pes-logo">
-          <img src={LogoPes} alt="PES logo" className="h-12" />
+          <img src={LogoPes} alt="PES logo" className="h-12" loading="lazy" />
         </a>
       </div>
 
@@ -62,7 +62,7 @@ function Header() {
           <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
         </div>
         <div className="mobile-header">
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="menu-toggle" aria-label="Toggle navigation menu" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>

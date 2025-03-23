@@ -1,6 +1,20 @@
+:root {
+    --primary-green: rgba(13, 85, 19, 0.818);
+    --hover-green: rgba(91, 211, 95, 0.29);
+    --text-dark: #333;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 2px -2px gray;
+    --transition-speed: 0.3s;
+}
+
+/*body {
+    font-family: system-ui, sans-serif;
+    color: var(--text-dark);
+}*/
+
+/* ========== Header ========== */
 .header {
     display: flex;
-    flex-direction: row;
     padding: 10px 20px;
     height: 76px;
     width: 100%;
@@ -10,7 +24,7 @@
     /* Ensures the header stays on top of other elements */
     background-color: white;
     /* Set background color to avoid transparency issues */
-    box-shadow: 0 4px 2px -2px gray;
+    box-shadow: var(--shadow-medium);
     /* Optional: Add a shadow for better visibility */
 }
 
@@ -24,11 +38,8 @@
 
 .middle-section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     gap: 20px;
-    margin-bottom: 20px;
 }
 
 .nav-link {
@@ -36,18 +47,24 @@
     color: gray;
     font-size: 18px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--primary-green);
+    font-weight: bold;
+    text-decoration: underline;
+    transform: scale(1.05);
 }
 
 .nav-link.active {
-    color: rgb(13, 85, 19, 0.818);
+    color: var(--primary-green);
     font-weight: bold;
 }
 
 /* ========== Mobile Navigation ========== */
 .mobile-nav {
     display: none;
-    /* Hide by default */
     width: 100%;
 }
 
@@ -64,24 +81,21 @@
 .mobile-menu {
     display: none;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     /* Slight transparency */
     position: absolute;
-    top: 60px;
+    top: 75px;
     left: 0;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
     padding: 15px 0;
     text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 .mobile-menu.open {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    top: 75px;
-    animation: fadeIn 0.5s ease-in;
+    animation: fadeIn var(--transition-speed) ease-in;
 }
 
 .mobile-menu a {
@@ -89,9 +103,9 @@
     text-decoration: none;
     color: black;
     font-size: 18px;
-    animation: fadeIn 0.5s ease-in;
 }
 
+/* ========== Logos ========== */
 .aeropower-logo img,
 .pes-logo img {
 
@@ -117,15 +131,13 @@
     /* Ensures the width scales proportionally */
 }
 
+/* ========== Impression Block ========== */
 .impression-block {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     background-color: white;
-    height: auto;
-    align-items: center;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-light);
     /* Necesario para que el border-radius funcione */
 }
 
@@ -133,11 +145,10 @@
     flex: 1;
     /* Para que la imagen ocupe la mitad del contenedor */
     position: relative;
-    /* Necesario para posicionar el pseudo-elemento */
-    margin-bottom: 0;
     min-width: 50%;
 }
 
+/* VERIFICAR ESTO */
 .team-photo img {
     width: 100%;
     height: auto;
@@ -153,7 +164,7 @@
     bottom: 0;
     width: 100%;
     height: auto;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0)80%, rgb(255, 255, 255));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0)80%, white);
     pointer-events: none;
     /* Permite que los clics pasen a través del pseudo-elemento */
 }
@@ -167,7 +178,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*text-align: center;*/
 }
 
 .typewriter-text {
@@ -187,17 +197,16 @@
     /* Makes sure text is properly contained */
 }
 
-
+/* ========== This is What We Do Block ========== */
 .this-is-what-we-do-block {
     margin-top: 20px;
     background-color: white;
     display: flex;
-    height: auto;
     padding: 20px;
     /* Añade padding interno alrededor del contenedor */
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 2px -2px gray;
+    box-shadow: var(--shadow-medium);
     overflow: hidden;
 }
 
@@ -214,14 +223,9 @@
 .this-is-what-we-do-grid img {
     max-width: 100%;
     max-height: 230px;
-    height: auto;
     object-fit: cover;
     aspect-ratio: 1 / 1;
     /* Mantiene una relación de aspecto cuadrada */
-    margin: 0;
-    /* Elimina cualquier margen superior e inferior */
-    padding: 0;
-    /* Elimina cualquier padding */
     display: block;
     /* Elimina el espacio en línea inferior generado por las imágenes */
 }
@@ -237,6 +241,7 @@
     /* Centers the text horizontally */
 }
 
+/* ========== Mission & Vision ========== */
 .mission-vision-block {
     display: flex;
     flex-direction: row;
@@ -244,50 +249,20 @@
     justify-content: space-between;
     height: 200px;
     background-color: white;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin: 20px;
     border-radius: 20px;
 }
 
-.mission {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    background-color: white;
-}
-
-.vision-mission-image {
-    max-width: 50%;
-    max-height: 150px;
-    height: auto;
-    object-fit: cover;
-}
-
-.vision-mission-image img {
-    width: 50%;
-    height: 150px;
-    object-fit: contain;
-}
-
+/* ========== Competitions ========== */
 .competitions-grid {
     display: flex;
     flex-direction: column;
     background-color: white;
     text-align: center;
     width: 100%;
-    /*max-width: 1000px; Keep it from getting too wide on huge screens */
     margin: 0 auto;
 }
 
-.child1 {
-    min-height: 55px;
-    background-color: white;
-    vertical-align: middle;
-}
 
 .competition-tabs {
     display: flex;
@@ -297,10 +272,9 @@
     height: 60px;
     width: 85%;
     max-width: 800px;
-    background-color: rgba(13, 85, 19, 0.818);
+    background-color: var(--primary-green);
     color: white;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     border-radius: 20px;
     cursor: pointer;
     font-size: 17px;
@@ -313,6 +287,12 @@
     text-align: center;
     padding: 5px;
     border-radius: 20px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.competitions:hover {
+    background-color: var(--hover-green);
+    transform: scale(1.01);
 }
 
 .competitions.selected {
@@ -322,24 +302,51 @@
     /* Optional: Add a shadow for better visibility */
 }
 
-.competitions:hover {
-    background-color: rgba(91, 211, 95, 0.29);
+/* ========== Video & Content ========== */
+.video-container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    margin-top: 20px;
 }
 
-.competition-block {
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-row {
     display: flex;
-    height: auto;
-    /* Let content define the height */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    /* Optional: Add a shadow for better visibility */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    align-items: center;
+    margin: 0 auto;
+    /* center the row if needed */
+    width: 100%;
+    /* or a max-width if you want a fixed container width */
+    max-width: 1000px;
+    padding: 30px 0;
 }
 
-.competition-title {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 10px;
+.video-row.has-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Split into two columns */
 }
 
+.content-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn var(--transition-speed) ease-in;
+}
+
+/* ========== Footer & Contact ========== */
 .uprm-logo img {
     max-width: 100px;
     /* Adjust to make logos bigger */
@@ -370,19 +377,7 @@ a {
     /* Inherit color for consistency */
 }
 
-.image-wrapper {
-    animation: fade 1s ease-in-out;
-    /* Ajusta las propiedades de la animación si lo deseas */
-}
-
-iframe,
-video {
-    max-width: 100%;
-    display: block;
-    /* prevents inline spacing issues */
-}
-
-
+/* ========== Animations ========== */
 @keyframes fade {
     0% {
         opacity: 0;
@@ -409,6 +404,17 @@ video {
     animation: fade 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
     .desktop-nav {
         display: none;
@@ -451,66 +457,11 @@ video {
     }
 
     .text-container {
-        width: 90%;
-        /* Ensure text doesn’t stretch too far */
+        width: 100%;
     }
 
     /* .impression-block {
         flex-direction: column;  Stack items vertically 
         text-align: center;
     }*/
-}
-
-.video-container {
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
-    margin-top: 20px;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.video-row {
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
-    align-items: center;
-    margin: 0 auto;
-    /* center the row if needed */
-    width: 100%;
-    /* or a max-width if you want a fixed container width */
-    max-width: 1000px;
-    padding: 30px 0;
-}
-
-.video-row.has-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Split into two columns */
-}
-
-.content-container {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    animation: fadeIn 0.5s ease-in;
-    /* Optional fade-in effect */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
