@@ -7,11 +7,6 @@
     --transition-speed: 0.3s;
 }
 
-/*body {
-    font-family: system-ui, sans-serif;
-    color: var(--text-dark);
-}*/
-
 /* ========== Header ========== */
 .header {
     display: flex;
@@ -47,7 +42,8 @@
     color: gray;
     font-size: 18px;
     font-weight: 500;
-    transition: color var(--transition-speed), transform var(--transition-speed);
+    transition: color var(--transition-speed), transform var(--transition-speed), background-color var(--transition-speed);
+    /* Optional: Add a transition for better user experience */
 }
 
 .nav-link:hover {
@@ -74,7 +70,6 @@
     cursor: pointer;
     padding: 10px;
     font-size: 24px;
-
 }
 
 /* Mobile Menu */
@@ -96,6 +91,7 @@
 .mobile-menu.open {
     display: flex;
     animation: fadeIn var(--transition-speed) ease-in;
+    /*     animation: slideDown var(--transition-speed) ease-out; */
 }
 
 .mobile-menu a {
@@ -103,6 +99,7 @@
     text-decoration: none;
     color: black;
     font-size: 18px;
+    transition: transform var(--transition-speed), color var(--transition-speed);
 }
 
 /* ========== Logos ========== */
@@ -287,7 +284,8 @@
     text-align: center;
     padding: 5px;
     border-radius: 20px;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    transition: color var(--transition-speed), transform var(--transition-speed), background-color var(--transition-speed);
+    /* Optional: Add a transition for better user experience */
 }
 
 .competitions:hover {
@@ -360,6 +358,11 @@ a {
     /* Removes underline from links */
 }
 
+a:hover {
+    transform: scale(1.5);
+    /* Optional: Add a transition for better user experience */
+}
+
 .contact-us,
 .logo-contact {
     display: flex;
@@ -368,41 +371,8 @@ a {
     margin-top: 10px;
 }
 
-.contact-icon {
-    font-size: 30px;
-    /* Makes icons bigger */
-    margin: 0 10px;
-    /* Adds some space around icons */
-    color: inherit;
-    /* Inherit color for consistency */
-}
 
 /* ========== Animations ========== */
-@keyframes fade {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    25% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    75% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-.elemento {
-    animation: fade 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-}
 
 @keyframes fadeIn {
     from {
@@ -412,6 +382,36 @@ a {
     to {
         opacity: 1;
     }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes imageFade {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-imageFade {
+    animation: imageFade 1s ease-in-out;
 }
 
 /* ========== Responsive ========== */
@@ -454,14 +454,12 @@ a {
     .typewriter-text {
         font-size: 16px;
         /* Slightly smaller for mobile */
+        word-wrap: break-word;
+        /* Allow words to wrap */
     }
 
     .text-container {
         width: 100%;
+        padding: 10px;
     }
-
-    /* .impression-block {
-        flex-direction: column;  Stack items vertically 
-        text-align: center;
-    }*/
 }

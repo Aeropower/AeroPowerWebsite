@@ -23,6 +23,8 @@ const CompetitionBlock = () => {
                             key={competition}
                             className={`competitions ${selectedCompetition === competition ? 'selected' : ''}`}
                             onClick={() => handleCompetitionClick(competition)}
+                            role="button"
+                            aria-expanded={selectedCompetition === competition}
                         >
                             {competition}
                         </div>

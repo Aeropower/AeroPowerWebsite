@@ -23,7 +23,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center md:items-end">
         <div className="mb-4">
-          <a href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
+          <a className="text-gray-700 hover:text-green-700 transition-colors duration-300" href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
             <img src={LogoUPRM} alt="UPRM Logo" className="w-24" />
           </a>
         </div>
@@ -34,10 +34,10 @@ const Footer = () => {
           </div>
           <div className="flex gap-3">
             <a href="https://www.linkedin.com/company/aeropower-uprm/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-              <CiLinkedin className="text-gray-700 text-2xl" />
+              <CiLinkedin className="text-gray-700 text-4xl hover:text-green-700" />
             </a>
             <a href="https://www.instagram.com/aeropoweruprm/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-gray-700 text-2xl" />
+              <FaInstagram className="text-gray-700 text-4xl hover:text-green-700" />
             </a>
           </div>
         </div>

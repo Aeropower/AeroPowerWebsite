@@ -62,7 +62,7 @@ function Header() {
           <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
         </div>
         <div className="mobile-header">
-          <button className="menu-toggle" aria-label="Toggle navigation menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="menu-toggle" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
