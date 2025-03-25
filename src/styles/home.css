@@ -102,6 +102,12 @@
     transition: transform var(--transition-speed), color var(--transition-speed);
 }
 
+.mobile-menu a:hover {
+    transform: scale(1.5);
+    color: var(--primary-green);
+    /* Optional: Add hover effect to links */
+}
+
 /* ========== Logos ========== */
 .aeropower-logo img,
 .pes-logo img {
@@ -145,13 +151,7 @@
     min-width: 50%;
 }
 
-/* VERIFICAR ESTO */
-.team-photo img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    /* Ajusta la imagen para que se escale correctamente */
-}
+
 
 .team-photo-block::after {
     content: '';
@@ -357,11 +357,6 @@
 a {
     text-decoration: none;
     /* Removes underline from links */
-}
-
-a:hover {
-    transform: scale(1.5);
-    /* Optional: Add a transition for better user experience */
 }
 
 .contact-us,
