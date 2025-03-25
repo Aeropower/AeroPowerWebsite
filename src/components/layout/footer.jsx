@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoAeropower from "../../assets/images/aeropower-word-logo.png";
 import LogoUPRM from "../../assets/images/logo-rum.png";
 import { MdContactSupport, MdEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
@@ -7,10 +6,12 @@ import { CiLinkedin } from "react-icons/ci";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95">
+    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95 ">
       <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
         <div className="mb-2">
-          <img src={LogoAeropower} alt="Aeropower Logo" className="w-32" />
+          <a className="inline-block bg-green-700 text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md transform hover:scale-110 bg-green-800 transition-all duration-300"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeOJ7E5blU24HvCSKpYItfLpPlDoDPMEDjqUTFFCbZ8zXa0cw/viewform" target="_blank" rel="noopener noreferrer">
+            APPLY HERE!</a>
         </div>
         <div className="text-center md:text-left">
           <p>
@@ -23,7 +24,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center md:items-end">
         <div className="mb-4">
-          <a className="text-gray-700 hover:text-green-700 transition-colors duration-300" href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
+          <a href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
             <img src={LogoUPRM} alt="UPRM Logo" className="w-24" />
           </a>
         </div>
