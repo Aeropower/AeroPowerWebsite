@@ -1,9 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with a video
 
 const SoftwareDiv = () => {
@@ -22,11 +21,10 @@ const SoftwareDiv = () => {
 
         {/* Swiper Wrapper with Fixed Height for Visibility */}
         <Swiper
-          modules={[Pagination, Scrollbar, A11y]}
+          modules={[Pagination, A11y]}
           spaceBetween={20}
           slidesPerView={1}
           pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
           className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with a video
 
 const WindFarmDevDiv = () => {
@@ -21,17 +20,16 @@ const WindFarmDevDiv = () => {
           División de Wind Farm
         </h2>
         <p className="text-gray-700">
-        La División de Desarrollo de Parques Eólicos se centra en la creación de planes para proyectos de parques eólicos marinos. Realizamos análisis de datos, evaluaciones ambientales, evaluaciones económicas y estudios de ingeniería para garantizar la viabilidad y la sostenibilidad de los proyectos de energía eólica. Nuestro trabajo incluye la investigación de los recursos eólicos, la optimización de la ubicación de las turbinas y la garantía del cumplimiento de las normas ambientales.
+          La División de Desarrollo de Parques Eólicos se centra en la creación de planes para proyectos de parques eólicos marinos. Realizamos análisis de datos, evaluaciones ambientales, evaluaciones económicas y estudios de ingeniería para garantizar la viabilidad y la sostenibilidad de los proyectos de energía eólica. Nuestro trabajo incluye la investigación de los recursos eólicos, la optimización de la ubicación de las turbinas y la garantía del cumplimiento de las normas ambientales.
         </p>
         <h3 className="text-2xl mt-3 font-semibold text-gray-900 mb-4 text-center md:text-left">Subdivisions</h3>
 
         {/* Swiper Wrapper with Fixed Height for Visibility */}
         <Swiper
-          modules={[Pagination, Scrollbar, A11y]}
+          modules={[Pagination, A11y]}
           spaceBetween={20}
           slidesPerView={1}
           pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
           className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>
@@ -62,7 +60,7 @@ const WindFarmDevDiv = () => {
           </SwiperSlide>
         </Swiper>
 
-       
+
       </div>
     </div>
   );
