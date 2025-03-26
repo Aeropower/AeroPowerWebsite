@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y } from 'swiper/modules';
+import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with a video
@@ -19,18 +19,24 @@ const ElectricalDiv = () => {
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">
           División Eléctrica
         </h2>
-        <p className="text-gray-700">
+        <p className="text-gray-700 mb-4">
           La División Eléctrica se enfoca en el diseño, simulación y optimización de circuitos eléctricos para mejorar el rendimiento de las turbinas eólicas. También trabajamos en la programación de microcontroladores y sistemas de monitoreo remoto para garantizar un funcionamiento eficiente y seguro.
         </p>
         <h3 className="text-2xl mt-3 font-semibold text-gray-900 mb-4 text-center md:text-left">Subdivisions</h3>
 
         {/* Swiper Wrapper with Fixed Height for Visibility */}
         <Swiper
-          modules={[Pagination, A11y]}
+          modules={[Pagination, A11y, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
           pagination={{ clickable: true }}
           loop={true}
+          speed={500}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
           className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>
