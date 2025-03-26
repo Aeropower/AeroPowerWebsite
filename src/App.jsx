@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import HomePage from './components/pages/home_page/homePage';
 import DivisionsPage from './components/pages/divisions/divisionsPage';
+import SponsorPage from './components/pages/sponsors/sponsorpage';
 import './styles/general.css';
 import './styles/home.css';
 
@@ -10,6 +11,7 @@ const router = createBrowserRouter(
     <>
       <Route index element={<HomePage />} />
       <Route path='/divisions' element={<DivisionsPage />} />
+      <Route path='/sponsors' element={<SponsorPage />} /> 
     </>
   )
 );
