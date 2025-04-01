@@ -8,7 +8,7 @@ import ThisIsWhatWeDo from "./thisIsWhatWeDoBlock";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
       <Header />
       <ImpressionBlock />
       <ThisIsWhatWeDo />

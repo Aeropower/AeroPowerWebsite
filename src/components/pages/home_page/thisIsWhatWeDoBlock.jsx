@@ -15,7 +15,7 @@ const ThisIsWhatWeDoBlock = () => {
   }, [images.length]);
 
   return (
-    <div className="flex flex-col md:flex-row items-center p-4 bg-white mt-6 shadow-md">
+    <div className="flex flex-col md:flex-row items-center p-4 bg-white dark:bg-gray-800 mt-6 shadow-md transition-colors">
       <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
         <h2 className="text-2xl font-bold mb-4 text-center">This is what we do!</h2>
         <p className="text-center md:text-left text-lg">

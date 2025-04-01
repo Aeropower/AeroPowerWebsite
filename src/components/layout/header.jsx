@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
 import LogoAeropower from "../../assets/images/logo-aeropower.png";
 import LogoPes from "../../assets/images/logo-pes.png";
+import DarkModeToggle from "./DarkModeToggle";
 
 function Header() {
   const location = useLocation(); // Get current URL
@@ -23,7 +24,7 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="header">
+    <header className="header dark:bg-gray-900 shadow-md dark:shadow-lg transition-colors duration-300">
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <div className="aeropower-logo">
@@ -33,19 +34,19 @@ function Header() {
         <nav className="middle-section">
           <Link
             to="/"
-            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+            className={`nav-link text-gray-800 dark:text-white hover:underline ${location.pathname === "/" ? "active" : ""}`}
           >
             Home
           </Link>
           <Link
             to="/divisions"
-            className={`nav-link ${location.pathname === "/divisions" ? "active" : ""}`}
+            className={`nav-link text-gray-800 dark:text-white hover:underline ${location.pathname === "/divisions" ? "active" : ""}`}
           >
             Divisions & Subdivisions
           </Link>
           <Link
             to="/sponsors"
-            className={`nav-link ${location.pathname === "/sponsors" ? "active" : ""}`}
+            className={`nav-link text-gray-800 dark:text-white hover:underline ${location.pathname === "/sponsors" ? "active" : ""}`}
           >
             Sponsors
           </Link>
@@ -65,10 +66,12 @@ function Header() {
           <button className="menu-toggle" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
+          {/* Dark mode toggle only for mobile in header */}
+          <DarkModeToggle inHeader={true} />
         </div>
 
         {/* Slide-in Menu */}
-        <nav className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <nav className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-800 dark:text-white transition-colors`}>
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/divisions" onClick={() => setMenuOpen(false)}>Divisions & Subdivisions</Link>
           <Link to="/sponsors" onClick={() => setMenuOpen(false)}>Sponsors</Link>

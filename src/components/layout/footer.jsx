@@ -6,10 +6,10 @@ import { CiLinkedin } from "react-icons/ci";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95 ">
+    <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95 dark:bg-gray-800">
       <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
         <div className="mb-2">
-          <a className="inline-block bg-green-700 text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md transform hover:scale-110 bg-green-800 transition-all duration-300"
+          <a className="inline-block text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md transform hover:scale-110 bg-darkgreen transition-all duration-300"
             href="https://docs.google.com/forms/d/e/1FAIpQLSeOJ7E5blU24HvCSKpYItfLpPlDoDPMEDjqUTFFCbZ8zXa0cw/viewform" target="_blank" rel="noopener noreferrer">
             APPLY HERE!</a>
         </div>
@@ -35,10 +35,10 @@ const Footer = () => {
           </div>
           <div className="flex gap-3">
             <a href="https://www.linkedin.com/company/aeropower-uprm/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-              <CiLinkedin className="text-gray-700 text-4xl hover:text-green-700" />
+              <CiLinkedin className="text-gray-700 text-4xl hover:text-green-700 dark:text-green-500" />
             </a>
             <a href="https://www.instagram.com/aeropoweruprm/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-gray-700 text-4xl hover:text-green-700" />
+              <FaInstagram className="text-gray-700 text-4xl hover:text-green-700 dark:text-green-500" />
             </a>
           </div>
         </div>

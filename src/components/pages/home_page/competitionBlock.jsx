@@ -15,7 +15,7 @@ const CompetitionBlock = () => {
 
     return (
         <div className="competition-block">
-            <div className="competitions-grid">
+            <div className="competitions-grid dark:bg-gray-900 dark:text-white">
                 <h2 className="text-2xl font-bold mb-4 mt-4 text-center">Collegiate Wind Competition</h2>
                 <div className="competition-tabs">
                     {Object.keys(competitionContent).map((competition) => (

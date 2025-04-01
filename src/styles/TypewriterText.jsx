@@ -15,7 +15,7 @@ function TypewriterText({ text, speed = 50 }) {
     }
   }, [index, text, speed]);
 
-  return <p className="typewriter-text">{displayedText}</p>;
+  return <p className="typewriter-text text-black dark:text-white transition-colors duration-300">{displayedText}</p>;
 }
 
 export default TypewriterText;
