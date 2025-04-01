@@ -8,22 +8,22 @@ const BusinessOpsDiv = () => {
       <div className="w-full md:w-1/2 md:pr-6 order-2 md:order-1">
         {/* Division Title */}
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">
-          División de Business & Operations
+        Business & Operations Division
         </h2>
 
         {/* Description */}
         <p className="text-gray-700">
-          La División de Business & Operations gestiona los asuntos cotidianos, las operaciones del equipo y la planificación de actividades. Las responsabilidades incluyen la coordinación de eventos de divulgación, el mantenimiento de una sólida presencia en las redes sociales, la documentación del recorrido del equipo y la realización de actividades de recaudación de fondos. La división también establece relaciones profesionales con expertos y organizaciones de la industria para respaldar el éxito del proyecto.
+        The Business & Operations division is responsible for the logistics, planning, and execution of activities, whether for fundraising or raising awareness about renewable energy. Likewise, we manage social media, communication with sponsors, and the Content Creation Contest within the CWC Competition. In this contest, we are tasked with making an impact on different communities by raising awareness about renewable energy among them.
         </p>
 
         {/* List of Responsibilities */}
         <div className="mt-4">
-          <h3 className="text-xl font-medium">Lo Que Hacemos</h3>
+          <h3 className="text-xl font-medium">What we do</h3>
           <ul className="list-disc list-inside text-gray-700">
-            <li>Gestionar cronogramas, presupuestos y recursos del proyecto.</li>
-            <li>Desarrollar estrategias de marketing y campañas de difusión.</li>
-            <li>Realizar análisis financieros y asegurar oportunidades de financiación.</li>
-            <li>Colaborar con equipos multifuncionales para el éxito del proyecto.</li>
+            <li>Organize and run the Content Creation Contest as part of the CWC Competition.</li>
+            <li>Engage and educate communities by raising awareness about renewable energy through the contest and other initiatives.</li>
+            <li>Conduct financial analysis and plan and execute events to fund the team.</li>
+            <li>Manage social media and communication. </li>
           </ul>
         </div>
       </div>

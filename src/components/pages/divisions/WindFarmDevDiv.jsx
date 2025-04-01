@@ -37,7 +37,7 @@ const WindFarmDevDiv = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }}
-          className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
+          className="w-full min-h-[120px] custom-swiper" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>
             <div className="w-full text-center md:text-left">
