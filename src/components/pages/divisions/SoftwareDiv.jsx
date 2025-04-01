@@ -12,10 +12,10 @@ const SoftwareDiv = () => {
       <div className="w-full md:w-1/2 md:pr-6 mt-6 md:mt-0 order-2 md:order-1 flex flex-col">
         {/* Division Title */}
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">
-          División de Software
+          Software Division
         </h2>
         <p className="text-gray-700 mb-4">
-          La División de Software se enfoca en el desarrollo de aplicaciones web, software embebido y interfaces de usuario para sistemas de control y monitoreo de turbinas eólicas. Utilizamos tecnologías modernas para garantizar la eficiencia y usabilidad de nuestros sistemas.
+        The Software Division is in charge of designing, developing, and maintaining the team's website, both front-end and back-end, as well as the embedded system that operates the turbine's control system and the emergency brake, ensuring smooth and safe performance.
         </p>
         <h3 className="text-2xl mt-3 font-semibold text-gray-900 mb-4 text-center md:text-left">Subdivisions</h3>
 
@@ -32,31 +32,22 @@ const SoftwareDiv = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }}
-          className="w-full min-h-[120px]" // Ensures text stays visible even on smaller screens
+          className="w-full min-h-[120px] custom-swiper" // Ensures text stays visible even on smaller screens
         >
           <SwiperSlide>
             <div className="w-full text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-medium">Desarrollo Web</h3>
+              <h3 className="text-lg md:text-xl font-medium">Web Development</h3>
               <p className="text-gray-700">
-                Creación y mantenimiento del sitio web del equipo con tecnologías modernas.
+              The Web Development Division is responsible for designing the team's website UI and bringing it to life by developing the front-end using React.js with JavaScript and the back-end using Python and Flask. They are the ones who make real the very website you are reading this on.
               </p>
             </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div className="w-full text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-medium">Código Embebido</h3>
+              <h3 className="text-lg md:text-xl font-medium">Embedded Software</h3>
               <p className="text-gray-700">
-                Desarrollo de software para microcontroladores como Arduino para control de turbinas.
-              </p>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="w-full text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-medium">Interfaces de Usuario</h3>
-              <p className="text-gray-700">
-                Diseño de interfaces para el monitoreo en tiempo real de sistemas embebidos.
+              The Embedded Software Subdivision is responsible for designing and maintaining the real-time operating system using FreeRTOS, running on ESP32 or AVR microcontrollers. This system makes possible the implementation of the turbine's pitch control system and the emergency brake control.
               </p>
             </div>
           </SwiperSlide>
