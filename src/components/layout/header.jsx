@@ -24,7 +24,7 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="header dark:bg-gray-900 shadow-md dark:shadow-lg transition-colors duration-300">
+    <header className="header dark:bg-gray-800 shadow-md dark:shadow-lg transition-colors duration-300 px-1 py-1 ">
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <div className="aeropower-logo">
@@ -62,7 +62,7 @@ function Header() {
         <div className="aeropower-logo">
           <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
         </div>
-        <div className="mobile-header">
+        <div className="mobile-header dark:text-white">
           <button className="menu-toggle" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
@@ -71,10 +71,10 @@ function Header() {
         </div>
 
         {/* Slide-in Menu */}
-        <nav className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-800 dark:text-white transition-colors`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/divisions" onClick={() => setMenuOpen(false)}>Divisions & Subdivisions</Link>
-          <Link to="/sponsors" onClick={() => setMenuOpen(false)}>Sponsors</Link>
+        <nav className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-700 transition-colors`}>
+          <Link to="/" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Home</Link>
+          <Link to="/divisions" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Divisions & Subdivisions</Link>
+          <Link to="/sponsors" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Sponsors</Link>
         </nav>
 
         <div className="pes-logo">

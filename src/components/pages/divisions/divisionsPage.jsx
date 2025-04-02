@@ -10,7 +10,7 @@ import ProjectManagementDiv from './ProjectManagementDiv';
 
 const DivisionsPage = () => {
   return (
-    <div>
+    <div className="dark:bg-gray-900 dark:text-white transition-colors duration-300">
       <Header />
       <WindFarmDevDiv />
       <BusinessOpsDiv />

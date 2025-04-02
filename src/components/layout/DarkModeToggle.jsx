@@ -2,41 +2,42 @@ import React, { useEffect, useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 const DarkModeToggle = ({ inHeader = false }) => {
-  const [darkMode, setDarkMode] = useState(() =>
-    localStorage.getItem("theme") === "dark"
-  );
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.toggle("dark", darkMode);
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
   }, [darkMode]);
 
-  const icon = darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-600" />;
-
-  const baseClasses =
-    "p-2 rounded-full text-xl transition-colors duration-300 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:scale-105";
-
-  if (isMobile) {
+  // Mobile toggle inside header
+  if (inHeader) {
     return (
-      <button onClick={() => setDarkMode(!darkMode)} className={`${baseClasses} ml-2`}>
-        {icon}
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="ml-2 md:hidden p-2 rounded-full bg-gray-200 dark:bg-gray-700 shadow transition-colors"
+        aria-label="Toggle Dark Mode"
+      >
+        {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-700" />}
       </button>
     );
   }
 
+  // Desktop floating toggle
   return (
-    <div className="fixed bottom-2 left-2 z-50">
-      <button onClick={() => setDarkMode(!darkMode)} className={baseClasses}>
-        {icon}
-      </button>
-    </div>
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className="fixed bottom-2 left-2 z-50 p-3 hidden md:flex items-center justify-center rounded-full shadow-lg bg-gray-300 hover:shadow-hard dark:bg-gray-700 transition-colors"
+      aria-label="Toggle Dark Mode"
+    >
+      {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-700" />}
+    </button>
   );
 };
 
