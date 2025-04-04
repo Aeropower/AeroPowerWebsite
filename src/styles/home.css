@@ -1,28 +1,3 @@
-:root {
-    --primary-green: rgba(13, 85, 19, 0.818);
-    --hover-green: rgba(91, 211, 95, 0.29);
-    --text-dark: #333;
-    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 2px -2px gray;
-    --transition-speed: 0.3s;
-}
-
-/* ========== Header ========== */
-.header {
-    display: flex;
-    padding: 10px 20px;
-    height: 76px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    /* Ensures the header stays on top of other elements */
-    background-color: white;
-    /* Set background color to avoid transparency issues */
-    box-shadow: var(--shadow-medium);
-    /* Optional: Add a shadow for better visibility */
-}
-
 /* ========== Desktop Navigation ========== */
 .desktop-nav {
     display: flex;

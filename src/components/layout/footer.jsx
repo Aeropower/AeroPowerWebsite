@@ -30,6 +30,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col items-center">
           <div className="flex items-center mb-2">
+            <MdEmail className="text-green-500 mr-2" />
             <MdContactSupport className="text-green-500 mr-2" />
             <p>Contact us!</p>
           </div>

@@ -3,7 +3,7 @@ import { MdEmail } from 'react-icons/md';
 import LogoUPRM from "../../../assets/images/logo-rum.png";
 
 const Contact = () => (
-  <section id="contact" className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95">
+  <section id="contact" className="flex flex-col md:flex-row justify-between items-center p-5 bg-gray-95 dark:bg-gray-800">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold text-center mb-16">Connect With Us</h2>
       <div className="max-w-2xl mx-auto text-center">

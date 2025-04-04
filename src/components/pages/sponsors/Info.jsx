@@ -1,10 +1,9 @@
-// components/sections/Hero.jsx
 import React from 'react';
 import { FaWind } from 'react-icons/fa';
 import { IoChevronForward } from 'react-icons/io5';
 
 const Info = () => (
-  <header className="bg-darkgreen text-white py-20 relative shadow-lg">
+  <section className="bg-darkgreen py-20 text-white shadow-md mb-6 relative">
     <div className="absolute inset-0 opacity-10 ">
       <FaWind className="w-full h-full" />
     </div>
@@ -20,7 +19,7 @@ const Info = () => (
         <IoChevronForward className="ml-2 h-5 w-5" />
       </a>
     </div>
-  </header>
+  </section>
 );
 
 export default Info;

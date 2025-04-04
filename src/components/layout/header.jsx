@@ -24,7 +24,8 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="header dark:bg-gray-800 shadow-md dark:shadow-lg transition-colors duration-300 px-1 py-1 ">
+    <header className="flex items-center justify-between px-1 py-[10px] h-[76px] w-full sticky top-0 z-[1000] 
+                       bg-white dark:bg-gray-800 shadow-custom-shadow-md transition-colors duration-300 ">
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <div className="aeropower-logo">

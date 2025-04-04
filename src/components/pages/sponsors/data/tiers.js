@@ -2,7 +2,7 @@ export const tiers = {
   platinum: {
     name: 'Platinum',
     benefits: [
-      'Previous tier rewards',
+      'Gold tier rewards',
       'Premium logo placement on all competition materials',
       'Featured case study on our website',
       'Social media spotlight series'
@@ -11,7 +11,7 @@ export const tiers = {
   gold: {
     name: 'Gold',
     benefits: [
-      'Previous tier rewards',
+      'Silver tier rewards',
       'Large logo placement on competition materials',
       'Student recruitment opportunities',
       'Regular social media mentions'
@@ -20,7 +20,7 @@ export const tiers = {
   silver: {
     name: 'Silver',
     benefits: [
-      'Previous tier rewards',
+      'Bronze tier rewards',
       'Medium logo placement on materials',
       'Recognition in our newsletter',
       'Social media recognition'

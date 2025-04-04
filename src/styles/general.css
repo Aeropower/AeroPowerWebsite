@@ -1,25 +1,41 @@
+:root {
+    --primary-green: rgba(13, 85, 19, 0.818);
+    --hover-green: rgba(91, 211, 95, 0.29);
+    --text-dark: #333;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 2px -2px gray;
+    --transition-speed: 0.3s;
+}
 
 /* Apply custom font to the body */
 body {
     margin: 0;
-    font-family: 'Inter',sans-serif;
-    background-color: rgb(240, 240, 240);
-
+    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 60%), url("../assets/images/polygons.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     font-weight: 400;
 }
 
 /* Apply custom font to paragraphs */
 p {
-    font-family: 'Inter',sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 0;
 }
+
 /* Cambia el color del bullet activo a verde oscuro */
 .swiper-pagination-bullet-active {
-    background-color: #006400 !important; /* Verde oscuro */
+    background-color: #006400 !important;
+    /* Verde oscuro */
 }
+
 .custom-swiper .swiper-pagination {
-    margin-top: 30px;    /* mueve los dots */
-    position: relative;   /* asegúrate que el margen funcione */
+    margin-top: 30px;
+    /* mueve los dots */
+    position: relative;
+    /* asegúrate que el margen funcione */
 }

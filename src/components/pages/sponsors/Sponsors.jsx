@@ -9,8 +9,8 @@ const tierColors = {
 };
 
 const Sponsors = () => (
-  <section className="py-20 container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">Our Valued Partners</h2>
+  <section className="bg-gray-50 py-20 container mx-auto px-4 mb-6 shadow-md dark:bg-gray-800">
+    <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">Our Valued Partners</h2>
     {Object.entries(sponsors).map(([tier, tierSponsors]) => (
       <div key={tier} className="mb-16">
         <h3 className="text-2xl font-semibold mb-8 text-center capitalize" style={{ color: tierColors[tier], textShadow: '1px 1px 0 black' }}>
@@ -18,12 +18,12 @@ const Sponsors = () => (
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {tierSponsors.map((sponsor) => (
-            <div key={sponsor.name} className="bg-white rounded-xl shadow-lg p-6 justify-center hover:shadow-hard transition-shadow">
+            <div key={sponsor.name} className="bg-white rounded-xl shadow-lg p-6 justify-center hover:shadow-hard transition-shadow dark:bg-gray-700">
               <img src={sponsor.logo} alt={`${sponsor.name} logo`} className="w-full h-48 object-contain mb-4" />
               <h4 className="text-xl font-semibold mb-2">{sponsor.name}</h4>
-              <p className="text-gray-600 mb-4">{sponsor.description}</p>
+              <p className="text-gray-600 mb-4 dark:text-white">{sponsor.description}</p>
               {sponsor.testimonial && (
-                <blockquote className="italic text-gray-700 border-l-4 border-sky-500 pl-4 mt-4">
+                <blockquote className="italic text-gray-700 border-l-4 border-sky-500 pl-4 mt-4 dark:text-white">
                   "{sponsor.testimonial}"
                 </blockquote>
               )}
