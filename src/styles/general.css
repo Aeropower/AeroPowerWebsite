@@ -19,6 +19,10 @@ body {
     font-weight: 400;
 }
 
+html.dark body {
+    background-image: url("../assets/images/polygons_dark.png");
+}
+
 /* Apply custom font to paragraphs */
 p {
     font-family: 'Inter', sans-serif;

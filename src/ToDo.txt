@@ -2,6 +2,5 @@ Aqui escribiremos las cosas que estamos hay qie hacer y marcamos las que hemos h
 asi cumplimoc con la metodologia Agile
 
 -Put the wind farm and project management info on divisions page(when provided)
--Make the sponsors page similar as the other ones(the gray background and white boxes format)
 -Talk to business divisions to make the videos for divisions page and take pictures for home page
 -Start thinking if a backend with a database and a framework like flask its more suitable for managing the recruitment data
