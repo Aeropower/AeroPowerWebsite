@@ -38,7 +38,7 @@ const SoftwareDiv = () => {
             <div className="w-full text-center md:text-left">
               <h3 className="text-lg md:text-xl font-medium">Web Development</h3>
               <p className="text-gray-700 dark:text-white">
-                The Web Development Division is responsible for designing the team's website UI and bringing it to life by developing the front-end using React.js with JavaScript and the back-end using Python and Flask. They are the ones who make real the very website you are reading this on.
+                The web development subdivision is responsible for designing the team's website UI and bringing it to life by developing the front-end using React.js with JavaScript and the back-end using Python and Flask. They are the ones who make real the very website you are reading this on.
               </p>
             </div>
           </SwiperSlide>
@@ -47,7 +47,7 @@ const SoftwareDiv = () => {
             <div className="w-full text-center md:text-left">
               <h3 className="text-lg md:text-xl font-medium">Embedded Software</h3>
               <p className="text-gray-700 dark:text-white">
-                The Embedded Software Subdivision is responsible for designing and maintaining the real-time operating system using FreeRTOS, running on ESP32 or AVR microcontrollers. This system makes possible the implementation of the turbine's pitch control system and the emergency brake control.
+                The embedded software subdivision is responsible for designing and maintaining the real-time operating system using FreeRTOS, running on ESP32 or AVR microcontrollers. This system makes possible the implementation of the turbine's pitch control system and the emergency brake control.
               </p>
             </div>
           </SwiperSlide>
