@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Replace with a video later
 
-const electrical_subdivisions = [
+const electricalSubdivisions = [
   {
     title: "Power Generation",
     description:
@@ -70,7 +70,7 @@ const ElectricalDiv = () => {
           }}
           className="w-full min-h-[140px]"
         >
-          {electrical_subdivisions.map(({ title, description }, index) => (
+          {electricalSubdivisions.map(({ title, description }, index) => (
             <SwiperSlide key={index}>
               <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
