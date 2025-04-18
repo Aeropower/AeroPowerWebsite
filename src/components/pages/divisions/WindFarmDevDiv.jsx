@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Dog2 from "../../../assets/images/dog2.jpg"; // TODO: Replace with a video in the future
 
-const subdivisions = [
+const windfarm_subdivisions = [
   {
     title: "Electrical",
     description:
@@ -70,7 +70,7 @@ const WindFarmDevDiv = () => {
         </h4>
 
         {/* Description */}
-        <p className="text-gray-700 dark:text-gray-300 mb-4">
+        <p className="text-gray-700 dark:text-white mb-4">
           As part of the Wind Farm Development division, members of this multidisciplinary division will be responsible for developing a plan concept for a marine wind farm project. This will be done through data analysis, environmental assessments, economic analysis and engineering analysis.
           Some of the topics that this division will investigate include understanding wind resource data and yield estimation, project economics, bathymetry (study of seabed depth), environmental issues, transport restrictions, logistics, permits, turbine technology and others.
         </p>
@@ -84,7 +84,7 @@ const WindFarmDevDiv = () => {
         <Swiper
           modules={[Pagination, A11y, Autoplay]}
           spaceBetween={20}
-          pagination={{ el: ".swiper-pagination-custom", clickable: true }}
+          pagination={{ el: ".swiper-pagination-windfarm", clickable: true }}
           loop={true}
           speed={600}
           autoplay={{
@@ -94,9 +94,9 @@ const WindFarmDevDiv = () => {
           }}
           className="w-full min-h-[140px]"
         >
-          {subdivisions.map(({ title, description }, index) => (
+          {windfarm_subdivisions.map(({ title, description }, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full h-full px-4 py-2 text-center md:text-left border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
+              <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                   {title}
                 </h4>
@@ -107,8 +107,8 @@ const WindFarmDevDiv = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* Custom pagination outside the card */}
-        <div className="swiper-pagination-custom mt-4 flex justify-center" />
+        {/* Custom pagination for Swiper */}
+        <div className="swiper-pagination-windfarm mt-4 flex justify-center" />
       </div>
     </div >
   );
