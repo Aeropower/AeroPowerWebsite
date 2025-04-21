@@ -45,12 +45,14 @@ function Header() {
           >
             Divisions & Subdivisions
           </Link>
+          {/*
           <Link
             to="/sponsors"
             className={`nav-link text-gray-800 dark:text-white hover:underline ${location.pathname === "/sponsors" ? "active" : ""}`}
           >
             Sponsors
           </Link>
+          */}
         </nav>
 
         <a href="https://www.ieee.org/" className="pes-logo">
@@ -75,7 +77,7 @@ function Header() {
         <nav className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-700 transition-colors`}>
           <Link to="/" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Home</Link>
           <Link to="/divisions" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Divisions & Subdivisions</Link>
-          <Link to="/sponsors" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Sponsors</Link>
+          {/*<Link to="/sponsors" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Sponsors</Link>*/}
         </nav>
 
         <div className="pes-logo">

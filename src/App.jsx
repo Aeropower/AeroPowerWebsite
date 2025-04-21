@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <>
-      <DarkModeToggle /> {/* ✅ Actually rendered now */}
+      <DarkModeToggle />
       <RouterProvider router={router} />
     </>
   );
