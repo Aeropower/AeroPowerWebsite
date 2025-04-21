@@ -28,7 +28,7 @@ const ElectricalDiv = () => {
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6 flex flex-col md:flex-row items-center w-full transition-colors duration-300">
 
       {/* Media Section */}
-      <div className="md:w-1/2 flex justify-center">
+      <div className="w-full md:w-1/2 flex justify-center">
         {/* Replace this <img> with a <video> when applicable */}
         <img
           src={Dog2}
@@ -39,7 +39,7 @@ const ElectricalDiv = () => {
       </div>
 
       {/* Info Section */}
-      <div className="md:w-1/2 md:pl-6 mt-6 md:mt-0 flex flex-col w-full">
+      <div className="w-full md:w-1/2 md:pl-6 mt-6 md:mt-0 flex flex-col w-full">
 
         {/* Division Title */}
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center md:text-left">
