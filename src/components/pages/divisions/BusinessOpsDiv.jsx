@@ -12,7 +12,7 @@ const BusinessOpsDiv = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-gray-700 dark:text-white">
+        <p className="text-gray-700 dark:text-white leading-relaxed">
           The Business & Operations division is responsible for the logistics, planning, and execution of activities, whether for fundraising or raising awareness about renewable energy. Likewise, we manage social media, communication with sponsors, and the Content Creation Contest within the CWC Competition. In this contest, we are tasked with making an impact on different communities by raising awareness about renewable energy among them.
         </p>
 

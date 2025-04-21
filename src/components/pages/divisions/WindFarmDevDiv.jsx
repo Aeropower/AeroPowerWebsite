@@ -70,7 +70,7 @@ const WindFarmDevDiv = () => {
         </h4>
 
         {/* Description */}
-        <p className="text-gray-700 dark:text-white mb-4">
+        <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
           As part of the Wind Farm Development division, members of this multidisciplinary division will be responsible for developing a plan concept for a marine wind farm project. This will be done through data analysis, environmental assessments, economic analysis and engineering analysis.
           Some of the topics that this division will investigate include understanding wind resource data and yield estimation, project economics, bathymetry (study of seabed depth), environmental issues, transport restrictions, logistics, permits, turbine technology and others.
         </p>

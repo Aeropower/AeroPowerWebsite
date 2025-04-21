@@ -19,7 +19,7 @@ const ProjectManagementDiv = () => {
           División de Project Management
         </h2>
 
-        <p className="text-gray-700 dark:text-white">
+        <p className="text-gray-700 dark:text-white leading-relaxed">
           La División de Project Management supervisa la planificación, ejecución y entrega de todos los proyectos del equipo. Nos aseguramos de que los proyectos se completen a tiempo, dentro del presupuesto y cumpliendo con los más altos estándares de calidad. Nuestras responsabilidades incluyen definir los alcances del proyecto, crear cronogramas, asignar recursos y coordinar equipos multifuncionales para lograr los objetivos del proyecto. También nos encargamos de la gestión de riesgos, la comunicación con las partes interesadas y el seguimiento del progreso para garantizar una ejecución fluida del proyecto.
         </p>
 
