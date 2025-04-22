@@ -21,6 +21,11 @@ const mechanicalSubdivisions = [
     description:
       "Ensures the structural integrity of the turbine base, supporting mechanical loads and withstanding environmental forces",
   },
+  {
+    title: "Mechatronics",
+    description:
+      "Designs the blade pitch actuator and integrates sensors with microcontrollers to enable real-time blade control. Ensures coordination between motion, feedback, and electronic control—enhancing turbine efficiency and safety."
+  },
 ];
 
 const MechanicalDiv = () => {
