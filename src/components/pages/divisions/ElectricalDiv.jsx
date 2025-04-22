@@ -14,12 +14,12 @@ const electricalSubdivisions = [
   {
     title: "Control Systems",
     description:
-      "Develops systems for monitoring and regulating turbine behavior, including real-time data acquisition (voltage, current, speed, temperature) and control algorithms to optimize performance and stability under changing wind conditions.",
+      "Analyzes mathematical models of wind turbines to design controllers such as PID and FLC for applications like blade pitch control. These controllers are modeled, tested, and validated using Simulink to optimize turbine performance, ensure operational stability, and adapt to varying wind conditions.",
   },
   {
     title: "Converters",
     description:
-      "Conditions and transforms electrical energy using converters (AC/DC rectifiers, DC/DC converters, and DC/AC inverters) to ensure compatibility with storage systems or grid-connected loads. Emphasizes proper sizing, optimized switching strategies, and thermal management to maximize efficiency and reduce power loss.",
+      "Transforms electrical energy using converters (AC/DC rectifiers, DC/DC converters, and DC/AC inverters) to ensure compatibility with storage systems or grid-connected loads. Emphasizes proper sizing, optimized switching strategies, and thermal management to maximize efficiency and reduce power loss.",
   },
 ];
 
