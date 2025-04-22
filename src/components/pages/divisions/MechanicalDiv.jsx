@@ -85,10 +85,10 @@ const MechanicalDiv = () => {
         >
           {mechanicalSubdivisions.map(({ title, description, icon: Icon }, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center justify-center md:justify-start gap-2 whitespace-nowrap">
+              <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center justify-center md:justify-start gap-2 flex-wrap md:flex-nowrap">
                   {title}
-                  <Icon className="text-xl text-green-600 dark:text-green-400" />
+                  <Icon className="text-xl text-green-600 dark:text-green-400" title={`${title} icon`} aria-hidden="true" />
                 </h4>
                 <p className="text-gray-700 dark:text-gray-300 break-normal hyphens-auto leading-relaxed">
                   {description}
