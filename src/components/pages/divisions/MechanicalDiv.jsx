@@ -1,6 +1,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
+import {
+  MdEngineering,
+  MdQueryStats,
+  MdConstruction,
+  MdMemory
+} from "react-icons/md";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with video
@@ -8,21 +14,25 @@ import Dog2 from "../../../assets/images/dog2.jpg"; // Replace later with video
 const mechanicalSubdivisions = [
   {
     title: "Rotor Mechanics & Data Analysis",
+    icon: MdQueryStats,
     description:
       "Optimizes wind turbine blade performance through CFD simulations, structural analysis, and experimental data evaluation. We refine blade designs for maximum efficiency and durability, continuously improving overall turbine performance based on test results.",
   },
   {
     title: "Manufacturing & Design",
+    icon: MdEngineering,
     description:
       "Transforms concepts into reality by developing and refining turbine components. We utilize CAD modeling and simulations to ensure designs that balance efficiency with functionality. Our commitment to precision and optimization delivers components that consistently meet the highest performance standards.",
   },
   {
     title: "Base Design",
+    icon: MdConstruction,
     description:
       "Ensures the structural integrity of the turbine base, supporting mechanical loads and withstanding environmental forces",
   },
   {
     title: "Mechatronics",
+    icon: MdMemory,
     description:
       "Designs the blade pitch actuator and integrates sensors with microcontrollers to enable real-time blade control. Ensures coordination between motion, feedback, and electronic control—enhancing turbine efficiency and safety."
   },
@@ -73,13 +83,14 @@ const MechanicalDiv = () => {
           }}
           className="w-full min-h-[140px]"
         >
-          {mechanicalSubdivisions.map(({ title, description }, index) => (
+          {mechanicalSubdivisions.map(({ title, description, icon: Icon }, index) => (
             <SwiperSlide key={index}>
               <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center justify-center md:justify-start gap-2 whitespace-nowrap">
                   {title}
+                  <Icon className="text-xl text-green-600 dark:text-green-400" />
                 </h4>
-                <p className="text-base text-gray-700 dark:text-gray-300 break-normal hyphens-auto leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 break-normal hyphens-auto leading-relaxed">
                   {description}
                 </p>
               </div>

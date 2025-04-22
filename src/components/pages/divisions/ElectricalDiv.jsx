@@ -1,6 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
+import {
+  MdSettings,
+  MdAutorenew
+} from "react-icons/md";
+import { GiPowerGenerator } from "react-icons/gi";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Replace with a video later
@@ -8,16 +13,19 @@ import Dog2 from "../../../assets/images/dog2.jpg"; // Replace with a video late
 const electricalSubdivisions = [
   {
     title: "Power Generation",
+    icon: GiPowerGenerator,
     description:
       "Converts mechanical turbine energy into electricity. Oversees generator selection (based on power and voltage), load system design, and emergency breaker integration.",
   },
   {
     title: "Control Systems",
+    icon: MdSettings,
     description:
       "Analyzes mathematical models of wind turbines to design controllers such as PID and FLC for applications like blade pitch control. These controllers are modeled, tested, and validated using Simulink to optimize turbine performance, ensure operational stability, and adapt to varying wind conditions.",
   },
   {
     title: "Converters",
+    icon: MdAutorenew,
     description:
       "Transforms electrical energy using converters (AC/DC rectifiers, DC/DC converters, and DC/AC inverters) to ensure compatibility with storage systems or grid-connected loads. Emphasizes proper sizing, optimized switching strategies, and thermal management to maximize efficiency and reduce power loss.",
   },
@@ -39,7 +47,7 @@ const ElectricalDiv = () => {
       </div>
 
       {/* Info Section */}
-      <div className="w-full md:w-1/2 md:pl-6 mt-6 md:mt-0 flex flex-col w-full">
+      <div className="w-full md:w-1/2 md:pl-6 mt-6 md:mt-0 flex flex-col">
 
         {/* Division Title */}
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center md:text-left">
@@ -70,13 +78,14 @@ const ElectricalDiv = () => {
           }}
           className="w-full min-h-[140px]"
         >
-          {electricalSubdivisions.map(({ title, description }, index) => (
+          {electricalSubdivisions.map(({ title, description, icon: Icon }, index) => (
             <SwiperSlide key={index}>
               <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center justify-center md:justify-start gap-2 whitespace-nowrap">
                   {title}
+                  <Icon className="text-xl text-green-600 dark:text-green-400" />
                 </h4>
-                <p className="text-base text-gray-700 dark:text-gray-300 break-normal hyphens-auto leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 break-normal hyphens-auto leading-relaxed">
                   {description}
                 </p>
               </div>
