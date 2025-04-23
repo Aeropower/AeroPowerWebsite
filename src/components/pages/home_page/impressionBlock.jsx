@@ -1,7 +1,6 @@
 import React from "react";
 import TeamPhoto from "../../../assets/images/team-photo.jpeg";
 import LogoAeropower from "../../../assets/images/logo-aeropower.png";
-import TypewriterText from "../../../styles/TypewriterText";
 
 const ImpressionBlock = () => {
   return (

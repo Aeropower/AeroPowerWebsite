@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
+import { FaBars, FaTimes } from "react-icons/fa";
+import { MdExpandMore } from "react-icons/md";
 import LogoAeropower from "../../assets/images/logo-aeropower.png";
 import LogoPes from "../../assets/images/logo-pes.png";
 import DarkModeToggle from "./DarkModeToggle";
 
 function Header() {
-  const location = useLocation(); // Get current URL
-  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [divisionDropdownOpen, setDivisionDropdownOpen] = useState(false); // Desktop
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Mobile
 
-  // Close menu on scroll
+  const divisionLinks = [
+    { name: "Wind Farm Dev", path: "/divisions/windfarm" },
+    { name: "Electrical", path: "/divisions/electrical" },
+    { name: "Mechanical", path: "/divisions/mechanical" },
+    { name: "Software", path: "/divisions/software" },
+    { name: "Business Operations", path: "/divisions/business" },
+    { name: "Project Management", path: "/divisions/project_management" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
-      if (menuOpen) {
-        setMenuOpen(false);
-      }
+      setMenuOpen(false);
+      setDropdownOpen(false);
+      setDivisionDropdownOpen(false);
     };
-
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [menuOpen]);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="flex items-center justify-between px-1 py-[10px] h-[76px] w-full sticky top-0 z-[1000] 
-                       bg-white dark:bg-gray-800 shadow-custom-shadow-md transition-colors duration-300 ">
+                       bg-white dark:bg-gray-800 shadow-custom-shadow-md transition-colors duration-300">
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <div className="aeropower-logo">
@@ -39,14 +47,34 @@ function Header() {
           >
             Home
           </Link>
-          <Link
-            to="/divisions"
-            className={`nav-link text-gray-800 dark:text-white hover:underline ${location.pathname === "/divisions" ? "active" : ""}`}
-          >
-            Divisions & Subdivisions
-          </Link>
-          {/*
-          <Link
+
+          {/* Desktop Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setDivisionDropdownOpen(!divisionDropdownOpen)}
+              className="nav-link text-gray-800 dark:text-white hover:underline flex items-center gap-1"
+            >
+              Divisions & Subdivisions <MdExpandMore className={`transition-transform ${divisionDropdownOpen ? "rotate-180" : ""}`} />
+            </button>
+            {divisionDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                              rounded-md shadow-md ring-1 ring-black/5 dark:ring-white/10 py-2">
+                {divisionLinks.map(({ name, path }) => (
+                  <Link
+                    key={name}
+                    to={path}
+                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[--primary-green] dark:hover:bg-gray-800 text-lg 
+                               text-gray-800 dark:text-white hover:font-bold transform transition-all duration-150 ease-in-out"
+                    onClick={() => setDivisionDropdownOpen(false)}
+                  >
+                    {name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/*<Link
             to="/sponsors"
             className={`nav-link text-gray-800 dark:text-white hover:underline ${location.pathname === "/sponsors" ? "active" : ""}`}
           >
@@ -66,18 +94,60 @@ function Header() {
           <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
         </div>
         <div className="mobile-header dark:text-white">
-          <button className="menu-toggle" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="menu-toggle"
+            aria-label="Toggle navigation"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
-          {/* Dark mode toggle only for mobile in header */}
           <DarkModeToggle inHeader={true} />
         </div>
 
-        {/* Slide-in Menu */}
+        {/* Mobile Slide-in Menu */}
         <nav className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-700 transition-colors`}>
-          <Link to="/" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Home</Link>
-          <Link to="/divisions" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Divisions & Subdivisions</Link>
-          {/*<Link to="/sponsors" onClick={() => setMenuOpen(false)} className="dark:text-white dark:hover:text-green-500">Sponsors</Link>*/}
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            className="dark:text-white"
+          >
+            Home
+          </Link>
+
+          {/* Mobile Dropdown */}
+          <div>
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="w-full py-2 flex justify-center items-center gap-1"
+            >
+              <span className="dark:text-white">Divisions & Subdivisions</span> <MdExpandMore className={`text-lg transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+            </button>
+            {dropdownOpen && (
+              <div>
+                {divisionLinks.map(({ name, path }) => (
+                  <Link
+                    key={name}
+                    to={path}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setDropdownOpen(false);
+                    }}
+                    className="block w-full px-4 py-2 text-sm dark:text-white border border-gray-200 dark:border-gray-700 shadow-md"
+                  >
+                    {name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/*<Link
+            to="/sponsors"
+            onClick={() => setMenuOpen(false)}
+            className="dark:text-white"
+          >
+            Sponsors
+          </Link>*/}
         </nav>
 
         <div className="pes-logo">

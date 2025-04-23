@@ -24,7 +24,6 @@
 .nav-link:hover {
     color: var(--primary-green);
     font-weight: bold;
-    text-decoration: underline;
     transform: scale(1.05);
 }
 

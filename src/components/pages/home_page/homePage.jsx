@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../../layout/header';
-import Footer from "../../layout/footer";
 import CompetitionBlock from "./competitionBlock";
 import MissionVisionBlock from "./missionVisionBlock";
 import ImpressionBlock from "./impressionBlock";
@@ -8,14 +6,12 @@ import ThisIsWhatWeDo from "./thisIsWhatWeDoBlock";
 
 const HomePage = () => {
   return (
-    <div className="dark:bg-gray-900 dark:text-white transition-colors duration-300">
-      <Header />
+    <>
       <ImpressionBlock />
       <ThisIsWhatWeDo />
       <MissionVisionBlock />
       <CompetitionBlock />
-      <Footer />
-    </div>
+    </>
   );
 };
 
