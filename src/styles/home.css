@@ -109,66 +109,6 @@
     /* Ensures the width scales proportionally */
 }
 
-/* ========== Impression Block ========== */
-.impression-block {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: var(--shadow-light);
-    /* Necesario para que el border-radius funcione */
-}
-
-.team-photo-block {
-    flex: 1;
-    /* Para que la imagen ocupe la mitad del contenedor */
-    position: relative;
-    min-width: 50%;
-}
-
-
-
-.team-photo-block::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0)80%, white);
-    pointer-events: none;
-    /* Permite que los clics pasen a través del pseudo-elemento */
-}
-
-
-.text-container {
-    flex: 1;
-    /* Text occupies half of the container */
-    padding: 20px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.typewriter-text {
-    font-size: 18px;
-    font-weight: 500;
-    color: black;
-    white-space: normal;
-    /* Allows text to wrap naturally like a paragraph */
-    overflow: hidden;
-    word-break: break-word;
-    /* Ensures words don't overflow */
-    max-width: 90%;
-    /* Prevents text from stretching too wide */
-    line-height: 1.6;
-    /* Improves readability */
-    display: block;
-    /* Makes sure text is properly contained */
-}
-
 /* ========== This is What We Do Block ========== */
 .this-is-what-we-do-block {
     margin-top: 20px;
