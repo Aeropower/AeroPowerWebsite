@@ -13,7 +13,7 @@ const Footer = () => {
             href="https://docs.google.com/forms/d/e/1FAIpQLSeOJ7E5blU24HvCSKpYItfLpPlDoDPMEDjqUTFFCbZ8zXa0cw/viewform" target="_blank" rel="noopener noreferrer">
             APPLY HERE!</a>
         </div>
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left dark:text-white">
           <p>
             Wind Energy Research Team<br />
             University of Puerto Rico, Mayagüez Campus<br />
@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="flex flex-col items-center">
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-2 dark:text-white">
             <MdEmail className="text-green-500 mr-2" />
             <MdContactSupport className="text-green-500 mr-2" />
             <p>Contact us!</p>
