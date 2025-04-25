@@ -37,7 +37,14 @@ p {
     /* Verde oscuro */
 }
 
-html.dark .swiper-pagination-bullet-active {
+html.dark .swiper-pagination-bullet {
     background-color: #4ade80 !important;
     /* Tailwind text-green-400 */
+}
+
+.custom-swiper .swiper-pagination {
+    margin-top: 30px;
+    /* mueve los dots */
+    position: relative;
+    /* asegúrate que el margen funcione */
 }
