@@ -5,7 +5,8 @@ import { FaMicrochip } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Dog2 from "../../../assets/images/dog2.jpg"; // Replace with a video later
+import Dog2 from "../../../assets/images/dog2.jpg";
+import SoftwareBannerImage from "../../../assets/images/polygons_dark.png";
 
 const softwareSubdivisions = [
   {
@@ -24,66 +25,73 @@ const softwareSubdivisions = [
 
 const SoftwareDiv = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6 flex flex-col md:flex-row items-center w-full transition-colors duration-300">
+    <div className="dark:bg-gray-800 transition-colors duration-300">
 
-      {/* Media Section */}
-      <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2">
-        <img
-          src={Dog2}
-          alt="Software Division"
-          className="w-48 h-auto rounded-lg"
-          loading="lazy"
-        />
-      </div>
-      {/* Info Section*/}
-      <div className="w-full md:w-1/2 md:pr-6 mt-6 md:mt-0 order-2 md:order-1 flex flex-col">
+      {/* Banner */}
+      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-md mb-6">
+        <img src={SoftwareBannerImage} alt="Software Division Banner" className="object-cover w-full h-full" />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
+            Software Division
+          </h1>
+        </div>
+      </section>
 
-        {/* Title */}
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center md:text-left">
-          Software Division
-        </h2>
+      {/* Info Block */}
+      <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-md">
+        {/* Visual */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src={Dog2}
+            alt="Software Visual"
+            className="w-48 h-auto rounded-lg"
+            loading="lazy"
+          />
+        </div>
 
-        {/* Description */}
-        <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
-          The Software Division designs, develops, and maintains the team’s website and the embedded systems responsible for turbine control and safety. Their work ensures seamless user interaction and real-time system responsiveness.
-        </p>
+        {/* Text Section */}
+        <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
+          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
+            The Software Division designs, develops, and maintains the team’s website and the embedded systems responsible for turbine control and safety. Their work ensures seamless user interaction and real-time system responsiveness.
+          </p>
 
-        {/* Subdivisions Title */}
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
-          Subdivisions
-        </h3>
+          <blockquote className="italic text-gray-600 dark:text-gray-400 mb-4">
+            "We build reliable, efficient, and intelligent systems — from user interfaces to real-time embedded controllers."
+          </blockquote>
 
-        {/* Swiper */}
-        <Swiper
-          modules={[Pagination, A11y, Autoplay]}
-          spaceBetween={20}
-          pagination={{ el: ".swiper-pagination-software", clickable: true }}
-          loop={true}
-          speed={600}
-          autoplay={{
-            delay: 15000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          className="w-full min-h-[140px]"
-        >
-          {softwareSubdivisions.map(({ title, description, icon: Icon }, index) => (
-            <SwiperSlide key={index}>
-              <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center justify-center md:justify-start gap-2 flex-wrap md:flex-nowrap">
-                  {title}
-                  <Icon className="text-xl text-green-600 dark:text-green-400" title={`${title} icon`} aria-hidden="true" />
-                </h4>
-                <p className="text-gray-700 dark:text-gray-300 break-normal hyphens-auto leading-relaxed">
-                  {description}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
+            Subdivisions
+          </h3>
 
-        {/* Pagination Dots */}
-        <div className="swiper-pagination-software mt-4 flex justify-center" />
+          <Swiper
+            modules={[Pagination, A11y, Autoplay]}
+            spaceBetween={20}
+            pagination={{ clickable: true }}
+            loop
+            speed={600}
+            autoplay={{
+              delay: 15000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            className="w-full min-h-[140px] custom-swiper"
+          >
+            {softwareSubdivisions.map(({ title, description, icon: Icon }, index) => (
+              <SwiperSlide key={index}>
+                <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center gap-2 justify-center md:justify-start flex-wrap md:flex-nowrap">
+                    {title}
+                    <Icon className="text-xl text-green-600 dark:text-green-400" title={`${title} icon`} aria-hidden="true" />
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300 break-normal leading-relaxed">
+                    {description}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div />
+        </div>
       </div>
     </div>
   );

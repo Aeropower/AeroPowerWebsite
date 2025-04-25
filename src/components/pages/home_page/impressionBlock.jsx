@@ -7,7 +7,7 @@ const ImpressionBlock = () => {
     <section className="relative w-full dark:bg-gray-800 text-white transition-colors duration-300">
 
       <div className="relative w-full h-[80vh] sm:h-screen overflow-hidden shadow-md">
-        {/* Background Image */}
+        {/* Team Image */}
         <img
           src={TeamPhoto}
           alt="Team Photo"
