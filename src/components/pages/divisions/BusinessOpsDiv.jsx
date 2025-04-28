@@ -10,6 +10,11 @@ const BusinessOpsDiv = () => {
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left dark:text-white">
           Business & Operations Division
         </h2>
+            {/* Leadership */}
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1 text-center md:text-left">
+          Leader: Samarys Bocachica Alvarado
+        </h3>
+      
 
         {/* Description */}
         <p className="text-gray-700 dark:text-white leading-relaxed">
