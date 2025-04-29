@@ -9,7 +9,7 @@ import { GiPowerGenerator } from "react-icons/gi";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Dog2 from "../../../assets/images/dog2.jpg"; // Placeholder image
-import ElectricalBannerImage from "../../../assets/images/polygons_dark.png"; // Shared banner
+import ElectricalBannerImage from "../../../assets/images/Electrical-team.webp";
 
 const electricalSubdivisions = [
   {
@@ -37,19 +37,32 @@ const ElectricalDiv = () => {
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
       {/* Banner */}
-      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-md mb-6">
+      <section className="relative w-full h-[400px] md:h-[550px] overflow-hidden shadow-lg mb-6">
         <img src={ElectricalBannerImage} alt="Electrical Division Banner" className="object-cover w-full h-full" />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
-            Electrical Division
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
+            {/* Bottom Shadow Layer */}
+            <span className="absolute top-[4px] left-[4px] text-black z-0 select-none">
+              Electrical Division
+            </span>
+
+            {/* Mid Highlight Layer */}
+            <span className="absolute top-[2px] left-[2px] text-gray-700 z-10 select-none">
+              Electrical Division
+            </span>
+
+            {/* Top Main Gradient Text Layer */}
+            <span className="relative z-20 bg-gradient-to-r from-white to-slate-300  text-transparent bg-clip-text drop-shadow-lg">
+              Electrical Division
+            </span>
           </h1>
         </div>
       </section>
 
       {/* Main Content */}
-      <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-md">
+      <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <img
             src={Dog2}
             alt="Electrical Visual"
@@ -65,7 +78,7 @@ const ElectricalDiv = () => {
           </p>
 
           <blockquote className="italic text-gray-600 dark:text-gray-400 mb-4">
-            "We power the turbine’s intelligence and stability — from real-time control to efficient energy conversion."
+            "Building the brains of clean energy: real-time optimization, resilient control, and intelligent turbine dynamics."
           </blockquote>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">

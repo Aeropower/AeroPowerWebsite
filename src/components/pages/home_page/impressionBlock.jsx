@@ -1,5 +1,5 @@
 import React from "react";
-import TeamPhoto from "../../../assets/images/team-photo.jpeg";
+import TeamPhoto from "../../../assets/images/team-photo.webp";
 import LogoAeropower from "../../../assets/images/logo-aeropower.png";
 
 const ImpressionBlock = () => {
@@ -23,7 +23,7 @@ const ImpressionBlock = () => {
           <img
             src={LogoAeropower}
             alt="Aeropower Logo"
-            className="w-64 sm:w-80 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] animate-fadeInSlow filter brightness-125 drop-shadow-lg"
+            className="w-64 sm:w-80 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] animate-fadeInSlow filter brightness-0 invert drop-shadow-lg "
           />
         </div>
       </div>
