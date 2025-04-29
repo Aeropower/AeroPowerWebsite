@@ -17,7 +17,7 @@ const ThisIsWhatWeDoBlock = () => {
   return (
     <div className="flex flex-col md:flex-row items-center p-4 bg-white dark:bg-gray-800 mt-6 shadow-md transition-colors">
       <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
-        <h2 className="text-2xl font-bold mb-4 text-center">This is what we do!</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">Who are we?</h2>
         <p className="text-center md:text-left text-lg">
           We’re a student-led engineering team passionate about advancing renewable energy and creating real-world impact. At AeroPower, we design, build, and test functional wind turbines, develop offshore wind farm proposals, and lead outreach initiatives that promote wind energy within our community.
           <br /><br />
