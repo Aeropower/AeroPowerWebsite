@@ -73,6 +73,10 @@ const ElectricalDiv = () => {
 
         {/* Info Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
+             {/* Leadership */}
+             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1 text-center md:text-left">
+          Leader: Josue Colón López
+        </h3>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
             The electrical division is responsible for the design, implementation, and management of electrical and electronic systems associated with the wind turbine. Its main goal is to ensure reliable, efficient, and safe operation of all components involved in power generation, control, and energy conversion.
           </p>

@@ -80,6 +80,12 @@ const MechanicalDiv = () => {
 
         {/* Info Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
+            Leader: Diego J. Muñoz Rivera
+          </h3>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
+            Co-Leader: Paola N. Sierra
+          </h4>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
             The Mechanical Division is responsible for the design, development, and assembly of all mechanical systems of the wind turbine. This includes structural components, material selection, and ensuring overall functionality and safety. The team brings innovative and practical solutions to meet technical requirements while collaborating with other divisions for seamless integration and performance.
           </p>

@@ -51,6 +51,9 @@ const SoftwareDiv = () => {
 
         {/* Text Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1 text-center md:text-left">
+          Leader: Hiram R. Rodríguez Hernández
+        </h3>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
             The Software Division designs, develops, and maintains the team’s website and the embedded systems responsible for turbine control and safety. Their work ensures seamless user interaction and real-time system responsiveness.
           </p>
