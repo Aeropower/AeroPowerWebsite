@@ -51,7 +51,7 @@ const SoftwareDiv = () => {
 
         {/* Text Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1 text-center md:text-left">
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
           Leader: Hiram R. Rodríguez Hernández
         </h3>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
