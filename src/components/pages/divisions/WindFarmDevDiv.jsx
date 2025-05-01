@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import {
@@ -11,7 +11,10 @@ import {
 } from "react-icons/md";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Dog2 from "../../../assets/images/dog2.jpg"; // TODO: Replace with a video in the future
+import WindFarm1 from "../../../assets/images/windFarm1.png";
+import WindFarm2 from "../../../assets/images/windFarm2.png";
+import WindFarm3 from "../../../assets/images/windFarm3.png";
+import WindFarm4 from "../../../assets/images/windFarm4.png";
 import WindFarmBanner from "../../../assets/images/wind-farm.webp";  //Add your banner image
 
 const windfarmSubdivisions = [
@@ -54,6 +57,16 @@ const windfarmSubdivisions = [
 ];
 
 const WindFarmDevDiv = () => {
+  const images = [WindFarm1, WindFarm2, WindFarm3, WindFarm4];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
@@ -85,10 +98,10 @@ const WindFarmDevDiv = () => {
         {/* Visual */}
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <img
-            src={Dog2}
-            alt="Offshore wind farm visual"
-            className="w-48 h-auto rounded-lg"
-            loading="lazy"
+            key={currentImageIndex}
+            src={images[currentImageIndex]}
+            alt={`Image ${currentImageIndex + 1}`}
+            className="animate-imageFade max-w-full max-h-[300px] w-auto h-auto object-contain rounded-lg shadow-lg transition-opacity duration-700"
           />
         </div>
 

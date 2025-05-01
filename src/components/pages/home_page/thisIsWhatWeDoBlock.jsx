@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import TeamWork1 from '../../../assets/images/team-work1.jpg';
-import Dog1 from '../../../assets/images/dog.jpg';
-import Dog2 from '../../../assets/images/dog2.jpg';
+import ElectricalWork from '../../../assets/images/electrical4.png';
+import SoftwareWork from '../../../assets/images/software3.png';
+import MechanicalWork from '../../../assets/images/mech3.png';
+import WindFarmWork from '../../../assets/images/windFarm2.png';
+import BusinessWork from '../../../assets/images/businessDiv4.png';
+
 
 const ThisIsWhatWeDoBlock = () => {
-  const images = [TeamWork1, Dog1, Dog2, TeamWork1, Dog1, Dog2];
+  const images = [ElectricalWork, SoftwareWork, MechanicalWork, TeamWork1, WindFarmWork, BusinessWork];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

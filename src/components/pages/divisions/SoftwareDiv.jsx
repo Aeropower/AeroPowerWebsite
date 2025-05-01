@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import { FaMicrochip } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Dog2 from "../../../assets/images/dog2.jpg";
-import SoftwareBannerImage from "../../../assets/images/polygons_dark.png";
+import Software1 from "../../../assets/images/software1.png";
+import Software2 from "../../../assets/images/software2.png";
+import Software3 from "../../../assets/images/software4.png";
+import Software4 from "../../../assets/images/software3.png";
+import SoftwareBannerImage from "../../../assets/images/software-banner.png";
 
 const softwareSubdivisions = [
   {
@@ -24,36 +27,60 @@ const softwareSubdivisions = [
 ];
 
 const SoftwareDiv = () => {
+  const images = [Software1, Software2, Software3, Software4];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
       {/* Banner */}
-      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-md mb-6">
+      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-lg mb-6">
         <img src={SoftwareBannerImage} alt="Software Division Banner" className="object-cover w-full h-full" />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
-            Software Division
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap tracking-wider">
+            {/* Bottom Shadow Layer */}
+            <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-black z-0 select-none block w-full">
+              Software Division
+            </span>
+
+            {/* Mid Highlight Layer */}
+            <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
+              Software Division
+            </span>
+
+            {/* Top Main Gradient Text Layer */}
+            <span className="relative z-20 bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1] text-transparent bg-clip-text drop-shadow-lg block w-full">
+              Software Division
+            </span>
           </h1>
         </div>
       </section>
 
       {/* Info Block */}
-      <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-md">
+      <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Visual */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <img
-            src={Dog2}
-            alt="Software Visual"
-            className="w-48 h-auto rounded-lg"
-            loading="lazy"
+            key={currentImageIndex}
+            src={images[currentImageIndex]}
+            alt={`Image ${currentImageIndex + 1}`}
+            className="animate-imageFade max-w-full max-h-[300px] w-auto h-auto object-contain rounded-lg shadow-lg transition-opacity duration-700"
           />
         </div>
 
         {/* Text Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-          Leader: Hiram R. Rodríguez Hernández
-        </h3>
+          {/* Leadership */}
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
+            Leader: Hiram R. Rodríguez Hernández
+          </h3>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
             The Software Division designs, develops, and maintains the team’s website and the embedded systems responsible for turbine control and safety. Their work ensures seamless user interaction and real-time system responsiveness.
           </p>

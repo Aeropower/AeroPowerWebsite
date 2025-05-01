@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import {
@@ -8,7 +8,10 @@ import {
 import { GiPowerGenerator } from "react-icons/gi";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Dog2 from "../../../assets/images/dog2.jpg"; // Placeholder image
+import Electrical1 from "../../../assets/images/electrical1.png";
+import Electrical2 from "../../../assets/images/electrical2.png";
+import Electrical3 from "../../../assets/images/electrical3.png";
+import Electrical4 from "../../../assets/images/electrical4.png";
 import ElectricalBannerImage from "../../../assets/images/Electrical-team.webp";
 
 const electricalSubdivisions = [
@@ -33,6 +36,16 @@ const electricalSubdivisions = [
 ];
 
 const ElectricalDiv = () => {
+  const images = [Electrical1, Electrical2, Electrical3, Electrical4];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
@@ -40,19 +53,19 @@ const ElectricalDiv = () => {
       <section className="relative w-full h-[400px] md:h-[550px] overflow-hidden shadow-lg mb-6">
         <img src={ElectricalBannerImage} alt="Electrical Division Banner" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
+          <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
             {/* Bottom Shadow Layer */}
-            <span className="absolute top-[4px] left-[4px] text-black z-0 select-none">
+            <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-black z-0 select-none block w-full">
               Electrical Division
             </span>
 
             {/* Mid Highlight Layer */}
-            <span className="absolute top-[2px] left-[2px] text-gray-700 z-10 select-none">
+            <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
               Electrical Division
             </span>
 
             {/* Top Main Gradient Text Layer */}
-            <span className="relative z-20 bg-gradient-to-r from-white to-slate-300  text-transparent bg-clip-text drop-shadow-lg">
+            <span className="relative z-20 bg-gradient-to-r from-white to-slate-300 text-transparent bg-clip-text drop-shadow-lg block w-full">
               Electrical Division
             </span>
           </h1>
@@ -64,20 +77,20 @@ const ElectricalDiv = () => {
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <img
-            src={Dog2}
-            alt="Electrical Visual"
-            className="w-48 h-auto rounded-lg"
-            loading="lazy"
+            key={currentImageIndex}
+            src={images[currentImageIndex]}
+            alt={`Image ${currentImageIndex + 1}`}
+            className="animate-imageFade max-w-full max-h-[300px] w-auto h-auto object-contain rounded-lg shadow-lg transition-opacity duration-700"
           />
         </div>
 
         {/* Info Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
-             {/* Leadership */}
-             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1 text-center md:text-left">
-          Leader: Josue Colón López
-        </h3>
-          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
+          {/* Leadership */}
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
+            Leader: Josue Colón López
+          </h3>
+          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The electrical division is responsible for the design, implementation, and management of electrical and electronic systems associated with the wind turbine. Its main goal is to ensure reliable, efficient, and safe operation of all components involved in power generation, control, and energy conversion.
           </p>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import {
@@ -9,7 +9,10 @@ import {
 } from "react-icons/md";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Dog2 from "../../../assets/images/dog2.jpg"; // Replace with video later
+import Mech1 from "../../../assets/images/mech1.png";
+import Mech2 from "../../../assets/images/mech2.png";
+import Mech3 from "../../../assets/images/mech3.png";
+import Mech4 from "../../../assets/images/mech4.png";
 import MechanicalBannerImage from "../../../assets/images/mechanical-eng.webp"; // Shared or specific banner
 
 const mechanicalSubdivisions = [
@@ -39,7 +42,18 @@ const mechanicalSubdivisions = [
   },
 ];
 
+
 const MechanicalDiv = () => {
+  const images = [Mech1, Mech2, Mech3, Mech4];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
@@ -47,19 +61,19 @@ const MechanicalDiv = () => {
       <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-lg mb-6">
         <img src={MechanicalBannerImage} alt="Mechanical Division Banner" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
+          <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
             {/* Bottom Shadow Layer */}
-            <span className="absolute top-[4px] left-[4px] text-gray-900 z-0 select-none">
+            <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-gray-900 z-0 select-none block w-full">
               Mechanical Division
             </span>
 
             {/* Mid Highlight Layer */}
-            <span className="absolute top-[2px] left-[2px] text-gray-700 z-10 select-none">
+            <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
               Mechanical Division
             </span>
 
             {/* Top Main Gradient Text Layer */}
-            <span className="relative z-20 bg-gradient-to-r from-white to-slate-300 text-transparent bg-clip-text drop-shadow-lg">
+            <span className="relative z-20 bg-gradient-to-r from-white to-slate-300 text-transparent bg-clip-text drop-shadow-lg block w-full">
               Mechanical Division
             </span>
           </h1>
@@ -71,16 +85,16 @@ const MechanicalDiv = () => {
         {/* Visual */}
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <img
-            src={Dog2}
-            alt="Mechanical Division Visual"
-            className="w-48 h-auto rounded-lg"
-            loading="lazy"
+            key={currentImageIndex}
+            src={images[currentImageIndex]}
+            alt={`Image ${currentImageIndex + 1}`}
+            className="animate-imageFade max-w-full max-h-[300px] w-auto h-auto object-contain rounded-lg shadow-lg transition-opacity duration-700"
           />
         </div>
 
         {/* Info Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
             Leader: Diego J. Muñoz Rivera
           </h3>
           <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
