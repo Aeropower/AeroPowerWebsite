@@ -84,12 +84,15 @@ const MechanicalDiv = () => {
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Visual */}
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <img
-            key={currentImageIndex}
-            src={images[currentImageIndex]}
-            alt={`Image ${currentImageIndex + 1}`}
-            className="animate-imageFade max-w-full max-h-[300px] w-auto h-auto object-contain rounded-lg shadow-lg transition-opacity duration-700"
-          />
+          <div className="relative w-full max-w-[400px] h-[250px] md:h-[400px] md:max-w-[500px] overflow-hidden flex items-center justify-center rounded-lg">
+            <img
+              key={currentImageIndex}
+              src={images[currentImageIndex]}
+              alt={`Image ${currentImageIndex + 1}`}
+              loading="lazy"
+              className=" absolute inset-0 m-auto animate-imageFade max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-lg"
+            />
+          </div>
         </div>
 
         {/* Info Section */}
@@ -100,7 +103,7 @@ const MechanicalDiv = () => {
           <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
             Co-Leader: Paola N. Sierra
           </h4>
-          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed mt-4">
+          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The Mechanical Division is responsible for the design, development, and assembly of all mechanical systems of the wind turbine. This includes structural components, material selection, and ensuring overall functionality and safety. The team brings innovative and practical solutions to meet technical requirements while collaborating with other divisions for seamless integration and performance.
           </p>
 
