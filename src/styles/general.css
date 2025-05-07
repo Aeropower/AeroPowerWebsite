@@ -48,3 +48,66 @@ html.dark .swiper-pagination-bullet {
     position: relative;
     /* asegúrate que el margen funcione */
 }
+
+/* Default Swiper arrows */
+.swiper-button-prev,
+.swiper-button-next {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    /* 8px = Tailwind p-2 */
+    border-radius: 9999px;
+    /* fully rounded */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* bg-white/80 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* shadow */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Positioning */
+.swiper-button-prev {
+    left: 8px;
+}
+
+.swiper-button-next {
+    right: 8px;
+}
+
+/* Show on medium+ screens (md:flex) */
+@media (min-width: 768px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: flex;
+    }
+}
+
+/* Dark mode support (manual version of dark: classes) */
+.dark .swiper-button-prev,
+.dark .swiper-button-next {
+    color: white;
+    background-color: rgba(31, 41, 55, 0.7);
+    /* dark:bg-gray-800/70 */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: white;
+}
+
+.dark .swiper-button-prev:hover,
+.dark .swiper-button-next:hover {
+    background-color: #374151;
+    /* dark:hover:bg-gray-700 */
+}
+
+/* Optional: increase icon size */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.75rem;
+    /* Tailwind text-2xl */
+}

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay } from 'swiper/modules';
+import { Pagination, A11y, Autoplay, Navigation } from 'swiper/modules';
 import { FaMicrochip } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Software1 from "../../../assets/images/software1.png";
+import Software1 from "../../../assets/images/software1.png"; //Do not change the order/image of 1-2
 import Software2 from "../../../assets/images/software2.png";
 import Software3 from "../../../assets/images/software4.png";
 import Software4 from "../../../assets/images/software3.png";
-import SoftwareBannerImage from "../../../assets/images/software-banner.png";
+import SoftwareBanner from "../../../assets/images/software-banner.png";
 
 const softwareSubdivisions = [
   {
@@ -28,21 +29,44 @@ const softwareSubdivisions = [
 
 const SoftwareDiv = () => {
   const images = [Software1, Software2, Software3, Software4];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const swiperRef = useRef(null);
+
+  const pauseAutoplayTemporarily = () => {
+    const swiper = swiperRef.current;
+    if (swiper && swiper.autoplay.running) {
+      swiper.autoplay.stop();
+      setTimeout(() => {
+        swiper?.autoplay.start();
+      }, 10000); // Pause for 10 seconds
+    }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+    const nextBtn = document.querySelector('.swiper-button-next');
+    const prevBtn = document.querySelector('.swiper-button-prev');
+
+    const handleClick = () => pauseAutoplayTemporarily();
+
+    nextBtn?.addEventListener('click', handleClick);
+    prevBtn?.addEventListener('click', handleClick);
+
+    return () => {
+      nextBtn?.removeEventListener('click', handleClick);
+      prevBtn?.removeEventListener('click', handleClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = SoftwareBanner;
+  }, []);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
       {/* Banner */}
       <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-lg mb-6">
-        <img src={SoftwareBannerImage} alt="Software Division Banner" className="object-cover w-full h-full" />
+        <img src={SoftwareBanner} alt="Software Division Banner" loading="eager" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap tracking-wider">
             {/* Bottom Shadow Layer */}
@@ -65,20 +89,41 @@ const SoftwareDiv = () => {
 
       {/* Info Block */}
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
-        {/* Visual */}
-        <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <div className="relative w-full max-w-[400px] h-[250px] md:h-[400px] md:max-w-[525px] overflow-hidden flex items-center justify-center rounded-lg">
-            <img
-              key={currentImageIndex}
-              src={images[currentImageIndex]}
-              alt={`Image ${currentImageIndex + 1}`}
-              loading="lazy"
-              className=" absolute inset-0 m-auto animate-imageFade max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-lg"
-            />
+        {/* Image Carousel */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
+          <div className="relative w-full max-w-[400px] h-[250px] md:h-[400px] md:max-w-full overflow-hidden">
+            <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              modules={[Autoplay, Pagination, Navigation]}
+              spaceBetween={100}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              pagination={{ el: '.custom-swiper-pagination', clickable: true }}
+              navigation={true}
+              loop={true}
+              allowTouchMove={false}
+              className="w-full h-full"
+            >
+              {images.map((src, idx) => (
+                <SwiperSlide key={idx} className="flex items-center justify-center h-full w-full">
+                  <img
+                    src={src}
+                    alt={`Software Division Slide ${idx + 1}`}
+                    loading="lazy"
+                    className={`object-contain max-h-full rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)] ${
+                      // Custom width cap for just the super-wide images
+                      idx === 0 || idx === 1 ? 'md:max-w-[85%]' : 'max-w-full'
+                      }`}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
+          {/* Pagination */}
+          <div className="custom-swiper-pagination mt-3 flex items-center justify-center" />
         </div>
 
-        {/* Text Section */}
+        {/* Info Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">

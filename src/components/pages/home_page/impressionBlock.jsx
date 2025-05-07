@@ -2,6 +2,11 @@ import React from "react";
 import TeamPhoto from "../../../assets/images/team-photo.webp";
 import LogoAeropower from "../../../assets/images/logo-aeropower.png";
 
+useEffect(() => {
+  const img = new Image();
+  img.src = TeamPhoto;
+}, []);
+
 const ImpressionBlock = () => {
   return (
     <section className="relative w-full dark:bg-gray-800 text-white transition-colors duration-300">
@@ -12,7 +17,7 @@ const ImpressionBlock = () => {
           src={TeamPhoto}
           alt="Team Photo"
           className="object-cover w-full h-full"
-          loading="lazy"
+          loading="eager"
         />
 
         {/* Gradient Overlay */}

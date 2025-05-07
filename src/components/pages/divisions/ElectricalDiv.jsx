@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay } from 'swiper/modules';
+import { Pagination, A11y, Autoplay, Navigation } from 'swiper/modules';
 import {
   MdSettings,
   MdAutorenew
 } from "react-icons/md";
 import { GiPowerGenerator } from "react-icons/gi";
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Electrical1 from "../../../assets/images/electrical1.png";
+import Electrical1 from "../../../assets/images/electrical1.png"; //Do not change the order/image of 1-2
 import Electrical2 from "../../../assets/images/electrical2.png";
 import Electrical3 from "../../../assets/images/electrical3.png";
 import Electrical4 from "../../../assets/images/electrical4.png";
-import ElectricalBannerImage from "../../../assets/images/Electrical-team.webp";
+import ElectricalBanner from "../../../assets/images/Electrical-team.webp";
 
 const electricalSubdivisions = [
   {
@@ -37,21 +38,44 @@ const electricalSubdivisions = [
 
 const ElectricalDiv = () => {
   const images = [Electrical1, Electrical2, Electrical3, Electrical4];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const swiperRef = useRef(null);
+
+  const pauseAutoplayTemporarily = () => {
+    const swiper = swiperRef.current;
+    if (swiper && swiper.autoplay.running) {
+      swiper.autoplay.stop();
+      setTimeout(() => {
+        swiper?.autoplay.start();
+      }, 10000); // Pause for 10 seconds
+    }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+    const nextBtn = document.querySelector('.swiper-button-next');
+    const prevBtn = document.querySelector('.swiper-button-prev');
+
+    const handleClick = () => pauseAutoplayTemporarily();
+
+    nextBtn?.addEventListener('click', handleClick);
+    prevBtn?.addEventListener('click', handleClick);
+
+    return () => {
+      nextBtn?.removeEventListener('click', handleClick);
+      prevBtn?.removeEventListener('click', handleClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = ElectricalBanner;
+  }, []);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
       {/* Banner */}
-      <section className="relative w-full h-[400px] md:h-[550px] overflow-hidden shadow-lg mb-6">
-        <img src={ElectricalBannerImage} alt="Electrical Division Banner" className="object-cover w-full h-full" />
+      <section className="relative w-full h-[320px] md:h-[550px] overflow-hidden shadow-lg mb-6">
+        <img src={ElectricalBanner} alt="Electrical Division Banner" loading='eager' className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
             {/* Bottom Shadow Layer */}
@@ -75,16 +99,37 @@ const ElectricalDiv = () => {
       {/* Main Content */}
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <div className="relative w-full max-w-[400px] h-[250px] md:h-[400px] md:max-w-[525px] overflow-hidden flex items-center justify-center rounded-lg">
-            <img
-              key={currentImageIndex}
-              src={images[currentImageIndex]}
-              alt={`Image ${currentImageIndex + 1}`}
-              loading="lazy"
-              className=" absolute inset-0 m-auto animate-imageFade max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-lg"
-            />
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
+          <div className="relative w-full max-w-[400px] h-[250px] md:h-[400px] md:max-w-full overflow-hidden">
+            <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              modules={[Autoplay, Pagination, Navigation]}
+              spaceBetween={100}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              pagination={{ el: '.custom-swiper-pagination', clickable: true }}
+              navigation={true}
+              loop={true}
+              allowTouchMove={false}
+              className="w-full h-full"
+            >
+              {images.map((src, idx) => (
+                <SwiperSlide key={idx} className="flex items-center justify-center">
+                  <img
+                    src={src}
+                    alt={`Slide ${idx + 1}`}
+                    loading="lazy"
+                    className={`object-contain max-h-full rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)] ${
+                      // Custom width cap for just the super-wide images
+                      idx === 1 || idx === 2 ? 'md:max-w-[85%]' : 'max-w-full'
+                      }`}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
+          {/* Pagination */}
+          <div className="custom-swiper-pagination mt-3 flex items-center justify-center" />
         </div>
 
         {/* Info Section */}
