@@ -4,11 +4,11 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import BandO1 from "../../../assets/images/businessDiv1.png";
-import BandO2 from "../../../assets/images/BusinessDiv3.png";
-import BandO3 from "../../../assets/images/businessDiv4.png";
+import BandO1 from "../../../assets/images/BusinessDivision.jpeg";
+import BandO2 from "../../../assets/images/businessDiv1.png";
+import BandO3 from "../../../assets/images/businessDiv3.png";
 import BandO4 from "../../../assets/images/businessDiv5.png";
-import BusinessBanner from "../../../assets/images/BusinessDivision.jpeg"; // Usa tu banner preferido
+import BusinessBanner from "../../../assets/images/businessDiv4.png"; // Usa tu banner preferido
 
 const BusinessOpsDiv = () => {
   const images = [BandO1, BandO2, BandO3, BandO4];
@@ -101,7 +101,7 @@ const BusinessOpsDiv = () => {
             </Swiper>
           </div>
           {/* Pagination */}
-          <div className="custom-swiper-pagination mb-3 flex items-center justify-center" />
+          <div className="custom-swiper-pagination mt-3 md:mb-3 md:mt-0 flex items-center justify-center" />
         </div>
 
         {/* Info Section */}

@@ -51,18 +51,18 @@ const ProjectManagementDiv = () => {
       <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-lg mb-6">
         <img src={ProjectManageBanner} alt="Project Management Banner" loading="eager" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
+          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-center md:text-left whitespace-pre-line md:whitespace-nowrap">
             {/* Bottom Shadow Layer */}
-            <span className="absolute top-[4px] left-[4px] text-black z-0 select-none">
+            <span className="absolute z-0 select-none text-black w-full md:w-auto left-1 top-1 md:left-[4px] md:top-[4px] text-center md:text-left">
               Project Management Division
             </span>
 
             {/* Mid Highlight Layer */}
-            <span className="absolute top-[2px] left-[2px] text-[#2c3e50] z-10 select-none">
+            <span className="absolute z-10 select-none text-[#2c3e50] w-full md:w-auto left-[0.5px] top-[0.5px] md:left-[2px] md:top-[2px] text-center md:text-left">
               Project Management Division
             </span>
 
-            {/* Top Main Gradient Text Layer */}
+            {/* Top Gradient Text */}
             <span className="relative z-20 bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1] text-transparent bg-clip-text drop-shadow-lg">
               Project Management Division
             </span>
