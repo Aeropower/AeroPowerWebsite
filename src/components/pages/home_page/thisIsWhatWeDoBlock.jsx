@@ -3,7 +3,7 @@ import TeamWork1 from '../../../assets/images/team-work1.jpg';
 import ElectricalWork from '../../../assets/images/electrical4.png';
 import SoftwareWork from '../../../assets/images/software3.png';
 import MechanicalWork from '../../../assets/images/mech3.png';
-import WindFarmWork from '../../../assets/images/windFarm2.png';
+import WindFarmWork from '../../../assets/images/windFarm3.png';
 import BusinessWork from '../../../assets/images/businessDiv4.png';
 
 
