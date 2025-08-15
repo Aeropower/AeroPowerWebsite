@@ -82,7 +82,7 @@ const ProjectManagementDiv = () => {
               pagination={{ el: '.custom-swiper-pagination', clickable: true }}
               navigation={true}
               loop={true}
-              allowTouchMove={false}
+              allowTouchMove={true}
               className="w-full h-full"
             >
               {images.map((src, idx) => (

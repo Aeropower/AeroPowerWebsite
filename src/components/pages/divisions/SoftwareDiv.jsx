@@ -101,7 +101,7 @@ const SoftwareDiv = () => {
               pagination={{ el: '.custom-swiper-pagination', clickable: true }}
               navigation={true}
               loop={true}
-              allowTouchMove={false}
+              allowTouchMove={true}
               className="w-full h-full"
             >
               {images.map((src, idx) => (
@@ -146,6 +146,7 @@ const SoftwareDiv = () => {
             spaceBetween={20}
             pagination={{ clickable: true }}
             loop
+            allowTouchMove={true}
             speed={600}
             autoplay={{
               delay: 15000,
