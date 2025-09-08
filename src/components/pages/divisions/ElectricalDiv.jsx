@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay, Navigation } from 'swiper/modules';
 import {
@@ -9,11 +9,11 @@ import { GiPowerGenerator } from "react-icons/gi";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Electrical1 from "../../../assets/images/electrical1.png"; //Do not change the order/image of 1-2
-import Electrical2 from "../../../assets/images/electrical2.png";
-import Electrical3 from "../../../assets/images/electrical3.png";
-import Electrical4 from "../../../assets/images/electrical4.png";
-import ElectricalBanner from "../../../assets/images/Electrical-team.webp";
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
+import Electrical1 from "../../../assets/images/electrical2.png";
+import Electrical2 from "../../../assets/images/electrical3.png";
+import Electrical3 from "../../../assets/images/electrical4.png";
+import ElectricalBanner from "../../../assets/images/Electrical Team.jpg";
 
 const electricalSubdivisions = [
   {
@@ -37,8 +37,9 @@ const electricalSubdivisions = [
 ];
 
 const ElectricalDiv = () => {
-  const images = [Electrical1, Electrical2, Electrical3, Electrical4];
+  const images = [Electrical1, Electrical2, Electrical3];
   const swiperRef = useRef(null);
+  const prefersReduced = usePrefersReducedMotion();
 
   const pauseAutoplayTemporarily = () => {
     const swiper = swiperRef.current;
@@ -49,26 +50,6 @@ const ElectricalDiv = () => {
       }, 10000); // Pause for 10 seconds
     }
   };
-
-  useEffect(() => {
-    const nextBtn = document.querySelector('.swiper-button-next');
-    const prevBtn = document.querySelector('.swiper-button-prev');
-
-    const handleClick = () => pauseAutoplayTemporarily();
-
-    nextBtn?.addEventListener('click', handleClick);
-    prevBtn?.addEventListener('click', handleClick);
-
-    return () => {
-      nextBtn?.removeEventListener('click', handleClick);
-      prevBtn?.removeEventListener('click', handleClick);
-    };
-  }, []);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = ElectricalBanner;
-  }, []);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -106,7 +87,7 @@ const ElectricalDiv = () => {
               modules={[Autoplay, Pagination, Navigation]}
               spaceBetween={100}
               slidesPerView={1}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              autoplay={prefersReduced ? false : { delay: 5000, disableOnInteraction: false }}
               pagination={{ el: '.custom-swiper-pagination', clickable: true }}
               navigation={true}
               loop={true}
@@ -142,10 +123,6 @@ const ElectricalDiv = () => {
             The electrical division is responsible for the design, implementation, and management of electrical and electronic systems associated with the wind turbine. Its main goal is to ensure reliable, efficient, and safe operation of all components involved in power generation, control, and energy conversion.
           </p>
 
-          <blockquote className="italic text-gray-600 dark:text-gray-400 mb-4">
-            "Building the brains of clean energy: real-time optimization, resilient control, and intelligent turbine dynamics."
-          </blockquote>
-
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
             Subdivisions
           </h3>
@@ -157,11 +134,7 @@ const ElectricalDiv = () => {
             loop
             allowTouchMove={true}
             speed={600}
-            autoplay={{
-              delay: 15000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
+            autoplay={prefersReduced ? false : { delay: 5000, disableOnInteraction: false }}
             className="w-full min-h-[140px] custom-swiper"
           >
             {electricalSubdivisions.map(({ title, description, icon: Icon }, index) => (
