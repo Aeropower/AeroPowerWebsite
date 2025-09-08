@@ -4,14 +4,13 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import BandO1 from "../../../assets/images/BusinessDivision.jpeg";
-import BandO2 from "../../../assets/images/businessDiv1.png";
-import BandO3 from "../../../assets/images/businessDiv3.png";
-import BandO4 from "../../../assets/images/businessDiv5.png";
-import BusinessBanner from "../../../assets/images/businessDiv4.png"; // Usa tu banner preferido
+import BandO1 from "../../../assets/images/businessDiv1.png";
+import BandO2 from "../../../assets/images/businessDiv3.png";
+import BandO3 from "../../../assets/images/businessDiv5.png";
+import BusinessBanner from "../../../assets/images/Business&Ops Group.jpeg"; // Usa tu banner preferido
 
 const BusinessOpsDiv = () => {
-  const images = [BandO1, BandO2, BandO3, BandO4];
+  const images = [BandO1, BandO2, BandO3];
   const swiperRef = useRef(null);
 
   const pauseAutoplayTemporarily = () => {
@@ -92,8 +91,8 @@ const BusinessOpsDiv = () => {
                     alt={`Business Ops Slide ${idx + 1}`}
                     loading="lazy"
                     className="object-contain m-auto rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)] 
-             max-h-[300px] w-auto 
-             md:max-h-[350px] md:max-w-[500px]"
+                    max-h-[300px] w-auto 
+                    md:max-h-[350px] md:max-w-[500px]"
                   />
 
                 </SwiperSlide>

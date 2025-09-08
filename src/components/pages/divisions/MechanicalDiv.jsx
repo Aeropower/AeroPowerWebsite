@@ -14,7 +14,7 @@ import Mech1 from "../../../assets/images/mech1.png";
 import Mech2 from "../../../assets/images/mech2.png";
 import Mech3 from "../../../assets/images/mech3.png";
 import Mech4 from "../../../assets/images/mech4.png";
-import MechanicalBanner from "../../../assets/images/mechDivision.jpeg";
+import MechanicalBanner from "../../../assets/images/Mecanica Group.jpeg";
 
 const mechanicalSubdivisions = [
   {
@@ -148,10 +148,6 @@ const MechanicalDiv = () => {
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The Mechanical Division is responsible for the design, development, and assembly of all mechanical systems of the wind turbine. This includes structural components, material selection, and ensuring overall functionality and safety. The team brings innovative and practical solutions to meet technical requirements while collaborating with other divisions for seamless integration and performance.
           </p>
-
-          <blockquote className="italic text-gray-600 dark:text-gray-400 mb-4">
-            "Harnessing the power of the wind through precision, innovation, and purpose-driven engineering."
-          </blockquote>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
             Subdivisions

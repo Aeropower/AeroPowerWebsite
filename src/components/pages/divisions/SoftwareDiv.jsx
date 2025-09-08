@@ -10,7 +10,7 @@ import Software1 from "../../../assets/images/software1.png"; //Do not change th
 import Software2 from "../../../assets/images/software2.png";
 import Software3 from "../../../assets/images/software4.png";
 import Software4 from "../../../assets/images/software3.png";
-import SoftwareBanner from "../../../assets/images/software-banner.png";
+import SoftwareBanner from "../../../assets/images/Software Group.jpeg";
 
 const softwareSubdivisions = [
   {
@@ -132,10 +132,6 @@ const SoftwareDiv = () => {
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The Software Division designs, develops, and maintains the team’s website and the embedded systems responsible for turbine control and safety. Their work ensures seamless user interaction and real-time system responsiveness.
           </p>
-
-          <blockquote className="italic text-gray-600 dark:text-gray-400 mb-4">
-            "We build reliable, efficient, and intelligent systems — from user interfaces to real-time embedded controllers."
-          </blockquote>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
             Subdivisions
