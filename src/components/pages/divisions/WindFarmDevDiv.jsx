@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay, Navigation } from 'swiper/modules';
+import { Pagination, A11y, Autoplay, Keyboard } from 'swiper/modules';
 import {
   MdElectricBolt,
   MdPrecisionManufacturing,
@@ -10,13 +10,12 @@ import {
   MdAttachMoney,
 } from "react-icons/md";
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import WindFarm1 from "../../../assets/images/windFarm1.png";
-import WindFarm2 from "../../../assets/images/windFarm2.png";
-import WindFarm3 from "../../../assets/images/windFarm3.png";
-import WindFarm4 from "../../../assets/images/windFarm5.png";
-import WindFarmBanner from "../../../assets/images/WindFarmTeam.jpg";
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
+import WindFarm1 from "@/assets/images/windFarm1.png";
+import WindFarm2 from "@/assets/images/windFarm2.png";
+import WindFarm3 from "@/assets/images/windFarm3.png";
+import WindFarmBanner from "@/assets/images/WindFarm Team.jpg";
 
 const windfarmSubdivisions = [
   {
@@ -58,59 +57,54 @@ const windfarmSubdivisions = [
 ];
 
 const WindFarmDevDiv = () => {
-  const images = [WindFarm1, WindFarm2, WindFarm3, WindFarm4];
-  const swiperRef = useRef(null);
-
-  const pauseAutoplayTemporarily = () => {
-    const swiper = swiperRef.current;
-    if (swiper && swiper.autoplay.running) {
-      swiper.autoplay.stop();
-      setTimeout(() => {
-        swiper?.autoplay.start();
-      }, 10000); // Pause for 10 seconds
-    }
-  };
-
-  useEffect(() => {
-    const nextBtn = document.querySelector('.swiper-button-next');
-    const prevBtn = document.querySelector('.swiper-button-prev');
-
-    const handleClick = () => pauseAutoplayTemporarily();
-
-    nextBtn?.addEventListener('click', handleClick);
-    prevBtn?.addEventListener('click', handleClick);
-
-    return () => {
-      nextBtn?.removeEventListener('click', handleClick);
-      prevBtn?.removeEventListener('click', handleClick);
-    };
-  }, []);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = WindFarmBanner;
-  }, []);
+  const images = [WindFarm1, WindFarm2, WindFarm3];
+  const SwiperRef = useRef(null);
+  const imgPaginationRef = useRef(null);
+  const subPaginationRef = useRef(null);
+  const prefersReduced = usePrefersReducedMotion();
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
-
       {/* Banner */}
-      <section className="relative w-full h-[300px] md:h-[600px] overflow-hidden shadow-lg mb-6">
-        <img src={WindFarmBanner} alt="Wind Farm Banner" loading="eager" className="object-cover w-full h-full" />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
-            {/* Bottom Shadow Layer */}
-            <span className="absolute top-[4px] left-[4px] text-black z-0 select-none">
+      <section className="relative h-[50vh] min-h-[360px] max-h-[520px] overflow-hidden shadow-lg mb-6">
+        <img
+          src={WindFarmBanner}
+          srcSet={`${WindFarmBanner} 1920w, ${WindFarmBanner} 1280w, ${WindFarmBanner} 768w`}
+          sizes="100vw"
+          alt="Wind Farm Development Division team"
+          loading="eager" fetchPriority="high" decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-[50%_46%] sm:object-[50%_48%] lg:object-[50%_52%]"
+        />
+        {/* stronger contrast at bottom, airy top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/35 to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1
+            className="
+            relative grid place-items-center text-center font-extrabold
+            leading-[1.1] px-2 sm:px-6 max-w-screen-xl mx-auto
+            text-[clamp(1.75rem,6vw,4rem)] md:text-[clamp(2.5rem,5vw,5rem)]">
+            {/* Bottom shadow layer */}
+            <span className="
+            col-start-1 row-start-1 translate-x-[0.08em] translate-y-[0.08em]
+            text-black/80 select-none pointer-events-none [will-change:transform]
+            ">
               Wind Farm Development Division
             </span>
 
-            {/* Mid Highlight Layer */}
-            <span className="absolute top-[2px] left-[2px] text-[#2c3e50] z-10 select-none">
+            {/* Mid highlight layer */}
+            <span className="
+            col-start-1 row-start-1 translate-x-[0.04em] translate-y-[0.04em]
+            text-[#2c3e50]/90 select-none pointer-events-none [will-change:transform]
+            ">
               Wind Farm Development Division
             </span>
 
-            {/* Top Main Gradient Text Layer */}
-            <span className="relative z-20 bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1] text-transparent bg-clip-text drop-shadow-lg">
+            {/* Top main text */}
+            <span className="
+            col-start-1 row-start-1 relative
+            bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1]
+            text-transparent bg-clip-text drop-shadow-lg
+            ">
               Wind Farm Development Division
             </span>
           </h1>
@@ -121,71 +115,107 @@ const WindFarmDevDiv = () => {
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Image Carousel */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
-          <div className="relative w-full max-w-[400px] h-[250px] md:h-[400px] md:max-w-full overflow-hidden">
+          <div className="relative w-full max-w-[640px] md:max-w-full aspect-[16/10] overflow-hidden rounded-lg">
             <Swiper
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              modules={[Autoplay, Pagination, Navigation]}
-              spaceBetween={100}
+              onBeforeInit={(s) => {
+                SwiperRef.current = s;
+                s.params.pagination = {
+                  ...s.params.pagination,
+                  el: imgPaginationRef.current,
+                  clickable: true
+                };
+              }}
+              onSwiper={(s) => {
+                // fallback in case ref isn't ready at onBeforeInit
+                if (imgPaginationRef.current) {
+                  s.params.pagination.el = imgPaginationRef.current;
+                  s.pagination.render();
+                  s.pagination.update();
+                }
+              }}
+              modules={[Autoplay, Pagination, Keyboard]}
+              spaceBetween={24}
               slidesPerView={1}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              pagination={{ el: '.custom-swiper-pagination', clickable: true }}
-              navigation={true}
+              autoplay={prefersReduced ? false : { delay: 5000, disableOnInteraction: false }}
               loop={true}
-              allowTouchMove={true}
+              allowTouchMove
+              keyboard={{ enabled: true, onlyInViewport: true }}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Wind farm concept images"
               className="w-full h-full"
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx} className="flex items-center justify-center">
                   <img
                     src={src}
-                    alt={`Wind Farm Slide ${idx + 1}`}
+                    alt={idx === 0
+                      ? "Hexagonal turbine-anchor-mooring layout concept"
+                      : idx === 1
+                        ? "Bathymetry and spacing visualization for turbines"
+                        : "Transmission and export cable routing concept"}
                     loading="lazy"
-                    className="inset-0 m-auto max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
+                    decoding="async"
+                    className="inset-0 m-auto max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
                   />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-          {/* Pagination */}
-          <div className="custom-swiper-pagination mt-3 flex items-center justify-center" />
+          {/* External pagination (below image) */}
+          <div
+            ref={imgPaginationRef}
+            className="mt-2 mb-1 flex justify-center
+                       [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
+                       [&_.swiper-pagination-bullet]:!bg-gray-400
+                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
+            aria-hidden="true"
+          />
         </div>
 
         {/* Info Section */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
-          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-            Leader: Paola N. Gordils Acosta
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 mt-6 md:mt-4 text-center md:text-left">
+            Leader: <span className="font-bold">Paola N. Gordils Acosta</span>
           </h3>
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
-            Co-Leader: Luis A. Negrón Torres
+          <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 text-center md:text-left">
+            Co-Leader: <span className="font-bold">Luis A. Negrón Torres</span>
           </h4>
 
-          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
+          <p className="text-gray-700 dark:text-white mb-4 leading-relaxed ">
             As part of the Wind Farm Development division, members of this multidisciplinary team will be responsible for developing a plan concept for a marine wind farm project. This will be done through data analysis, environmental and economic assessments, and engineering evaluations.
             Key areas of investigation include wind resource data analysis, yield estimation, project economics, bathymetry, environmental impact studies, and turbine technology evaluation.
           </p>
-
-          <blockquote className="italic text-gray-600 dark:text-gray-400 mb-4">
-            "Our mission is to design wind energy solutions that are both efficient and sustainable for real-world application." – Paola N. Gordils Acosta
-          </blockquote>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
             Subdivisions
           </h3>
 
           <Swiper
-            modules={[Pagination, A11y, Autoplay]}
+            onBeforeInit={(s) => {
+              s.params.pagination = { ...s.params.pagination, el: subPaginationRef.current, clickable: true };
+            }}
+            onSwiper={(s) => {
+              if (subPaginationRef.current) {
+                s.params.pagination.el = subPaginationRef.current;
+                s.pagination.render();
+                s.pagination.update();
+              }
+            }}
+            modules={[Pagination, A11y, Autoplay, Keyboard]}
             spaceBetween={20}
-            pagination={{ clickable: true }}
             loop
-            allowTouchMove={true}
-            speed={600}
-            autoplay={{
-              delay: 15000,
+            allowTouchMove
+            speed={550}
+            autoplay={prefersReduced ? false : {
+              delay: 12000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            className="w-full min-h-[140px] custom-swiper"
+            keyboard={{ enabled: true, onlyInViewport: true }}
+            a11y={{ containerMessage: 'Subdivision details carousel' }}
+            className="w-full min-h-[160px]"
           >
             {windfarmSubdivisions.map(({ title, description, icon: Icon }, index) => (
               <SwiperSlide key={index}>
@@ -202,6 +232,15 @@ const WindFarmDevDiv = () => {
             ))}
           </Swiper>
           <div />
+          {/* External pagination (below subdivision card slider) */}
+          <div
+            ref={subPaginationRef}
+            className="mt-2 mb-1 flex justify-center
+                       [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5
+                       [&_.swiper-pagination-bullet]:!bg-gray-400
+                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </div>
