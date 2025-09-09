@@ -65,52 +65,34 @@ const WindFarmDevDiv = () => {
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
-      {/* Banner */}
-      <section className="relative h-[50vh] min-h-[360px] max-h-[520px] overflow-hidden shadow-lg mb-6">
-        <img
-          src={WindFarmBanner}
-          srcSet={`${WindFarmBanner} 1920w, ${WindFarmBanner} 1280w, ${WindFarmBanner} 768w`}
-          sizes="100vw"
-          alt="Wind Farm Development Division team"
-          loading="eager" fetchPriority="high" decoding="async"
-          className="absolute inset-0 w-full h-full object-cover object-[50%_46%] sm:object-[50%_48%] lg:object-[50%_52%]"
-        />
-        {/* stronger contrast at bottom, airy top */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/35 to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1
-            className="
-            relative grid place-items-center text-center font-extrabold
-            leading-[1.1] px-2 sm:px-6 max-w-screen-xl mx-auto
-            text-[clamp(1.75rem,6vw,4rem)] md:text-[clamp(2.5rem,5vw,5rem)]">
-            {/* Bottom shadow layer */}
-            <span className="
-            col-start-1 row-start-1 translate-x-[0.08em] translate-y-[0.08em]
-            text-black/80 select-none pointer-events-none [will-change:transform]
-            ">
-              Wind Farm Development Division
-            </span>
+  <section className="relative w-full h-[420px] md:h-[590px] overflow-hidden shadow-lg mb-6">
 
-            {/* Mid highlight layer */}
-            <span className="
-            col-start-1 row-start-1 translate-x-[0.04em] translate-y-[0.04em]
-            text-[#2c3e50]/90 select-none pointer-events-none [will-change:transform]
-            ">
-              Wind Farm Development Division
-            </span>
 
-            {/* Top main text */}
-            <span className="
-            col-start-1 row-start-1 relative
-            bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1]
-            text-transparent bg-clip-text drop-shadow-lg
-            ">
-              Wind Farm Development Division
-            </span>
-          </h1>
-        </div>
-      </section>
+  <img 
+    src={WindFarmBanner} 
+    alt="Wind Farm Development Division Banner" 
+    loading="eager" 
+    className="object-cover w-full h-full" 
+  />
+  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+   <h1 className="relative -translate-y-24 sm:-translate-y-16 md:-translate-y-40 text-3xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap tracking-wider">
+      {/* Bottom Shadow Layer */}
+      <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-black z-0 select-none block w-full">
+        Wind Farm Development Division
+      </span>
 
+      {/* Mid Highlight Layer */}
+      <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
+        Wind Farm Development Division
+      </span>
+
+      {/* Top Main Gradient Text Layer */}
+      <span className="relative z-20 bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1] text-transparent bg-clip-text drop-shadow-lg block w-full">
+        Wind Farm Development Division
+      </span>
+    </h1>
+  </div>
+</section>
       {/* Main Info Block */}
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Image Carousel */}
@@ -177,10 +159,10 @@ const WindFarmDevDiv = () => {
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 mt-6 md:mt-4 text-center md:text-left">
-            Leader: <span className="font-bold">Paola N. Gordils Acosta</span>
+            Captain: <span className="font-bold">Luis A. Negrón Torres</span>
           </h3>
           <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 text-center md:text-left">
-            Co-Leader: <span className="font-bold">Luis A. Negrón Torres</span>
+            Co-Leader: <span className="font-bold">Maeson A. Franceschi Durán</span>
           </h4>
 
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed ">

@@ -50,7 +50,7 @@ const BusinessOpsDiv = () => {
       <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-lg mb-6">
         <img src={BusinessBanner} alt="Business Banner" loading="eager" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
+          <h1 className="relative -translate-y-12 text-3xl sm:text-4xl md:text-6xl font-extrabold text-center leading-tight whitespace-normal md:whitespace-nowrap">
             {/* Bottom Shadow Layer */}
             <span className="absolute top-[4px] left-[4px] text-black z-0 select-none">
               Business & Operations Division
@@ -107,8 +107,11 @@ const BusinessOpsDiv = () => {
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-            Leader: Samarys Bocachica Alvarado
+            Captain: Raúl A. Sánchez Velázquez
           </h3>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
+            Co-Leader: Neythan A. Sierra Orengo
+          </h4>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The Business & Operations division is responsible for the logistics, planning, and execution of activities, whether for fundraising or raising awareness about renewable energy. Likewise, we manage social media, communication with sponsors, and the Content Creation Contest within the CWC Competition. In this contest, we are tasked with making an impact on different communities by raising awareness about renewable energy among them.
           </p>

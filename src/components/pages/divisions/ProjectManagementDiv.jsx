@@ -8,7 +8,7 @@ import PrjManage1 from "../../../assets/images/businessDiv1.png";
 import PrjManage2 from "../../../assets/images/businessDiv2.png";
 import PrjManage3 from "../../../assets/images/businessDiv4.png";
 import PrjManage4 from "../../../assets/images/businessDiv5.png";
-import ProjectManageBanner from "../../../assets/images/polygons_dark.png"; // Usa tu banner preferido
+import ProjectManageBanner from "../../../assets/images/businessDiv4.png"; // Mientras tanto
 
 const ProjectManagementDiv = () => {
   const images = [PrjManage1, PrjManage2, PrjManage3, PrjManage4];
@@ -105,10 +105,10 @@ const ProjectManagementDiv = () => {
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-            Captain: Iván O. Morales Martorell
+            Project Manager: Iván O. Morales Martorell
           </h3>
           <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
-            Leader: Carlos M. Marrero
+            Co-Leader: Carlos M. Marrero
           </h4>
 
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">

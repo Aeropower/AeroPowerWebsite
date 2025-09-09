@@ -58,7 +58,7 @@ const ElectricalDiv = () => {
       <section className="relative w-full h-[320px] md:h-[550px] overflow-hidden shadow-lg mb-6">
         <img src={ElectricalBanner} alt="Electrical Division Banner" loading='eager' className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
+          <h1 className="relative -translate-y-12 text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
             {/* Bottom Shadow Layer */}
             <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-black z-0 select-none block w-full">
               Electrical Division
@@ -117,8 +117,11 @@ const ElectricalDiv = () => {
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-            Leader: Josue Colón López
+            Captain: Josue Colón López
           </h3>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
+            Co-Leader: Carlos M. Marrero
+          </h4>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The electrical division is responsible for the design, implementation, and management of electrical and electronic systems associated with the wind turbine. Its main goal is to ensure reliable, efficient, and safe operation of all components involved in power generation, control, and energy conversion.
           </p>

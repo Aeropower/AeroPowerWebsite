@@ -17,13 +17,13 @@ const softwareSubdivisions = [
     title: "Web Development",
     icon: SiJavascript,
     description:
-      "Responsible for designing and building the team’s website using React.js (frontend) and Flask with Python (backend). This team brings to life the very platform you're viewing right now.",
+      "Responsible for designing and building the team’s website using React.js. This team brings to life the very platform you're viewing right now.",
   },
   {
     title: "Embedded Software",
     icon: FaMicrochip,
     description:
-      "Develops and maintains the embedded real-time operating system using FreeRTOS for ESP32 or AVR microcontrollers. This system powers the turbine’s pitch control and emergency brake systems.",
+      "Develops and maintains the embedded finite-state machine and real-time operating system using FreeRTOS for the turbine microcontroller. This system powers the turbine’s control systems and emergency systems.",
   },
 ];
 
@@ -68,7 +68,8 @@ const SoftwareDiv = () => {
       <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden shadow-lg mb-6">
         <img src={SoftwareBanner} alt="Software Division Banner" loading="eager" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap tracking-wider">
+         <h1 className="relative -translate-y-12 text-4xl sm:text-6xl md:text-6xl font-extrabold ...">
+
             {/* Bottom Shadow Layer */}
             <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-black z-0 select-none block w-full">
               Software Division
@@ -127,8 +128,11 @@ const SoftwareDiv = () => {
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-            Leader: Hiram R. Rodríguez Hernández
+            Captain: Hiram R. Rodríguez Hernández
           </h3>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
+            Co-Leader: Ulises L. Medina Hurtado
+          </h4>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
             The Software Division designs, develops, and maintains the team’s website and the embedded systems responsible for turbine control and safety. Their work ensures seamless user interaction and real-time system responsiveness.
           </p>

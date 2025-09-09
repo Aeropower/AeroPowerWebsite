@@ -80,28 +80,34 @@ const MechanicalDiv = () => {
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
 
-      {/* Banner */}
-      <section className="relative w-full h-[400px] md:h-[600px] overflow-hidden shadow-lg mb-6">
-        <img src={MechanicalBanner} alt="Mechanical Division Banner" loading="eager" className="object-cover w-full h-full" />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="relative text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
-            {/* Bottom Shadow Layer */}
-            <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-gray-900 z-0 select-none block w-full">
-              Mechanical Division
-            </span>
+       {/* Banner */}
+  <section className="relative w-full h-[400px] md:h-[600px] overflow-hidden shadow-lg mb-6">
+    <img 
+      src={MechanicalBanner} 
+      alt="Mechanical Division Banner" 
+      loading="eager" 
+      className="object-cover w-full h-full" 
+    />
+    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+      <h1 className="relative -translate-y-20 text-4xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap">
+        {/* Bottom Shadow Layer */}
+        <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-gray-900 z-0 select-none block w-full">
+          Mechanical Division
+        </span>
 
-            {/* Mid Highlight Layer */}
-            <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
-              Mechanical Division
-            </span>
+        {/* Mid Highlight Layer */}
+        <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
+          Mechanical Division
+        </span>
 
-            {/* Top Main Gradient Text Layer */}
-            <span className="relative z-20 bg-gradient-to-r from-white to-slate-300 text-transparent bg-clip-text drop-shadow-lg block w-full">
-              Mechanical Division
-            </span>
-          </h1>
-        </div>
-      </section>
+        {/* Top Main Gradient Text Layer */}
+        <span className="relative z-20 bg-gradient-to-r from-white to-slate-300 text-transparent bg-clip-text drop-shadow-lg block w-full">
+          Mechanical Division
+        </span>
+      </h1>
+    </div>
+  </section>
+
 
       {/* Main Info */}
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
@@ -140,7 +146,7 @@ const MechanicalDiv = () => {
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col">
           {/* Leadership */}
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 mt-4 text-center md:text-left">
-            Leader: Diego J. Muñoz Rivera
+            Captain: Diego J. Muñoz Rivera
           </h3>
           <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center md:text-left">
             Co-Leader: Paola N. Sierra
