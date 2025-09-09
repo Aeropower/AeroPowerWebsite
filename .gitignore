@@ -11,3 +11,5 @@ node_modules/.vite/deps/react_jsx-runtime.js
 node_modules/.vite/deps/react_jsx-dev-runtime.js.map
 node_modules/.vite/deps/react_jsx-dev-runtime.js
 node_modules/.vite/deps/_metadata.json
+_metadata.json
+react-dom_client.js
