@@ -1,4 +1,6 @@
 /* ========== Desktop Navigation ========== */
+/* Legacy home.css code, now we used tailwind, but some divs are still being costumized by 
+    pure css, until a brave warrior with nothing to lose changes everything x2 */
 .desktop-nav {
     display: flex;
     justify-content: space-between;

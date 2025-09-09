@@ -1,3 +1,5 @@
+/* Legacy general.css code, now we used tailwind, but some divs are still being costumized by 
+    pure css, until a brave warrior with nothing to lose changes everything */
 :root {
     --primary-green: rgba(13, 85, 19, 0.818);
     --hover-green: rgba(91, 211, 95, 0.29);
