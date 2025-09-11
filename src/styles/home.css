@@ -343,6 +343,12 @@ a {
     animation: imageFade 1s ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .animate-imageFade {
+        animation: none;
+    }
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
     .desktop-nav {

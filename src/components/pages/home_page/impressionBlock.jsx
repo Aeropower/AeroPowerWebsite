@@ -18,13 +18,54 @@ const ImpressionBlock = () => {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 z-10" />
 
-        {/* Centered Logo */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 space-y-4">
+        {/* Center the logo itself */}
+        <div className="absolute inset-0 z-20 grid place-items-center text-center px-4">
           <img
             src={LogoAeropower}
             alt="Aeropower Logo"
-            className="w-64 sm:w-80 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] animate-fadeInSlow filter brightness-0 invert drop-shadow-lg "
+            className="w-64 sm:w-80 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] animate-fadeInSlow filter brightness-0 invert drop-shadow-lg"
           />
+        </div>
+
+        {/* Buttons placed below; no effect on logo centering */}
+        <div className="absolute inset-x-0 top-1/2 z-20 flex justify-center gap-3 sm:gap-4 px-4
+                     mt-16 sm:mt-20 md:mt-24 lg:mt-36 xl:mt-44">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeOJ7E5blU24HvCSKpYItfLpPlDoDPMEDjqUTFFCbZ8zXa0cw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full
+                px-6 py-3 text-lg font-semibold
+                bg-emerald-600 text-white shadow-lg
+                hover:bg-green-700 focus:outline-none
+                focus-visible:ring-2 focus-visible:ring-white/90
+                focus-visible:ring-offset-2 focus-visible:ring-offset-black/30
+                transition [@media(prefers-reduced-motion:reduce)]:transition-none"
+            aria-label="Join Aeropower"
+          >
+            JOIN US!
+          </a>
+          <a
+            href="#thisiswhatwedoblock"
+            onClick={(e) => {
+              const el = document.getElementById('thisiswhatwedoblock');
+              if (el) {
+                e.preventDefault();
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-darkgreen
+                      px-6 py-3 text-lg font-semibold
+                      text-white shadow-sm transition
+                      hover:bg-darkgreen
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-darkgreen/70
+                      focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800
+                      min-h-[44px]
+                      "
+            aria-label="More info about what we do"
+          >
+            More Info
+          </a>
         </div>
       </div>
     </section>

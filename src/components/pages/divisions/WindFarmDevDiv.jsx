@@ -65,34 +65,67 @@ const WindFarmDevDiv = () => {
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
-  <section className="relative w-full h-[420px] md:h-[590px] overflow-hidden shadow-lg mb-6">
+      <section className="relative w-full h-[420px] md:h-[590px] overflow-hidden shadow-lg mb-6">
+        <img
+          src={WindFarmBanner}
+          srcSet={`${WindFarmBanner} 1920w, ${WindFarmBanner} 1280w, ${WindFarmBanner} 768w`}
+          sizes="100vw"
+          alt="Wind Farm Development Division Banner"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
+        {/* keep the black overlay from the first snippet */}
+        <div className="absolute inset-0 bg-black/50" />
 
-  <img 
-    src={WindFarmBanner} 
-    alt="Wind Farm Development Division Banner" 
-    loading="eager" 
-    className="object-cover w-full h-full" 
-  />
-  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-   <h1 className="relative -translate-y-24 sm:-translate-y-16 md:-translate-y-40 text-3xl sm:text-6xl md:text-6xl font-extrabold text-center leading-tight whitespace-pre-line md:whitespace-nowrap tracking-wider">
-      {/* Bottom Shadow Layer */}
-      <span className="absolute top-[2px] left-[2px] md:top-[4px] md:left-[4px] text-black z-0 select-none block w-full">
-        Wind Farm Development Division
-      </span>
+        {/* keep the *positioning* (vertical lift) from the first snippet */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1
+            className="
+        relative grid place-items-center text-center font-extrabold tracking-wider
+        leading-[1.1] px-2 sm:px-6 max-w-screen-xl mx-auto
+        -translate-y-24 sm:-translate-y-16 md:-translate-y-40
+        text-[clamp(1.75rem,6vw,4rem)]
+        md:text-[clamp(2.5rem,5vw,5rem)]
+        lg:text-[clamp(2.25rem,3.8vw,4.25rem)]
+        md:whitespace-nowrap
+      "
+          >
+            {/* Bottom shadow layer (scales with font size) */}
+            <span
+              className="
+          col-start-1 row-start-1 translate-x-[0.08em] translate-y-[0.08em]
+          text-black/80 select-none pointer-events-none [will-change:transform]
+        "
+            >
+              Wind Farm Development Division
+            </span>
 
-      {/* Mid Highlight Layer */}
-      <span className="absolute top-[1px] left-[1px] md:top-[2px] md:left-[2px] text-gray-700 z-10 select-none block w-full">
-        Wind Farm Development Division
-      </span>
+            {/* Mid highlight layer */}
+            <span
+              className="
+          col-start-1 row-start-1 translate-x-[0.04em] translate-y-[0.04em]
+          text-[#2c3e50]/90 select-none pointer-events-none [will-change:transform]
+        "
+            >
+              Wind Farm Development Division
+            </span>
 
-      {/* Top Main Gradient Text Layer */}
-      <span className="relative z-20 bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1] text-transparent bg-clip-text drop-shadow-lg block w-full">
-        Wind Farm Development Division
-      </span>
-    </h1>
-  </div>
-</section>
+            {/* Top main gradient text */}
+            <span
+              className="
+          col-start-1 row-start-1 relative
+          bg-gradient-to-r from-[#e8f8f5] to-[#aed6f1]
+          text-transparent bg-clip-text drop-shadow-lg
+        "
+            >
+              Wind Farm Development Division
+            </span>
+          </h1>
+        </div>
+      </section>
       {/* Main Info Block */}
       <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg">
         {/* Image Carousel */}
@@ -149,7 +182,7 @@ const WindFarmDevDiv = () => {
             ref={imgPaginationRef}
             className="mt-2 mb-1 flex justify-center
                        [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
-                       [&_.swiper-pagination-bullet]:!bg-gray-400
+                       [&_.swiper-pagination-bullet]:!bg-green-600
                        [&_.swiper-pagination-bullet-active]:!bg-green-600"
             aria-hidden="true"
           />
@@ -219,7 +252,7 @@ const WindFarmDevDiv = () => {
             ref={subPaginationRef}
             className="mt-2 mb-1 flex justify-center
                        [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5
-                       [&_.swiper-pagination-bullet]:!bg-gray-400
+                       [&_.swiper-pagination-bullet]:!bg-green-600
                        [&_.swiper-pagination-bullet-active]:!bg-green-600"
             aria-hidden="true"
           />
