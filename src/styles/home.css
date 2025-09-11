@@ -196,26 +196,43 @@
 
 }
 
+/* Make the pill brighter and more saturated when selected */
 .competitions {
-    flex: 1;
-    text-align: center;
-    padding: 5px;
-    border-radius: 20px;
-    transition: color var(--transition-speed), transform var(--transition-speed), background-color var(--transition-speed);
-    /* Optional: Add a transition for better user experience */
+    background: transparent;
+    color: #fff;
+    border-radius: 16px;
+    padding: 5px 12px;
+    transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .competitions:hover {
     background-color: var(--hover-green);
-    transform: scale(1.01);
+    transform: translateY(-1px);
 }
 
+/* Fallback bright color if color-mix isn't supported */
 .competitions.selected {
-    font-weight: bold;
-    /* Make text bold */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Optional: Add a shadow for better visibility */
+    background-color: #34d399;
+    /* emerald-400 as a safe bright fallback */
+    color: white;
+    font-weight: 700;
 }
+
+/* Progressive enhancement: if browser supports color-mix, use it for precise brand brighten */
+@supports (background-color: color-mix(in srgb, white, black)) {
+    .competitions.selected {
+        background-color: color-mix(in srgb, var(--primary-green) 72%, white 28%);
+        color: color-mix(in srgb, white, black 15%);
+    }
+}
+
+/* Dark mode tweak (if the bar itself uses a dark bg behind) */
+@media (prefers-color-scheme: dark) {
+    .competitions.selected {
+        color: #052e16;
+    }
+}
+
 
 /* ========== Video & Content ========== */
 .video-container {

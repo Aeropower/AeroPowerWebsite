@@ -10,7 +10,7 @@ function getPrefersReducedMotion() {
  * - SSR-safe (defaults to false on the server)
  * - Reacts to live changes in system setting
  */
-export default function userPrefersReducedMotion() {
+export default function usePrefersReducedMotion() {
   const [prefersReduced, setPrefersReduced] = useState(getPrefersReducedMotion);
 
   useEffect(() => {

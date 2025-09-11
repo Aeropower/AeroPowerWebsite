@@ -17,22 +17,23 @@ const CompetitionBlock = () => {
         <div className="competition-block">
             <div className="competitions-grid dark:bg-gray-900 dark:text-white">
                 <h2 className="text-2xl font-bold mb-4 mt-4 text-center">Collegiate Wind Competition</h2>
-                <div className="competition-tabs">
+                <div className="competition-tabs" role="tablist" aria-label="CWC competitions">
                     {Object.keys(competitionContent).map((competition) => (
-                        <div
+                        <button
                             key={competition}
                             className={`competitions ${selectedCompetition === competition ? 'selected' : ''}`}
                             onClick={() => handleCompetitionClick(competition)}
-                            role="button"
-                            aria-expanded={selectedCompetition === competition}
+                            role="tab"
+                            aria-selected={selectedCompetition === competition}
+                            aria-controls={`panel-${competition}`}
                         >
                             {competition}
-                        </div>
+                        </button>
                     ))}
                 </div>
                 <div className="video-row">
                     <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mx-auto gap-8">
-                        <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-center">
+                        <div className="order-2 md:order-2 w-full md:w-1/2 flex justify-center">
                             <div className="video-container w-full max-w-sm md:max-w-lg">
                                 <iframe
                                     src="https://www.youtube.com/embed/FtkoJrZdJhY"
@@ -44,7 +45,8 @@ const CompetitionBlock = () => {
                         </div>
 
                         {selectedCompetition && (
-                            <div className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left max-w-sm md:max-w-none">
+                            <div id={`panel-${selectedCompetition}`} role="tabpanel"
+                                className="order-1 md:order-1 w-full md:w-1/2 text-center md:text-left max-w-sm md:max-w-none">
                                 <div className="content-container text-2xl">
                                     {competitionContent[selectedCompetition]}
                                 </div>

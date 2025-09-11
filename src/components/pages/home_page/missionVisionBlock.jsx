@@ -12,7 +12,7 @@ const MissionVisionBlock = () => {
           <div className="w-full flex flex-col items-center text-center mb-4">
             <TbTargetArrow size={80} className="mb-2 dark:text-white" />
             <p className="text-lg">
-              Our mission is to design, manufacture, and test wind turbines, providing students with hands-on experience in renewable energy and representing Puerto Rico in the Collegiate Wind Competition.
+              Our mission is to design, manufacture, and test wind turbines, providing students with hands-on experience in renewable energy, and represent Puerto Rico in the Collegiate Wind Competition.
             </p>
           </div>
         </div>
