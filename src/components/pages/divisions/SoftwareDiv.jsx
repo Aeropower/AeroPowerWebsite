@@ -26,7 +26,6 @@ const softwareSubdivisions = [
 
 const SoftwareDiv = () => {
   const images = [Software1, Software2, Software3];
-  const swiperRef = useRef(null);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -76,10 +75,10 @@ const SoftwareDiv = () => {
               pagination={{ clickable: true }}
               loop={true}
               allowTouchMove={true}
-              className="w-full h-full
-                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+              className="w-full h-full pb-6
+                        [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-2
                         [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
-                        [&_.swiper-pagination-bullet]:!bg-gray-400
+                        [&_.swiper-pagination-bullet]:!bg-green-600
                         [&_.swiper-pagination-bullet-active]:!bg-green-600"
             >
               {images.map((src, idx) => (
@@ -88,7 +87,7 @@ const SoftwareDiv = () => {
                     src={src}
                     alt={`Software Division Slide ${idx + 1}`}
                     loading="lazy"
-                    className={`object-contain max-h-full rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)] ${
+                    className={`object-contain max-h-full rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.4)] ${
                       // Custom width cap for just the super-wide images
                       idx === 0 || idx === 1 ? 'md:max-w-[85%]' : 'max-w-full'
                       }`}
@@ -124,7 +123,7 @@ const SoftwareDiv = () => {
             pagination={{ clickable: true }}
             speed={600}
             autoplay={{
-              delay: 15000,
+              delay: 10000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}

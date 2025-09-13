@@ -57,8 +57,6 @@ const windfarmSubdivisions = [
 
 const WindFarmDevDiv = () => {
   const images = [WindFarm1, WindFarm2, WindFarm3];
-  const SwiperRef = useRef(null);
-
   const prefersReduced = usePrefersReducedMotion();
 
   return (
@@ -140,8 +138,8 @@ const WindFarmDevDiv = () => {
               role="region"
               aria-roledescription="carousel"
               aria-label="Wind farm concept images"
-              className="w-full h-full
-                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+              className="w-full h-full pb-10
+                        [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-2
                         [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
                         [&_.swiper-pagination-bullet]:!bg-green-600
                         [&_.swiper-pagination-bullet-active]:!bg-green-600"
@@ -185,16 +183,6 @@ const WindFarmDevDiv = () => {
           </h3>
 
           <Swiper
-            onBeforeInit={(s) => {
-              s.params.pagination = { ...s.params.pagination, el: subPaginationRef.current, clickable: true };
-            }}
-            onSwiper={(s) => {
-              if (subPaginationRef.current) {
-                s.params.pagination.el = subPaginationRef.current;
-                s.pagination.render();
-                s.pagination.update();
-              }
-            }}
             modules={[Pagination, A11y, Autoplay]}
             spaceBetween={20}
             loop

@@ -51,7 +51,6 @@ const BusinessOpsDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
-
               modules={[Autoplay, Pagination, A11y]}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop
@@ -64,7 +63,8 @@ const BusinessOpsDiv = () => {
                          [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
                          [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
                          [&_.swiper-pagination-bullet]:!bg-green-600
-                         [&_.swiper-pagination-bullet-active]:!bg-green-600"            >
+                         [&_.swiper-pagination-bullet-active]:!bg-green-600"
+            >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx}>
                   <img
@@ -75,7 +75,6 @@ const BusinessOpsDiv = () => {
                     max-h-[300px] w-auto 
                     md:max-h-[350px] md:max-w-[500px]"
                   />
-
                 </SwiperSlide>
               ))}
             </Swiper>

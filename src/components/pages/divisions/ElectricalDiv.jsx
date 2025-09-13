@@ -85,8 +85,8 @@ const ElectricalDiv = () => {
               autoplay={prefersReduced ? false : { delay: 5000, disableOnInteraction: false }}
               loop={true}
               allowTouchMove={true}
-              className="w-full h-full
-                         [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+              className="w-full h-full pb-6
+                         [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-2
                          [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
                          [&_.swiper-pagination-bullet]:!bg-green-600
                          [&_.swiper-pagination-bullet-active]:!bg-green-600"
@@ -97,7 +97,7 @@ const ElectricalDiv = () => {
                     src={src}
                     alt={`Slide ${idx + 1}`}
                     loading="lazy"
-                    className={`object-contain max-h-full rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)] ${
+                    className={`object-contain max-h-full rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.4)] ${
                       // Custom width cap for just the super-wide images
                       idx === 1 || idx === 2 ? 'md:max-w-[85%]' : 'max-w-full'
                       }`}

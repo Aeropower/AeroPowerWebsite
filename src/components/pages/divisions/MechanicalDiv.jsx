@@ -43,7 +43,6 @@ const mechanicalSubdivisions = [
 
 const MechanicalDiv = () => {
   const images = [Mech1, Mech2, Mech3, Mech4];
-  const swiperRef = useRef(null);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -94,8 +93,8 @@ const MechanicalDiv = () => {
               pagination={{ clickable: true }}
               loop={true}
               allowTouchMove={true}
-              className="w-full h-full
-                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+              className="w-full h-full pb-6
+                        [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-2
                         [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
                         [&_.swiper-pagination-bullet]:!bg-green-600
                         [&_.swiper-pagination-bullet-active]:!bg-green-600"
@@ -139,7 +138,7 @@ const MechanicalDiv = () => {
             allowTouchMove={true}
             speed={600}
             autoplay={{
-              delay: 15000,
+              delay: 12000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}

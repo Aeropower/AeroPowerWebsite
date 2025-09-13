@@ -57,8 +57,8 @@ const ProjectManagementDiv = () => {
               loop={true}
               pagination={{ clickable: true }}
               allowTouchMove={true}
-              className="w-full h-full
-                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+              className="w-full h-full pb-6
+                        [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-2
                         [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
                         [&_.swiper-pagination-bullet]:!bg-green-600
                         [&_.swiper-pagination-bullet-active]:!bg-green-600"
@@ -69,7 +69,7 @@ const ProjectManagementDiv = () => {
                     src={src}
                     alt={`Project Management Slide ${idx + 1}`}
                     loading="lazy"
-                    className="inset-0 m-auto max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
+                    className="inset-0 m-auto max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
                   />
                 </SwiperSlide>
               ))}
