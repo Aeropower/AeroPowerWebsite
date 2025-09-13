@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay, Keyboard } from 'swiper/modules';
 import {
