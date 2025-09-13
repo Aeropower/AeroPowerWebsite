@@ -54,15 +54,19 @@ const BusinessOpsDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
-              onInit={(s) => {
+              onBeforeInit={(s) => {
                 swiperRef.current = s;
+                // bind external pagination before init (best for prod)
+                s.params.pagination = {
+                  ...(s.params.pagination || {}),
+                  el: imgPaginationRef.current,
+                  clickable: true,
+                };
+              }}
+              onSwiper={(s) => {
+                // fallback: if ref was null earlier, (re)bind now and force mount
                 if (imgPaginationRef.current) {
-                  s.params.pagination = {
-                    ...(s.params.pagination || {}),
-                    el: imgPaginationRef.current,
-                    clickable: true,
-                  };
-                  // ensure pagination actually mounts in prod builds
+                  s.params.pagination.el = imgPaginationRef.current;
                   s.pagination.init();
                   s.pagination.render();
                   s.pagination.update();
@@ -72,7 +76,6 @@ const BusinessOpsDiv = () => {
               autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop
               allowTouchMove
-              keyboard={{ enabled: true, onlyInViewport: true }}
               role="region"
               aria-roledescription="carousel"
               aria-label="Business & Operations images"
