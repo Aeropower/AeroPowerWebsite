@@ -54,13 +54,16 @@ const BusinessOpsDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
-              onBeforeInit={(s) => {
-                swiperRef.current = s;
-                s.params.pagination = { ...s.params.pagination, el: imgPaginationRef.current, clickable: true };
-              }}
-              onSwiper={(s) => {
+              onInit={(s) => {
+                SwiperRef.current = s;
                 if (imgPaginationRef.current) {
-                  s.params.pagination.el = imgPaginationRef.current;
+                  s.params.pagination = {
+                    ...(s.params.pagination || {}),
+                    el: imgPaginationRef.current,
+                    clickable: true,
+                  };
+                  // ensure pagination actually mounts in prod builds
+                  s.pagination.init();
                   s.pagination.render();
                   s.pagination.update();
                 }
