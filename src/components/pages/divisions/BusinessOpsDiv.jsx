@@ -55,7 +55,7 @@ const BusinessOpsDiv = () => {
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
               onInit={(s) => {
-                SwiperRef.current = s;
+                swiperRef.current = s;
                 if (imgPaginationRef.current) {
                   s.params.pagination = {
                     ...(s.params.pagination || {}),
