@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
@@ -10,7 +9,6 @@ import BusinessBanner from "../../../assets/images/Business&Ops Group.jpeg"; // 
 
 const BusinessOpsDiv = () => {
   const images = [BandO1, BandO2, BandO3];
-  const swiperRef = useRef(null);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">

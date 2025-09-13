@@ -1,4 +1,3 @@
-import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
@@ -10,8 +9,6 @@ import ProjectManageBanner from "@/assets/images/businessDiv4.png"; // Mientras 
 
 const ProjectManagementDiv = () => {
   const images = [PrjManage1, PrjManage2, PrjManage3];
-  const swiperRef = useRef(null);
-  const imgPaginationRef = useRef(null);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -55,22 +52,16 @@ const ProjectManagementDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[640px] md:max-w-full aspect-[16/10] overflow-hidden rounded-lg">
             <Swiper
-              onBeforeInit={(s) => {
-                swiperRef.current = s;
-                s.params.pagination = { ...s.params.pagination, el: imgPaginationRef.current, clickable: true };
-              }}
-              onSwiper={(s) => {
-                if (imgPaginationRef.current) {
-                  s.params.pagination.el = imgPaginationRef.current;
-                  s.pagination.render();
-                  s.pagination.update();
-                }
-              }}
               modules={[Autoplay, Pagination, A11y]}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop={true}
+              pagination={{ clickable: true }}
               allowTouchMove={true}
-              className="w-full h-full"
+              className="w-full h-full
+                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                        [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
+                        [&_.swiper-pagination-bullet]:!bg-green-600
+                        [&_.swiper-pagination-bullet-active]:!bg-green-600"
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx}>
@@ -84,15 +75,6 @@ const ProjectManagementDiv = () => {
               ))}
             </Swiper>
           </div>
-          {/* External pagination (below image) */}
-          <div
-            ref={imgPaginationRef}
-            className="mt-2 mb-1 flex justify-center
-                       [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
-                       [&_.swiper-pagination-bullet]:!bg-green-600
-                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
-            aria-hidden="true"
-          />
         </div>
 
         {/* Info Section */}

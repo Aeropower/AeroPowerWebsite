@@ -1,6 +1,5 @@
-import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay, Keyboard } from 'swiper/modules';
+import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import {
   MdElectricBolt,
   MdPrecisionManufacturing,
@@ -59,8 +58,7 @@ const windfarmSubdivisions = [
 const WindFarmDevDiv = () => {
   const images = [WindFarm1, WindFarm2, WindFarm3];
   const SwiperRef = useRef(null);
-  const imgPaginationRef = useRef(null);
-  const subPaginationRef = useRef(null);
+
   const prefersReduced = usePrefersReducedMotion();
 
   return (
@@ -132,33 +130,21 @@ const WindFarmDevDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[640px] md:max-w-full aspect-[16/10] overflow-hidden rounded-lg">
             <Swiper
-              onBeforeInit={(s) => {
-                SwiperRef.current = s;
-                s.params.pagination = {
-                  ...s.params.pagination,
-                  el: imgPaginationRef.current,
-                  clickable: true
-                };
-              }}
-              onSwiper={(s) => {
-                // fallback in case ref isn't ready at onBeforeInit
-                if (imgPaginationRef.current) {
-                  s.params.pagination.el = imgPaginationRef.current;
-                  s.pagination.render();
-                  s.pagination.update();
-                }
-              }}
-              modules={[Autoplay, Pagination, Keyboard]}
+              modules={[Autoplay, Pagination]}
               spaceBetween={24}
               slidesPerView={1}
               autoplay={prefersReduced ? false : { delay: 5000, disableOnInteraction: false }}
               loop={true}
               allowTouchMove
-              keyboard={{ enabled: true, onlyInViewport: true }}
+              pagination={{ clickable: true }}
               role="region"
               aria-roledescription="carousel"
               aria-label="Wind farm concept images"
-              className="w-full h-full"
+              className="w-full h-full
+                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                        [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
+                        [&_.swiper-pagination-bullet]:!bg-green-600
+                        [&_.swiper-pagination-bullet-active]:!bg-green-600"
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx} className="flex items-center justify-center">
@@ -177,15 +163,6 @@ const WindFarmDevDiv = () => {
               ))}
             </Swiper>
           </div>
-          {/* External pagination (below image) */}
-          <div
-            ref={imgPaginationRef}
-            className="mt-2 mb-1 flex justify-center
-                       [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
-                       [&_.swiper-pagination-bullet]:!bg-green-600
-                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
-            aria-hidden="true"
-          />
         </div>
 
         {/* Info Section */}
@@ -218,7 +195,7 @@ const WindFarmDevDiv = () => {
                 s.pagination.update();
               }
             }}
-            modules={[Pagination, A11y, Autoplay, Keyboard]}
+            modules={[Pagination, A11y, Autoplay]}
             spaceBetween={20}
             loop
             allowTouchMove
@@ -228,9 +205,13 @@ const WindFarmDevDiv = () => {
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            keyboard={{ enabled: true, onlyInViewport: true }}
+            pagination={{ clickable: true }}
             a11y={{ containerMessage: 'Subdivision details carousel' }}
-            className="w-full min-h-[160px]"
+            className="w-full min-h-[160px]
+                      [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                      [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5
+                      [&_.swiper-pagination-bullet]:!bg-green-600
+                      [&_.swiper-pagination-bullet-active]:!bg-green-600"
           >
             {windfarmSubdivisions.map(({ title, description, icon: Icon }, index) => (
               <SwiperSlide key={index}>
@@ -247,15 +228,6 @@ const WindFarmDevDiv = () => {
             ))}
           </Swiper>
           <div />
-          {/* External pagination (below subdivision card slider) */}
-          <div
-            ref={subPaginationRef}
-            className="mt-2 mb-1 flex justify-center
-                       [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5
-                       [&_.swiper-pagination-bullet]:!bg-green-600
-                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
-            aria-hidden="true"
-          />
         </div>
       </div>
     </div>

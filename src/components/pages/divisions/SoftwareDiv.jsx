@@ -1,10 +1,8 @@
-import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import { FaMicrochip } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Software1 from "@/assets/images/software1.png";
 import Software2 from "@/assets/images/software4.png";
@@ -29,8 +27,6 @@ const softwareSubdivisions = [
 const SoftwareDiv = () => {
   const images = [Software1, Software2, Software3];
   const swiperRef = useRef(null);
-  const imgPaginationRef = useRef(null);
-  const subPaginationRef = useRef(null);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -73,24 +69,18 @@ const SoftwareDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[640px] md:max-w-full aspect-[16/10] overflow-hidden rounded-lg">
             <Swiper
-              onBeforeInit={(s) => {
-                swiperRef.current = s;
-                s.params.pagination = { ...s.params.pagination, el: imgPaginationRef.current, clickable: true };
-              }}
-              onSwiper={(s) => {
-                if (imgPaginationRef.current) {
-                  s.params.pagination.el = imgPaginationRef.current;
-                  s.pagination.render();
-                  s.pagination.update();
-                }
-              }}
               modules={[Autoplay, Pagination, A11y]}
               spaceBetween={24}
               slidesPerView={1}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
               loop={true}
               allowTouchMove={true}
-              className="w-full h-full"
+              className="w-full h-full
+                        [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                        [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
+                        [&_.swiper-pagination-bullet]:!bg-gray-400
+                        [&_.swiper-pagination-bullet-active]:!bg-green-600"
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx} className="flex items-center justify-center h-full w-full">
@@ -107,15 +97,6 @@ const SoftwareDiv = () => {
               ))}
             </Swiper>
           </div>
-          {/* External pagination (below image) */}
-          <div
-            ref={imgPaginationRef}
-            className="mt-2 mb-1 flex justify-center
-                       [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
-                       [&_.swiper-pagination-bullet]:!bg-gray-400
-                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
-            aria-hidden="true"
-          />
         </div>
 
         {/* Info Section */}
@@ -136,27 +117,22 @@ const SoftwareDiv = () => {
           </h3>
 
           <Swiper
-            onBeforeInit={(s) => {
-              s.params.pagination = { ...s.params.pagination, el: subPaginationRef.current, clickable: true };
-            }}
-            onSwiper={(s) => {
-              if (subPaginationRef.current) {
-                s.params.pagination.el = subPaginationRef.current;
-                s.pagination.render();
-                s.pagination.update();
-              }
-            }}
             modules={[Pagination, A11y, Autoplay]}
             spaceBetween={20}
             loop
             allowTouchMove={true}
+            pagination={{ clickable: true }}
             speed={600}
             autoplay={{
               delay: 15000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            className="w-full min-h-[140px]"
+            className="w-full min-h-[140px]
+                      [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                      [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5
+                      [&_.swiper-pagination-bullet]:!bg-green-600
+                      [&_.swiper-pagination-bullet-active]:!bg-green-600"
           >
             {softwareSubdivisions.map(({ title, description, icon: Icon }, index) => (
               <SwiperSlide key={index}>
@@ -172,15 +148,6 @@ const SoftwareDiv = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* External pagination (below subdivision slider) */}
-          <div
-            ref={subPaginationRef}
-            className="mt-2 mb-1 flex justify-center
-                       [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5
-                       [&_.swiper-pagination-bullet]:!bg-green-600
-                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
-            aria-hidden="true"
-          />
         </div>
       </div>
     </div>
