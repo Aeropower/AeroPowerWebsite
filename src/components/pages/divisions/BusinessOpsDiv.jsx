@@ -11,7 +11,6 @@ import BusinessBanner from "../../../assets/images/Business&Ops Group.jpeg"; // 
 const BusinessOpsDiv = () => {
   const images = [BandO1, BandO2, BandO3];
   const swiperRef = useRef(null);
-  const imgPaginationRef = useRef(null);
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -54,24 +53,7 @@ const BusinessOpsDiv = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
-              onBeforeInit={(s) => {
-                swiperRef.current = s;
-                // bind external pagination before init (best for prod)
-                s.params.pagination = {
-                  ...(s.params.pagination || {}),
-                  el: imgPaginationRef.current,
-                  clickable: true,
-                };
-              }}
-              onSwiper={(s) => {
-                // fallback: if ref was null earlier, (re)bind now and force mount
-                if (imgPaginationRef.current) {
-                  s.params.pagination.el = imgPaginationRef.current;
-                  s.pagination.init();
-                  s.pagination.render();
-                  s.pagination.update();
-                }
-              }}
+
               modules={[Autoplay, Pagination, A11y]}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop
@@ -79,8 +61,12 @@ const BusinessOpsDiv = () => {
               role="region"
               aria-roledescription="carousel"
               aria-label="Business & Operations images"
-              className="w-full h-full"
-            >
+              pagination={{ clickable: true }}
+              className="w-full h-full
+                         [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                         [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
+                         [&_.swiper-pagination-bullet]:!bg-green-600
+                         [&_.swiper-pagination-bullet-active]:!bg-green-600"            >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx}>
                   <img
@@ -96,15 +82,6 @@ const BusinessOpsDiv = () => {
               ))}
             </Swiper>
           </div>
-          {/* External pagination (below image) */}
-          <div
-            ref={imgPaginationRef}
-            className="mt-2 md:mb-3 md:mt-0 flex items-center justify-center
-                       [&_.swiper-pagination-bullet]:!w-3.5 [&_.swiper-pagination-bullet]:!h-3.5
-                       [&_.swiper-pagination-bullet]:!bg-green-600
-                       [&_.swiper-pagination-bullet-active]:!bg-green-600"
-            aria-hidden="true"
-          />
         </div>
 
         {/* Info Section */}
