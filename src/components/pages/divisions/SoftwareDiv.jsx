@@ -111,7 +111,7 @@ const SoftwareDiv = () => {
                   `<button class="${className} a11y-bullet" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
               }}
               className="w-full h-full pb-10
-                        [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-4
+                        [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-6
                         [&_.swiper-pagination-bullet]:!w-4 [&_.swiper-pagination-bullet]:!h-4
                         [&_.swiper-pagination-bullet]:!bg-green-600
                         [&_.swiper-pagination-bullet]:!rounded-full
@@ -207,7 +207,7 @@ const SoftwareDiv = () => {
                 `<button class="${className}" type="button" aria-label="${bulletLabel(index, softwareSubdivisions.length)}"></button>`
             }}
             className="w-full min-h-[140px]
-                      [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+                      [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-6
                       [&_.swiper-pagination-bullet]:!w-4 [&_.swiper-pagination-bullet]:!h-4
                       [&_.swiper-pagination-bullet]:!bg-green-600
                       [&_.swiper-pagination-bullet]:!rounded-full

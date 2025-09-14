@@ -6,7 +6,7 @@ const ImpressionBlock = () => {
   return (
     <section className="relative w-full dark:bg-gray-800 text-white transition-colors duration-300">
 
-      <div className="relative w-full h-[80vh] sm:h-screen overflow-hidden shadow-md">
+      <div className="relative w-full h-screen sm:h-screen overflow-hidden shadow-md">
         {/* Team Image */}
         <img
           src={TeamPhoto}
@@ -19,7 +19,8 @@ const ImpressionBlock = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 z-10" />
 
         {/* Center the logo itself */}
-        <div className="absolute inset-0 z-20 grid place-items-center text-center px-4">
+        <div className="absolute inset-0 z-20 grid place-items-center text-center px-4
+                -translate-y-8 sm:translate-y-0">
           <img
             src={LogoAeropower}
             alt="Aeropower Logo"
@@ -28,13 +29,14 @@ const ImpressionBlock = () => {
         </div>
 
         {/* Buttons placed below; no effect on logo centering */}
-        <div className="absolute inset-x-0 top-1/2 z-20 flex justify-center gap-3 sm:gap-4 px-4
-                     mt-16 sm:mt-20 md:mt-24 lg:mt-36 xl:mt-44">
+       <div  className="absolute inset-x-0 top-1/2 z-20 flex justify-center gap-3 sm:gap-4 px-4
+             mt-24 lg:mt-36 xl:mt-44">
+
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeOJ7E5blU24HvCSKpYItfLpPlDoDPMEDjqUTFFCbZ8zXa0cw/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full
+            className="mt-4 inline-flex items-center justify-center rounded-full
                 px-6 py-3 text-lg font-semibold
                 bg-emerald-600 text-white shadow-lg
                 hover:bg-green-700 focus:outline-none
@@ -54,7 +56,7 @@ const ImpressionBlock = () => {
                 el.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             }}
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-darkgreen
+            className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border-2 border-darkgreen
                       px-6 py-3 text-lg font-semibold
                       text-white shadow-sm transition
                       hover:bg-darkgreen

@@ -87,7 +87,7 @@ const ElectricalDiv = () => {
       </section>
 
       {/* Main Info */}
-      <div className="px-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg"
+      <div className="px-6 py-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg"
         role='main' aria-labelledby='about-division'>
         {/* Image Carousel */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
@@ -122,7 +122,7 @@ const ElectricalDiv = () => {
                   `<button class="${className} a11y-bullet" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
               }}
               className="w-full h-full pb-10
-                         [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-4
+                         [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-6
                          [&_.swiper-pagination-bullet]:!w-4 [&_.swiper-pagination-bullet]:!h-4
                          [&_.swiper-pagination-bullet]:!bg-green-600
                         [&_.swiper-pagination-bullet]:!rounded-full
@@ -211,7 +211,7 @@ const ElectricalDiv = () => {
                 `<button class="${className} a11y-bullet" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
             }}
             className="w-full min-h-[140px]
-              [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-2
+              [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-6
               [&_.swiper-pagination-bullet]:!w-4 [&_.swiper-pagination-bullet]:!h-4
               [&_.swiper-pagination-bullet]:!bg-green-600
               [&_.swiper-pagination-bullet]:!rounded-full
