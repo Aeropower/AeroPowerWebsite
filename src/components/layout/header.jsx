@@ -36,8 +36,14 @@ function Header() {
                        bg-white dark:bg-gray-800 shadow-custom-shadow-md transition-colors duration-300">
       {/* Desktop Navigation */}
       <div className="desktop-nav">
-        <div className="aeropower-logo">
-          <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" loading="lazy" />
+        <div className="aeropower-logo" >
+          <a
+            href="/"
+            aria-label="Go to AeroPower home"
+            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 p-1"
+          >
+            <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" loading="lazy" />
+          </a>
         </div>
 
         <nav className="middle-section">
@@ -83,7 +89,7 @@ function Header() {
           */}
         </nav>
 
-        <a href="https://www.ieee.org/" className="pes-logo">
+        <a href="https://www.ieee.org/" aria-label="Go to IEEE site" className="pes-logo">
           <img src={LogoPes} alt="PES logo" className="h-12" loading="lazy" />
         </a>
       </div>

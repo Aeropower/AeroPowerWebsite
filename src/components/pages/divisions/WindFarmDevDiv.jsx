@@ -85,7 +85,7 @@ const WindFarmDevDiv = () => {
         />
 
         {/* keep the black overlay from the first snippet */}
-        <div className="absolute inset-0 bg-black/60 md:bg-black/50" />
+        <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
 
         {/* keep the *positioning* (vertical lift) from the first snippet */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -152,7 +152,7 @@ const WindFarmDevDiv = () => {
                 pauseOnMouseEnter: true
               }}
               navigation={isDesktop ? { enabled: true } : false}
-              keyboard={{ enabled: true, onlyInViewport: true, pageUpDown: true }}
+              keyboard={{ enabled: false, onlyInViewport: true, pageUpDown: true }}
               loop={true}
               allowTouchMove
               role="region"
@@ -165,7 +165,7 @@ const WindFarmDevDiv = () => {
                 swiperRef.current = swiper;
               }}
               pagination={{
-                clickable: true,
+                clickable: false,
                 renderBullet: (index, className) =>
                   `<button class="${className} a11y-bullet" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
               }}

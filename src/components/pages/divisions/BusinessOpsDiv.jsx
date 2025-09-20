@@ -35,7 +35,7 @@ const BusinessOpsDiv = () => {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60 md:bg-black/50" />
+        <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 id='businessOps-banner'
             className="relative grid place-items-center text-center font-extrabold
@@ -88,7 +88,7 @@ const BusinessOpsDiv = () => {
                 swiperRef.current = swiper;
               }}
               pagination={{
-                clickable: true,
+                clickable: false,
                 renderBullet: (index, className) =>
                   `<button class="${className} a11y-bullet" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
               }}
