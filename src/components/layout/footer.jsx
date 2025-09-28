@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
         <div className="mb-2">
           <a className="inline-block text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md transform hover:scale-110 bg-darkgreen transition-all duration-300"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeOJ7E5blU24HvCSKpYItfLpPlDoDPMEDjqUTFFCbZ8zXa0cw/viewform" target="_blank" rel="noopener noreferrer">
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4grUMZI5u7GpCMq8ye5cmEg3D0vC2XQqo3OEMMopO99eIww/viewform" target="_blank" rel="noopener noreferrer">
             JOIN US!</a>
         </div>
         <div className="text-center md:text-left dark:text-white">
