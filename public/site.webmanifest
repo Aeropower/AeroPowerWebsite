@@ -1,21 +1,22 @@
 {
-  "name": "Aeropower",
-  "short_name": "Aero",
+  "name": "AeroPower",
+  "short_name": "AeroPower",
   "icons": [
     {
-      "src": "/public/logo-icon/web-app-manifest-192x192.png",
+      "src": "/manifest-icon-192.maskable.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/public/logo-icon/web-app-manifest-512x512.png",
+      "src": "/manifest-icon-512.maskable.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "display": "standalone"
+  "theme_color": "#0f766e",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
 }

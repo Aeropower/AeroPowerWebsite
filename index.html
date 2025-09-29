@@ -4,12 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/logo-icon.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <!-- Favicons (SVG + fallbacks) -->
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-196.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-196.png" />
+
   <link rel="shortcut icon" href="/logo-short.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-aero-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Aeropower" />
-  <link rel="manifest" href="/public/logo-icon/site.webmanifest" />  
+  <!-- iOS app icon -->
+  <link rel="apple-touch-icon" href="/apple-icon-180.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/public/manifest-icon-192.maskable" />
+  <meta name="theme-color" content="#0f766e" />
+
+  <!-- Fonts, title, etc. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
