@@ -37,13 +37,13 @@ function Header() {
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <div className="aeropower-logo" >
-          <a
-            href="/"
+          <Link
+            to="/"
             aria-label="Go to AeroPower home"
             className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 p-1"
           >
             <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" loading="lazy" />
-          </a>
+          </Link>
         </div>
 
         <nav className="middle-section">
