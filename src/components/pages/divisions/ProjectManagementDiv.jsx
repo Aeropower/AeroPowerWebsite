@@ -17,7 +17,24 @@ const ProjectManagementDiv = () => {
   const bulletLabel = (i, total) => `Go to slide ${i + 1} of ${total}`;
   const swiperRef = useRef(null);
   const isDesktopLike = useMedia('(pointer: fine) and (hover: hover)');
-  const isTouch = useMedia('(pointer: coarse)');
+  const isTouch = useMedia('(hover: none), (pointer: coarse)');
+
+  const disableBulletClicks = (swiper) => {
+    if (!swiper?.pagination?.bullets) return;
+    swiper.pagination.bullets.forEach((el) => {
+      if (isTouch) {
+        el.style.pointerEvents = 'none';
+        el.setAttribute('tabindex', '-1');
+        el.setAttribute('aria-disabled', 'true');
+        el.setAttribute('disabled', 'true');
+      } else {
+        el.style.pointerEvents = '';
+        el.removeAttribute('tabindex');
+        el.removeAttribute('aria-disabled');
+        el.removeAttribute('disabled');
+      }
+    });
+  };
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -88,7 +105,12 @@ const ProjectManagementDiv = () => {
               aria-live="polite"
               onFocus={() => swiperRef.current?.autoplay?.stop?.()}
               onBlur={() => !prefersReduced && swiperRef.current?.autoplay?.start?.()}
-              onSwiper={(swiper) => { swiperRef.current = swiper; }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                disableBulletClicks(swiper);
+              }}
+              onUpdate={(swiper) => disableBulletClicks(swiper)}
+              onPaginationUpdate={(swiper) => disableBulletClicks(swiper)}
               pagination={{
                 clickable: !isTouch,
                 renderBullet: (index, className) =>
