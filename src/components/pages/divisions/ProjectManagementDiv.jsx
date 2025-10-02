@@ -16,7 +16,8 @@ const ProjectManagementDiv = () => {
   const prefersReduced = usePrefersReducedMotion();
   const bulletLabel = (i, total) => `Go to slide ${i + 1} of ${total}`;
   const swiperRef = useRef(null);
-  const isDesktop = useMedia('(min-width:1024px) and (pointer: fine)');
+  const isDesktopLike = useMedia('(pointer: fine) and (hover: hover)');
+  const isTouch = useMedia('(pointer: coarse)');
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -66,11 +67,11 @@ const ProjectManagementDiv = () => {
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
               tabIndex={0}
-              key={isDesktop ? 'nav-on' : 'nav-off'}
-              modules={[Autoplay, Pagination, A11y, Keyboard, ...(isDesktop ? [Navigation] : [])]}
+              key={isDesktopLike ? 'nav-on' : 'nav-off'}
+              modules={[Autoplay, Pagination, A11y, Keyboard, ...(isDesktopLike ? [Navigation] : [])]}
               spaceBetween={24}
               slidesPerView={1}
-              navigation={isDesktop ? { enabled: true } : false}
+              navigation={isDesktopLike ? { enabled: true } : false}
               keyboard={{ enabled: true, onlyInViewport: true, pageUpDown: true }}
               autoplay={
                 prefersReduced ? false : {
@@ -89,9 +90,10 @@ const ProjectManagementDiv = () => {
               onBlur={() => !prefersReduced && swiperRef.current?.autoplay?.start?.()}
               onSwiper={(swiper) => { swiperRef.current = swiper; }}
               pagination={{
-                clickable: false,
+                clickable: !isTouch,
                 renderBullet: (index, className) =>
-                  `<button class="${className}" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
+                  `<button class="${className}" type="button" 
+                ${isTouch ? 'tabindex="-1" aria-disabled="true"' : ''} aria-label="${bulletLabel(index, images.length)}"></button>`
               }}
               className="w-full h-full pb-10
                  [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-6

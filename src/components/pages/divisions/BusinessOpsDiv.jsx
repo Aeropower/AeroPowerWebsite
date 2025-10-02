@@ -16,7 +16,8 @@ const BusinessOpsDiv = () => {
   const prefersReduced = usePrefersReducedMotion();
   const bulletLabel = (i, total) => `Go to slide ${i + 1} of ${total}`;
   const swiperRef = useRef(null);
-  const isDesktop = useMedia('(min-width:1024px) and (pointer: fine)');
+  const isDesktopLike = useMedia('(pointer: fine) and (hover: hover)');
+  const isTouch = useMedia('(pointer: coarse)');
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
@@ -65,8 +66,8 @@ const BusinessOpsDiv = () => {
           <div className="relative w-full max-w-[600px] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
             <Swiper
               tabIndex={0}
-              key={isDesktop ? 'nav-on' : 'nav-off'}
-              modules={[Autoplay, Pagination, A11y, Keyboard, ...(isDesktop ? [Navigation] : [])]}
+              key={isDesktopLike ? 'nav-on' : 'nav-off'}
+              modules={[Autoplay, Pagination, A11y, Keyboard, ...(isDesktopLike ? [Navigation] : [])]}
               spaceBetween={24}
               slidesPerView={1}
               autoplay={prefersReduced ? false : {
@@ -74,7 +75,7 @@ const BusinessOpsDiv = () => {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
               }}
-              navigation={isDesktop ? { enabled: true } : false}
+              navigation={isDesktopLike ? { enabled: true } : false}
               keyboard={{ enabled: true, onlyInViewport: true, pageUpDown: true }}
               loop
               allowTouchMove
@@ -88,9 +89,10 @@ const BusinessOpsDiv = () => {
                 swiperRef.current = swiper;
               }}
               pagination={{
-                clickable: false,
+                clickable: !isTouch,
                 renderBullet: (index, className) =>
-                  `<button class="${className} a11y-bullet" type="button" aria-label="${bulletLabel(index, images.length)}"></button>`
+                  `<button class="${className} a11y-bullet" type="button" 
+                ${isTouch ? 'tabindex="-1" aria-disabled="true"' : ''} aria-label="${bulletLabel(index, images.length)}"></button>`
               }}
               className="w-full h-full
                          [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-6
