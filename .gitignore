@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 .DS_Store
 package-lock.json
 package.json
@@ -13,3 +13,17 @@ node_modules/.vite/deps/react_jsx-dev-runtime.js
 node_modules/.vite/deps/_metadata.json
 _metadata.json
 react-dom_client.js
+# dependencies & caches
+node_modules/
+.vite/
+pnpm-lock.yaml
+yarn.lock
+# build output
+dist/
+# editor/machine files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+Thumbs.db
