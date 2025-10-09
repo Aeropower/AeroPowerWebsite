@@ -58,12 +58,16 @@ function Header() {
           <div className="relative">
             <button
               onClick={() => setDivisionDropdownOpen(!divisionDropdownOpen)}
+              aria-haspopup="menu"
+              aria-expanded={divisionDropdownOpen}
+              aria-controls="divisions-menu"
               className="nav-link text-gray-800 dark:text-white hover:underline flex items-center gap-1"
             >
               Divisions & Subdivisions <MdExpandMore className={`transition-transform ${divisionDropdownOpen ? "rotate-180" : ""}`} />
             </button>
             {divisionDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+              <div id="divisions-menu" role="menu"
+                className="absolute left-0 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
                               rounded-md shadow-md ring-1 ring-black/5 dark:ring-white/10 py-2">
                 {divisionLinks.map(({ name, path }) => (
                   <Link
@@ -103,6 +107,9 @@ function Header() {
           <button
             className="menu-toggle"
             aria-label="Toggle navigation"
+            aria-haspopup="menu"
+            aria-expanded={dropdownOpen}
+            aria-controls="divisions-menu-mobile"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -129,7 +136,7 @@ function Header() {
               <span className="dark:text-white">Divisions & Subdivisions</span> <MdExpandMore className={`text-lg transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
             </button>
             {dropdownOpen && (
-              <div>
+              <div id="divisions-menu-mobile" role="menu">
                 {divisionLinks.map(({ name, path }) => (
                   <Link
                     key={name}
