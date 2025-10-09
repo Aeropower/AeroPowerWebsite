@@ -43,6 +43,7 @@ function Header() {
             className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 p-1"
           >
             <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" loading="lazy" />
+            <span className="sr-only">AeroPower</span>
           </Link>
         </div>
 
