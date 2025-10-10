@@ -102,14 +102,18 @@ function Header() {
       {/* Mobile Navigation */}
       <div className="mobile-nav">
         <div className="aeropower-logo">
-          <img src={LogoAeropower} alt="Aeropower Logo" className="h-12" />
+          <Link to="/" aria-label="Go to AeroPower home"
+            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 p-1">
+            <img src={LogoAeropower} alt="AeroPower logo" className="h-12" />
+            <span className="sr-only">AeroPower</span>
+          </Link>
         </div>
         <div className="mobile-header dark:text-white">
           <button
             className="menu-toggle"
             aria-label="Toggle navigation"
             aria-haspopup="menu"
-            aria-expanded={dropdownOpen}
+            aria-expanded={menuOpen}
             aria-controls="divisions-menu-mobile"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -119,7 +123,7 @@ function Header() {
         </div>
 
         {/* Mobile Slide-in Menu */}
-        <nav className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-700 transition-colors`}>
+        <nav id="mobile-menu" className={`mobile-menu ${menuOpen ? "open" : ""} dark:bg-gray-700 transition-colors`}>
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
@@ -132,6 +136,9 @@ function Header() {
           <div>
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
+              aria-haspopup="menu"
+              aria-expanded={dropdownOpen}
+              aria-controls="divisions-menu-mobile"
               className="w-full py-2 flex justify-center items-center gap-1"
             >
               <span className="dark:text-white">Divisions & Subdivisions</span> <MdExpandMore className={`text-lg transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
