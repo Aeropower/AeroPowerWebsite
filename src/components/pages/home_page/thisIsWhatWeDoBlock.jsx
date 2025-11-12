@@ -40,13 +40,15 @@ const ThisIsWhatWeDoBlock = () => {
         <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
           <h2 className="text-2xl font-bold mb-4 text-center">Who are we?</h2>
           <p className="text-left md:text-left text-lg">
-            We’re a student-led engineering team passionate about advancing renewable energy and creating real-world impact. At AeroPower, we design, build, and test functional wind turbines, develop offshore wind farm proposals, and lead outreach initiatives that promote wind energy within our community.
+            We're a student-led research team advancing wind energy through open, hands-on engineering.
+            We design, build, and test turbine prototypes; analyze wind resources and farm layouts; and share results through documentation and outreach.
             <br /><br />
-            As competitors in the U.S. Department of Energy Collegiate Wind Competition (CWC), we combine technical precision with innovation across three core tracks: turbine engineering, wind farm development, and community engagement.
+            Our focus is research and learning. Joining means running experiments, validating models, building hardware and software, and contributing to publications.
             <br /><br />
-            Our team is organized into specialized divisions — mechanical, electrical, software, wind farm development, business and operations, and project management; each with dedicated subteams focusing on areas such as blade design, control systems, power conversion, logistics, and sustainability.
+            We organize into six divisions: mechanical, electrical, software, wind farm development, operations, and project management.
+            Each division has its own focus, letting you specialize in areas like blade design, control systems, or power electronics.
             <br /><br />
-            Through hands-on experience in simulation, prototyping, optimization, and outreach, we build expertise in CAD, coding, embedded systems, system modeling, and project coordination; preparing the next generation of engineers to lead the transition toward a sustainable future.
+            Through this work, you'll develop expertise in CAD, coding, embedded systems, power electronics, and system modeling.
           </p>
         </div>
 

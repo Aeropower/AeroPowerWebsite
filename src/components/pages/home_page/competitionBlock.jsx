@@ -1,59 +1,94 @@
 import React, { useState } from 'react';
 
+// This block now highlights our research-first purpose so
+// prospective members don't assume we are competing.
 const CompetitionBlock = () => {
-    const [selectedCompetition, setSelectedCompetition] = useState(null);
+    const [selectedTopic, setSelectedTopic] = useState(null);
 
-    const handleCompetitionClick = (competition) => {
-        setSelectedCompetition(current => current === competition ? null : competition);
+    const handleClick = (topic) => {
+        setSelectedTopic((current) => (current === topic ? null : topic));
     };
 
-    const competitionContent = {
-        'Wind Turbine': 'Design, build, and present a unique, wind-driven power system.',
-        'Project Development': 'Research wind resource data, transmission infrastructure, and environmental factors to create a site plan and financial analysis for a hypothetical wind farm.',
-        'Connection Creation': 'Partner with wind industry professionals, raise awareness of wind energy in your local community, and work with local media to promote your team’s accomplishments.'
+    const researchContent = {
+        'Wind Farm Dev': {
+            description:
+                'Analyze resources and site constraints, design layouts and interconnection, model energy and wakes, plan logistics, and evaluate cost, risk, and sustainability.',
+            href: '/divisions/windfarm',
+        },
+        'Electrical': {
+            description:
+                'Select generators and protection, design rectifiers, DC-DC, and inverters, instrument systems, and validate closed-loop control and efficiency in models and hardware.',
+            href: '/divisions/electrical',
+        },
+        'Mechanical': {
+            description:
+                'Design blades and structures, run CFD and FEA, build hub and base, integrate a pitch actuator and sensors, and verify strength, safety, and performance.',
+            href: '/divisions/mechanical',
+        },
+        'Software': {
+            description:
+                'Build FreeRTOS-based control firmware, sensor and actuator drivers, telemetry and data logging, plus web tools and dashboards to visualize experiments.',
+            href: '/divisions/software',
+        },
     };
+
+    const topics = Object.keys(researchContent);
 
     return (
         <div className="competition-block">
             <div className="competitions-grid dark:bg-gray-900 dark:text-white">
-                <h2 className="text-2xl font-bold mb-4 mt-4 text-center">Collegiate Wind Competition</h2>
-                <div className="competition-tabs" role="tablist" aria-label="CWC competitions">
-                    {Object.keys(competitionContent).map((competition) => (
+                <h2 className="text-2xl font-bold mb-2 mt-4 text-center">Our Research Focus</h2>
+                {/* <p className="text-center mb-4 px-4 text-gray-700 dark:text-gray-300">
+          We are a research-driven student team. We are not competing in external competitions this cycle. If you join, expect to do experiments, build prototypes, analyze data, and publish or document results.
+        </p> */}
+
+                <div className="competition-tabs" role="tablist" aria-label="Research areas">
+                    {topics.map((topic) => (
                         <button
-                            key={competition}
-                            className={`competitions ${selectedCompetition === competition ? 'selected' : ''}`}
-                            onClick={() => handleCompetitionClick(competition)}
+                            key={topic}
+                            className={`competitions ${selectedTopic === topic ? 'selected' : ''}`}
+                            onClick={() => handleClick(topic)}
                             role="tab"
-                            aria-selected={selectedCompetition === competition}
-                            aria-controls={`panel-${competition}`}
+                            aria-selected={selectedTopic === topic}
+                            aria-controls={`panel-${topic}`}
                         >
-                            {competition}
+                            {topic}
                         </button>
                     ))}
                 </div>
-                <div className="video-row">
-                    <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mx-auto gap-8">
-                        <div className="order-2 md:order-2 w-full md:w-1/2 flex justify-center">
-                            <div className="video-container w-full max-w-sm md:max-w-lg">
-                                <iframe
-                                    src="https://www.youtube.com/embed/FtkoJrZdJhY"
-                                    title="Prepare for Tomorrow's Wind Energy Career Today with the Collegiate Wind Competition (CWC)"
-                                    allowFullScreen
-                                    className="w-full h-48 md:h-96 rounded-lg shadow-lg"
-                                ></iframe>
+
+                {/* <div className="video-row"> */}
+                <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mx-auto gap-8">
+                    {selectedTopic ? (
+                        <div
+                            id={`panel-${selectedTopic}`}
+                            role="tabpanel"
+                            className="w-full text-center md:text-left max-w-2xl"
+                        >
+                            <div className="content-container text-xl md:text-2xl">
+                                {researchContent[selectedTopic]?.description}
+                            </div>
+                            {researchContent[selectedTopic]?.href && (
+                                <div className="mt-1 flex justify-center">
+                                    <a
+                                        href={researchContent[selectedTopic].href}
+                                        className="inline-block text-lg mb-4 md:text-xl text-emerald-700 dark:text-emerald-400 font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded"
+                                        aria-label={`Learn more about ${selectedTopic}`}
+                                    >
+                                        Learn more
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <div className="w-full text-center max-w-2xl">
+                            <div className="content-container justify-center text-lg md:text-xl">
+                                Select a research area to learn what you can work on.
                             </div>
                         </div>
-
-                        {selectedCompetition && (
-                            <div id={`panel-${selectedCompetition}`} role="tabpanel"
-                                className="order-1 md:order-1 w-full md:w-1/2 text-center md:text-left max-w-sm md:max-w-none">
-                                <div className="content-container text-2xl">
-                                    {competitionContent[selectedCompetition]}
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    )}
                 </div>
+                {/* </div> */}
             </div>
         </div>
     );

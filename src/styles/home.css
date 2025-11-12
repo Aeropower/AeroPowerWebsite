@@ -183,7 +183,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 60px;
+    /* Intrinsic height; support multi-line on small screens */
+    height: auto;
+    min-height: 56px;
     width: 85%;
     max-width: 800px;
     background-color: var(--primary-green);
@@ -193,7 +195,11 @@
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-
+    gap: 12px 16px;
+    /* column gap larger */
+    padding: 8px 12px;
+    /* Wrap so all tabs are visible; no horizontal scroll */
+    flex-wrap: wrap;
 }
 
 /* Make the pill brighter and more saturated when selected */
@@ -201,7 +207,7 @@
     background: transparent;
     color: #fff;
     border-radius: 16px;
-    padding: 5px 12px;
+    padding: 6px 14px;
     transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
@@ -396,5 +402,27 @@ a {
     .text-container {
         width: 100%;
         padding: 10px;
+    }
+}
+
+/* ========== Even spacing for division pills on mobile ========== */
+@media (max-width: 768px) {
+    .competition-block .competition-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 10px 12px;
+        /* row x column */
+        height: auto;
+        /* allow two rows if needed */
+        overflow-x: visible;
+    }
+
+    .competition-block .competitions {
+        flex: initial;
+        /* let grid control spacing */
+        white-space: nowrap;
+        /* avoid broken labels */
     }
 }
