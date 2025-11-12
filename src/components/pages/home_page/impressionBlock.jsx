@@ -12,7 +12,6 @@ const ImpressionBlock = () => {
           src={TeamPhoto}
           alt="Team Photo"
           className="object-cover w-full h-full"
-          loading="eager"
         />
 
         {/* Gradient Overlay */}

@@ -9,7 +9,7 @@ import { useMedia } from '../../../hooks/useMedia';
 import BandO1 from "../../../assets/images/businessDiv1.png";
 import BandO2 from "../../../assets/images/businessDiv3.png";
 import BandO3 from "../../../assets/images/businessDiv5.png";
-import BusinessBanner from "../../../assets/images/Business&Ops Group.jpg"; // Usa tu banner preferido
+import BusinessBanner from "../../../assets/images/Business&Ops Group.webp"; // Usa tu banner preferido
 
 const BusinessOpsDiv = () => {
   const images = [BandO1, BandO2, BandO3];
