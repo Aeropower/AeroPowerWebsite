@@ -16,7 +16,7 @@ import Mech1 from "../../../assets/images/mech1.png";
 import Mech2 from "../../../assets/images/mech2.png";
 import Mech3 from "../../../assets/images/mech3.png";
 import Mech4 from "../../../assets/images/mech4.png";
-import MechanicalBanner from "../../../assets/images/Mecanica Group.jpeg";
+import MechanicalBanner from "../../../assets/images/Mecanica Group.webp";
 
 const mechanicalSubdivisions = [
   {

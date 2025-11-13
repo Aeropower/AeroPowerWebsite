@@ -14,7 +14,7 @@ import { useMedia } from '../../../hooks/useMedia';
 import Electrical1 from "../../../assets/images/electrical3.png";
 import Electrical2 from "../../../assets/images/electrical4.png";
 import Electrical3 from "../../../assets/images/electrical5.png";
-import ElectricalBanner from "../../../assets/images/Electrical Team.jpg";
+import ElectricalBanner from "../../../assets/images/Electrical Team.webp";
 
 const electricalSubdivisions = [
   {
