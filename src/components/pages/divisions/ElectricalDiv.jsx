@@ -11,9 +11,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { useMedia } from '../../../hooks/useMedia';
-import Electrical1 from "../../../assets/images/electrical3.png";
-import Electrical2 from "../../../assets/images/electrical4.png";
-import Electrical3 from "../../../assets/images/electrical5.png";
+import Electrical1 from "../../../assets/images/electrical3.webp";
+import Electrical2 from "../../../assets/images/electrical4.webp";
+import Electrical3 from "../../../assets/images/electrical5.webp";
 import ElectricalBanner from "../../../assets/images/Electrical Team.webp";
 
 const electricalSubdivisions = [

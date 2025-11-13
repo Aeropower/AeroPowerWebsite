@@ -6,10 +6,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { useMedia } from '../../../hooks/useMedia';
-import PrjManage1 from "@/assets/images/businessDiv1.png";
-import PrjManage2 from "@/assets/images/businessDiv4.png";
-import PrjManage3 from "@/assets/images/businessDiv5.png";
-import ProjectManageBanner from "@/assets/images/businessDiv4.png"; // Mientras tanto
+import PrjManage1 from "@/assets/images/businessDiv1.webp";
+import PrjManage2 from "@/assets/images/businessDiv4.webp";
+import PrjManage3 from "@/assets/images/businessDiv5.webp";
+import ProjectManageBanner from "@/assets/images/businessDiv4.webp"; // Mientras tanto
 
 const ProjectManagementDiv = () => {
   const images = [PrjManage1, PrjManage2, PrjManage3];

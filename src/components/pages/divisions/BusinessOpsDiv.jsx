@@ -6,9 +6,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { useMedia } from '../../../hooks/useMedia';
-import BandO1 from "../../../assets/images/businessDiv1.png";
-import BandO2 from "../../../assets/images/businessDiv3.png";
-import BandO3 from "../../../assets/images/businessDiv5.png";
+import BandO1 from "../../../assets/images/businessDiv1.webp";
+import BandO2 from "../../../assets/images/businessDiv3.webp";
+import BandO3 from "../../../assets/images/businessDiv5.webp";
 import BusinessBanner from "../../../assets/images/Business&Ops Group.webp"; // Usa tu banner preferido
 
 const BusinessOpsDiv = () => {

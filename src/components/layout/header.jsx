@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdExpandMore } from "react-icons/md";
-import LogoAeropower from "../../assets/images/logo-aeropower.png";
+import LogoAeropower from "../../assets/images/logo-aeropower.webp";
 import LogoPes from "../../assets/images/logo-pes.png";
 import DarkModeToggle from "./DarkModeToggle";
 

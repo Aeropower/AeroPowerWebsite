@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import TeamWork1 from '@/assets/images/team-work1.jpg';
-import ElectricalWork from '@/assets/images/electrical4.png';
+import TeamWork1 from '@/assets/images/team-work1.webp';
+import ElectricalWork from '@/assets/images/electrical4.webp';
 import SoftwareWork from '@/assets/images/software3.webp';
-import MechanicalWork from '@/assets/images/mech3.png';
-import WindFarmWork from '@/assets/images/windFarm3.png';
-import BusinessWork from '@/assets/images/businessDiv4.png';
+import MechanicalWork from '@/assets/images/mech3.webp';
+import WindFarmWork from '@/assets/images/windFarm3.webp';
+import BusinessWork from '@/assets/images/businessDiv4.webp';
 
 const slides = [
   { src: ElectricalWork, alt: 'Electrical division: power electronics and conversion' },

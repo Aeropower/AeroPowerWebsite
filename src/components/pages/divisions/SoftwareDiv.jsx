@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { useMedia } from '../../../hooks/useMedia';
-import Software1 from "@/assets/images/software1.png";
+import Software1 from "@/assets/images/software1.webp";
 import Software2 from "@/assets/images/software4.webp";
 import Software3 from "@/assets/images/software3.webp";
 import SoftwareBanner from "@/assets/images/Software Group.webp";

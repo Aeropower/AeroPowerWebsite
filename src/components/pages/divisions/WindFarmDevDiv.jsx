@@ -14,10 +14,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { useMedia } from '../../../hooks/useMedia';
-import WindFarm1 from "@/assets/images/windFarm1.png";
-import WindFarm2 from "@/assets/images/windFarm2.png";
-import WindFarm3 from "@/assets/images/windFarm3.png";
-import WindFarmBanner from "@/assets/images/WindFarm Team.jpg";
+import WindFarm1 from "@/assets/images/windFarm1.webp";
+import WindFarm2 from "@/assets/images/windFarm2.webp";
+import WindFarm3 from "@/assets/images/windFarm3.webp";
+import WindFarmBanner from "@/assets/images/WindFarm Team.webp";
 
 const windfarmSubdivisions = [
   {
