@@ -13,7 +13,7 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 60%), url("../assets/images/polygons.png");
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 60%), url("../assets/images/polygons.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -22,7 +22,7 @@ body {
 }
 
 html.dark body {
-    background-image: url("../assets/images/polygons_dark.png");
+    background-image: url("../assets/images/polygons_dark.webp");
 }
 
 /* Apply custom font to paragraphs */

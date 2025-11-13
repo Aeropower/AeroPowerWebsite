@@ -12,10 +12,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { useMedia } from '../../../hooks/useMedia';
-import Mech1 from "../../../assets/images/mech1.png";
-import Mech2 from "../../../assets/images/mech2.png";
-import Mech3 from "../../../assets/images/mech3.png";
-import Mech4 from "../../../assets/images/mech4.png";
+import Mech1 from "../../../assets/images/mech1.webp";
+import Mech2 from "../../../assets/images/mech2.webp";
+import Mech3 from "../../../assets/images/mech3.webp";
+import Mech4 from "../../../assets/images/mech4.webp";
 import MechanicalBanner from "../../../assets/images/Mecanica Group.webp";
 
 const mechanicalSubdivisions = [

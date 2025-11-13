@@ -1,6 +1,6 @@
 import React from "react";
 import TeamPhoto from "../../../assets/images/team-photo.webp";
-import LogoAeropower from "../../../assets/images/logo-aeropower.png";
+import LogoAeropower from "../../../assets/images/logo-aeropower.webp";
 
 const ImpressionBlock = () => {
   return (
