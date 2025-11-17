@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaWind } from 'react-icons/fa';
 import { IoChevronForward } from 'react-icons/io5';
 

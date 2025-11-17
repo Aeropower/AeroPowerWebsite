@@ -1,4 +1,3 @@
-import React from 'react';
 import { tiers } from './data/tiers';
 import { IoChevronForward } from 'react-icons/io5';
 

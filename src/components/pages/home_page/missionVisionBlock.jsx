@@ -1,4 +1,3 @@
-import React from 'react';
 import { TbTargetArrow } from "react-icons/tb";
 import { FaEye } from "react-icons/fa";
 

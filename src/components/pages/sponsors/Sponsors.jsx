@@ -1,4 +1,3 @@
-import React from 'react';
 import { sponsors } from './data/sponsors';
 
 const tierColors = {
@@ -46,7 +45,7 @@ const Sponsors = () => (
               </p>
               {sponsor.testimonial && (
                 <blockquote className="italic text-gray-700 border-l-4 border-sky-500 pl-4 mt-4 text-sm dark:text-gray-200">
-                  "{sponsor.testimonial}"
+                  &ldquo;{sponsor.testimonial}&rdquo;
                 </blockquote>
               )}
             </div>

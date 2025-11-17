@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdEmail } from 'react-icons/md';
 import LogoUPRM from "../../../assets/images/logo-rum.png";
 

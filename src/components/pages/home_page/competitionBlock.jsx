@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // This block now highlights our research-first purpose so
 // prospective members don't assume we are competing.

@@ -1,4 +1,3 @@
-import React from 'react';
 import Info from './Info';
 import Sponsors from './Sponsors';
 import SponsorshipTiers from './SponsorshipTiers';

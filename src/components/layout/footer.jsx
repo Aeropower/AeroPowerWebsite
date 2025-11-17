@@ -1,4 +1,3 @@
-import React from 'react';
 import LogoUPRM from "../../assets/images/logo-rum.png";
 import { MdContactSupport, MdEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";

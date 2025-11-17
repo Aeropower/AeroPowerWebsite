@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TeamWork1 from '@/assets/images/team-work1.webp';
 import ElectricalWork from '@/assets/images/electrical4.webp';
 import SoftwareWork from '@/assets/images/software3.webp';
@@ -40,7 +40,7 @@ const ThisIsWhatWeDoBlock = () => {
         <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
           <h2 className="text-2xl font-bold mb-4 text-center">Who are we?</h2>
           <p className="text-left md:text-left text-lg">
-            We're a student-led research team advancing wind energy through open, hands-on engineering.
+            We&apos;re a student-led research team advancing wind energy through open, hands-on engineering.
             We design, build, and test turbine prototypes; analyze wind resources and farm layouts; and share results through documentation and outreach.
             <br /><br />
             Our focus is research and learning. Joining means running experiments, validating models, building hardware and software, and contributing to publications.
@@ -48,7 +48,7 @@ const ThisIsWhatWeDoBlock = () => {
             We organize into six divisions: mechanical, electrical, software, wind farm development, operations, and project management.
             Each division has its own focus, letting you specialize in areas like blade design, control systems, or power electronics.
             <br /><br />
-            Through this work, you'll develop expertise in CAD, coding, embedded systems, power electronics, and system modeling.
+            Through this work, you&apos;ll develop expertise in CAD, coding, embedded systems, power electronics, and system modeling.
           </p>
         </div>
 

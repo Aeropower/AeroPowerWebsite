@@ -1,4 +1,3 @@
-import React from 'react';
 import CompetitionBlock from "./competitionBlock";
 import MissionVisionBlock from "./missionVisionBlock";
 import ImpressionBlock from "./impressionBlock";

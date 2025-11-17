@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./header";
 import SponsorFooter from "../pages/sponsors/SponsorFooter";
 import { Outlet } from "react-router-dom";
