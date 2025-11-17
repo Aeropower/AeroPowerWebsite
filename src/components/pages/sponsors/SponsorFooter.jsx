@@ -18,7 +18,13 @@ const Contact = () => (
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8">
           <a href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
-            <img src={LogoUPRM} alt="UPRM Logo" className="w-24" />
+            <img
+              src={LogoUPRM}
+              alt="UPRM Logo"
+              className="w-24"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
         </div>
       </div>

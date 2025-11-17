@@ -25,7 +25,13 @@ const Footer = () => {
       <div className="flex flex-col items-center md:items-end">
         <div className="mb-4">
           <a href="https://uprm.edu" target="_blank" rel="noopener noreferrer">
-            <img src={LogoUPRM} alt="UPRM Logo" className="w-24" />
+            <img
+              src={LogoUPRM}
+              alt="UPRM Logo"
+              className="w-24"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
         </div>
         <div className="flex flex-col items-center">
