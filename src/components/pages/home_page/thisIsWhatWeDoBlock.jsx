@@ -39,17 +39,23 @@ const ThisIsWhatWeDoBlock = () => {
         {/* Text */}
         <div className="w-full md:w-1/2 order-2 md:order-1 md:pr-8">
           <h2 className="text-2xl font-bold mb-4 text-center">Who are we?</h2>
-          <p className="text-left md:text-left text-lg">
-            We&apos;re a student-led research team advancing wind energy through open, hands-on engineering.
-            We design, build, and test turbine prototypes; analyze wind resources and farm layouts; and share results through documentation and outreach.
-            <br /><br />
-            Our focus is research and learning. Joining means running experiments, validating models, building hardware and software, and contributing to publications.
-            <br /><br />
-            We organize into six divisions: mechanical, electrical, software, wind farm development, operations, and project management.
-            Each division has its own focus, letting you specialize in areas like blade design, control systems, or power electronics.
-            <br /><br />
-            Through this work, you&apos;ll develop expertise in CAD, coding, embedded systems, power electronics, and system modeling.
-          </p>
+        <p className="text-justify text-lg leading-relaxed indent-8">
+          We&apos;re a student-led research team advancing wind energy through open, hands-on engineering.
+          We design, build, and test turbine prototypes; analyze wind resources and farm layouts; and share results through documentation and outreach.
+        </p>
+
+        <p className="text-justify text-lg leading-relaxed indent-8 mt-4">
+          Our focus is research and learning. Joining means running experiments, validating models, building hardware and software, and contributing to publications.
+        </p>
+
+        <p className="text-justify text-lg leading-relaxed indent-8 mt-4">
+          We organize into six divisions: mechanical, electrical, software, wind farm development, operations, and project management.
+          Each division has its own focus, letting you specialize in areas like blade design, control systems, or power electronics.
+        </p>
+
+        <p className="text-justify text-lg leading-relaxed indent-8 mt-4">
+          Through this work, you&apos;ll develop expertise in CAD, coding, embedded systems, power electronics, and system modeling.
+        </p>
         </div>
 
         {/* Image */}
