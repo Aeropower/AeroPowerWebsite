@@ -88,7 +88,7 @@ function Header() {
               aria-controls="divisions-menu"
               className="nav-link text-gray-800 dark:text-white hover:underline flex items-center gap-1"
             >
-              Divisions & Subdivisions
+              Divisions
               <MdExpandMore
                 className={`transition-transform ${
                   divisionDropdownOpen ? "rotate-180" : ""
@@ -209,7 +209,7 @@ function Header() {
               aria-controls="divisions-menu-mobile"
               className="w-full py-2 flex justify-center items-center gap-1"
             >
-              <span className="dark:text-white">Divisions & Subdivisions</span>
+              <span className="dark:text-white">Divisions </span>
               <MdExpandMore
                 className={`text-lg transition-transform ${
                   dropdownOpen ? "rotate-180" : ""

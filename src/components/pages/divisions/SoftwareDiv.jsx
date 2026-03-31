@@ -188,11 +188,11 @@ const SoftwareDiv = () => {
           <dl className="mt-2 mb-4">
             <div className="flex flex-col md:flex-row md:items-baseline gap-1">
               <dt className="text-lg font-semibold text-gray-800 dark:text-white">Captain:</dt>
-              <dd className="text-lg text-gray-900 dark:text-white font-bold">Hiram R. Rodríguez Hernández</dd>
+              <dd className="text-lg text-gray-900 dark:text-white font-bold">Ulises L. Medina Hurtado</dd>
             </div>
             <div className="flex flex-col md:flex-row md:items-baseline gap-1">
               <dt className="text-lg font-semibold text-gray-800 dark:text-white">Co-Leader:</dt>
-              <dd className="text-lg text-gray-900 dark:text-white font-bold">Ulises L. Medina Hurtado</dd>
+              <dd className="text-lg text-gray-900 dark:text-white font-bold">Yahir J. Reyes Padilla</dd>
             </div>
           </dl>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
