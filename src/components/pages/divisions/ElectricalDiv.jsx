@@ -197,11 +197,11 @@ const ElectricalDiv = () => {
           <dl className="mt-2 mb-4">
             <div className="flex flex-col md:flex-row md:items-baseline gap-1">
               <dt className="text-lg font-semibold text-gray-800 dark:text-white">Captain:</dt>
-              <dd className="text-lg text-gray-900 dark:text-white font-bold">Josue Colón López</dd>
+              <dd className="text-lg text-gray-900 dark:text-white font-bold">Hector E Ramos-Rivera</dd>
             </div>
             <div className="flex flex-col md:flex-row md:items-baseline gap-1">
-              <dt className="text-lg font-semibold text-gray-800 dark:text-white">Co-Leader:</dt>
-              <dd className="text-lg text-gray-900 dark:text-white font-bold">Carlos M. Marrero</dd>
+              <dt className="text-lg font-semibold text-gray-800 dark:text-white">Co-Leaders:</dt>
+              <dd className="text-lg text-gray-900 dark:text-white font-bold">Diego J Orta Chevalier, Martin J Aguilar Robles</dd>
             </div>
           </dl>
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
