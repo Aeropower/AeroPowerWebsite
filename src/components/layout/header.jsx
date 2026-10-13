@@ -18,6 +18,7 @@ function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const divisionLinks = [
+    { name: "Wind Tunnel", path: "/divisions/windtunnel" },
     { name: "Electrical", path: "/divisions/electrical" },
     { name: "Mechanical", path: "/divisions/mechanical" },
     { name: "Software", path: "/divisions/software" },
