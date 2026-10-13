@@ -7,6 +7,7 @@ import {
 import MainLayout from "./components/layout/MainLayout";
 import SponsorLayout from "./components/layout/SponsorLayout";
 import HomePage from "./components/pages/home_page/homePage";
+import WindTunnel from "./components/pages/divisions/WindTunnel";
 import ElectricalDiv from "./components/pages/divisions/ElectricalDiv";
 import MechanicalDiv from "./components/pages/divisions/MechanicalDiv";
 import SoftwareDiv from "./components/pages/divisions/SoftwareDiv";
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
     <>
       <Route element={<MainLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="/divisions/windtunnel" element={<WindTunnel />} />
         <Route path="/divisions/electrical" element={<ElectricalDiv />} />
         <Route path="/divisions/mechanical" element={<MechanicalDiv />} />
         <Route path="/divisions/software" element={<SoftwareDiv />} />
