@@ -18,12 +18,12 @@ function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const divisionLinks = [
-    { name: "Wind Farm Dev", path: "/divisions/windfarm" },
     { name: "Electrical", path: "/divisions/electrical" },
     { name: "Mechanical", path: "/divisions/mechanical" },
     { name: "Software", path: "/divisions/software" },
     { name: "Business Operations", path: "/divisions/business" },
     { name: "Project Management", path: "/divisions/project_management" },
+    //{ name: "Wind Farm Dev", path: "/divisions/windfarm" },
   ];
 
   useEffect(() => {

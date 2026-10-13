@@ -1,6 +1,12 @@
-import { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay, Keyboard, Navigation } from 'swiper/modules';
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Pagination,
+  A11y,
+  Autoplay,
+  Keyboard,
+  Navigation,
+} from "swiper/modules";
 import {
   MdElectricBolt,
   MdPrecisionManufacturing,
@@ -9,11 +15,11 @@ import {
   MdEco,
   MdAttachMoney,
 } from "react-icons/md";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
-import { useMedia } from '../../../hooks/useMedia';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import { useMedia } from "../../../hooks/useMedia";
 import WindFarm1 from "@/assets/images/windFarm1.webp";
 import WindFarm2 from "@/assets/images/windFarm2.webp";
 import WindFarm3 from "@/assets/images/windFarm3.webp";
@@ -64,32 +70,32 @@ const WindFarmDevDiv = () => {
   const bulletLabel = (i, total) => `Go to slide ${i + 1} of ${total}`;
   const swiperRef = useRef(null);
   const subSwiperRef = useRef(null);
-  const isDesktopLike = useMedia('(pointer: fine) and (hover: hover)');
-  const isTouch = useMedia('(hover: none), (pointer: coarse)');
+  const isDesktopLike = useMedia("(pointer: fine) and (hover: hover)");
+  const isTouch = useMedia("(hover: none), (pointer: coarse)");
 
   const disableBulletClicks = (swiper) => {
     if (!swiper?.pagination?.bullets) return;
     swiper.pagination.bullets.forEach((el) => {
       if (isTouch) {
-        el.style.pointerEvents = 'none';
-        el.setAttribute('tabindex', '-1');
-        el.setAttribute('aria-disabled', 'true');
-        el.setAttribute('disabled', 'true');
+        el.style.pointerEvents = "none";
+        el.setAttribute("tabindex", "-1");
+        el.setAttribute("aria-disabled", "true");
+        el.setAttribute("disabled", "true");
       } else {
-        el.style.pointerEvents = '';
-        el.removeAttribute('tabindex');
-        el.removeAttribute('aria-disabled');
-        el.removeAttribute('disabled');
+        el.style.pointerEvents = "";
+        el.removeAttribute("tabindex");
+        el.removeAttribute("aria-disabled");
+        el.removeAttribute("disabled");
       }
     });
   };
 
   return (
     <div className="dark:bg-gray-800 transition-colors duration-300">
-
       {/* Banner */}
-      <section className="relative w-full h-[420px] md:h-[590px] overflow-hidden shadow-lg mb-6"
-        aria-labelledby='windfarm-banner'
+      <section
+        className="relative w-full h-[420px] md:h-[590px] overflow-hidden shadow-lg mb-6"
+        aria-labelledby="windfarm-banner"
       >
         <img
           src={WindFarmBanner}
@@ -107,7 +113,8 @@ const WindFarmDevDiv = () => {
 
         {/* keep the *positioning* (vertical lift) from the first snippet */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 id='windfarm-banner'
+          <h1
+            id="windfarm-banner"
             className="
               relative grid place-items-center text-center font-extrabold tracking-wider
               leading-[1.1] px-2 sm:px-6 max-w-screen-xl mx-auto
@@ -153,24 +160,41 @@ const WindFarmDevDiv = () => {
       </section>
 
       {/* Main Info Block */}
-      <div className="px-6 py-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg"
-        role='main' aria-labelledby='about-division'>
+      <div
+        className="px-6 py-6 md:px-10 flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow-lg"
+        role="main"
+        aria-labelledby="about-division"
+      >
         {/* Image Carousel */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mt-6 md:mt-0">
           <div className="relative w-full max-w-[640px] md:max-w-full aspect-[16/10] overflow-hidden rounded-lg">
             <Swiper
               tabIndex={0}
-              key={isDesktopLike ? 'nav-on' : 'nav-off'}
-              modules={[Autoplay, Pagination, A11y, Keyboard, ...(isDesktopLike ? [Navigation] : [])]}
+              key={isDesktopLike ? "nav-on" : "nav-off"}
+              modules={[
+                Autoplay,
+                Pagination,
+                A11y,
+                Keyboard,
+                ...(isDesktopLike ? [Navigation] : []),
+              ]}
               spaceBetween={24}
               slidesPerView={1}
-              autoplay={prefersReduced ? false : {
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
-              }}
+              autoplay={
+                prefersReduced
+                  ? false
+                  : {
+                      delay: 5000,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }
+              }
               navigation={isDesktopLike ? { enabled: true } : false}
-              keyboard={{ enabled: false, onlyInViewport: true, pageUpDown: true }}
+              keyboard={{
+                enabled: false,
+                onlyInViewport: true,
+                pageUpDown: true,
+              }}
               loop={true}
               allowTouchMove
               role="region"
@@ -178,7 +202,9 @@ const WindFarmDevDiv = () => {
               aria-label="Wind farm concept images"
               aria-live="polite"
               onFocus={() => swiperRef.current?.autoplay?.stop?.()}
-              onBlur={() => !prefersReduced && swiperRef.current?.autoplay?.start?.()}
+              onBlur={() =>
+                !prefersReduced && swiperRef.current?.autoplay?.start?.()
+              }
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
                 disableBulletClicks(swiper);
@@ -189,7 +215,7 @@ const WindFarmDevDiv = () => {
                 clickable: !isTouch,
                 renderBullet: (index, className) =>
                   `<button class="${className} a11y-bullet" type="button" 
-                ${isTouch ? 'tabindex="-1" aria-disabled="true"' : ''} aria-label="${bulletLabel(index, images.length)}"></button>`
+                ${isTouch ? 'tabindex="-1" aria-disabled="true"' : ""} aria-label="${bulletLabel(index, images.length)}"></button>`,
               }}
               className="w-full h-full pb-10
                 [&_.swiper-pagination]:relative [&_.swiper-pagination]:mt-6
@@ -214,14 +240,19 @@ const WindFarmDevDiv = () => {
                 [&_.swiper-button-next:active]:scale-95 [&_.swiper-button-prev:active]:scale-95"
             >
               {images.map((src, idx) => (
-                <SwiperSlide key={idx} className="flex items-center justify-center">
+                <SwiperSlide
+                  key={idx}
+                  className="flex items-center justify-center"
+                >
                   <img
                     src={src}
-                    alt={idx === 0
-                      ? "Hexagonal turbine-anchor-mooring layout concept"
-                      : idx === 1
-                        ? "Bathymetry and spacing visualization for turbines"
-                        : "Transmission and export cable routing concept"}
+                    alt={
+                      idx === 0
+                        ? "Hexagonal turbine-anchor-mooring layout concept"
+                        : idx === 1
+                          ? "Bathymetry and spacing visualization for turbines"
+                          : "Transmission and export cable routing concept"
+                    }
                     loading="lazy"
                     decoding="async"
                     className="inset-0 m-auto max-w-full max-h-full object-contain rounded-lg transition-opacity duration-700 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
@@ -233,25 +264,45 @@ const WindFarmDevDiv = () => {
         </div>
 
         {/* Info Section */}
-        <div className="w-full md:w-1/2 md:pl-6 flex flex-col" aria-labelledby='about-division'>
-          <h2 id="about-windfarm" className="text-xl font-semibold text-gray-900 dark:text-white mt-6 md:mt-4">
+        <div
+          className="w-full md:w-1/2 md:pl-6 flex flex-col"
+          aria-labelledby="about-division"
+        >
+          <h2
+            id="about-windfarm"
+            className="text-xl font-semibold text-gray-900 dark:text-white mt-6 md:mt-4"
+          >
             About Wind Farm Development
           </h2>
           {/* Leadership */}
           <dl className="mt-2 mb-4">
             <div className="flex flex-col md:flex-row md:items-baseline gap-1">
-              <dt className="text-lg font-semibold text-gray-900 dark:text-white">Captain:</dt>
-              <dd className="text-lg text-gray-900 dark:text-white font-bold">Luis A. Negrón Torres</dd>
+              <dt className="text-lg font-semibold text-gray-900 dark:text-white">
+                Captain:
+              </dt>
+              <dd className="text-lg text-gray-900 dark:text-white font-bold">
+                Luis A. Negrón Torres
+              </dd>
             </div>
             <div className="flex flex-col md:flex-row md:items-baseline gap-1">
-              <dt className="text-lg font-semibold text-gray-900 dark:text-white">Co-Leader:</dt>
-              <dd className="text-lg text-gray-900 dark:text-white font-bold">Maeson A. Franceschi Durán</dd>
+              <dt className="text-lg font-semibold text-gray-900 dark:text-white">
+                Co-Leader:
+              </dt>
+              <dd className="text-lg text-gray-900 dark:text-white font-bold">
+                Maeson A. Franceschi Durán
+              </dd>
             </div>
           </dl>
 
           <p className="text-gray-700 dark:text-white mb-4 leading-relaxed">
-            As part of the Wind Farm Development division, members of this multidisciplinary team will be responsible for developing a plan concept for a marine wind farm project. This will be done through data analysis, environmental and economic assessments, and engineering evaluations.
-            Key areas of investigation include wind resource data analysis, yield estimation, project economics, bathymetry, environmental impact studies, and turbine technology evaluation.
+            As part of the Wind Farm Development division, members of this
+            multidisciplinary team will be responsible for developing a plan
+            concept for a marine wind farm project. This will be done through
+            data analysis, environmental and economic assessments, and
+            engineering evaluations. Key areas of investigation include wind
+            resource data analysis, yield estimation, project economics,
+            bathymetry, environmental impact studies, and turbine technology
+            evaluation.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center md:text-left">
@@ -265,13 +316,16 @@ const WindFarmDevDiv = () => {
             loop
             allowTouchMove
             speed={550}
-            autoplay={prefersReduced ? false : {
-              delay: 12000,
-              disableOnInteraction: true,
-              pauseOnMouseEnter: true
+            autoplay={
+              prefersReduced
+                ? false
+                : {
+                    delay: 12000,
+                    disableOnInteraction: true,
+                    pauseOnMouseEnter: true,
+                  }
             }
-            }
-            a11y={{ containerMessage: 'Subdivision details carousel' }}
+            a11y={{ containerMessage: "Subdivision details carousel" }}
             aria-label="Subdivision details carousel"
             aria-live="polite"
             onSwiper={(swiper) => {
@@ -281,13 +335,15 @@ const WindFarmDevDiv = () => {
             onUpdate={(swiper) => disableBulletClicks(swiper)}
             onPaginationUpdate={(swiper) => disableBulletClicks(swiper)}
             onFocus={() => subSwiperRef.current?.autoplay?.stop?.()}
-            onBlur={() => !prefersReduced && subSwiperRef.current?.autoplay?.start?.()}
+            onBlur={() =>
+              !prefersReduced && subSwiperRef.current?.autoplay?.start?.()
+            }
             keyboard={{ enabled: true, onlyInViewport: true, pageUpDown: true }}
             pagination={{
               clickable: !isTouch,
               renderBullet: (index, className) =>
                 `<button class="${className}" type="button" 
-              ${isTouch ? 'tabindex="-1" aria-disabled="true"' : ''} aria-label="${bulletLabel(index, windfarmSubdivisions.length)}"></button>`
+              ${isTouch ? 'tabindex="-1" aria-disabled="true"' : ""} aria-label="${bulletLabel(index, windfarmSubdivisions.length)}"></button>`,
             }}
             className="w-full min-h-[160px]
               [&_.swiper-pagination]:static [&_.swiper-pagination]:mt-6
@@ -297,19 +353,24 @@ const WindFarmDevDiv = () => {
               [&_.swiper-pagination-bullet]:focus-visible:!outline [&_.swiper-pagination-bullet]:focus-visible:!outline-2
               [&_.swiper-pagination-bullet-active]:!bg-green-600"
           >
-            {windfarmSubdivisions.map(({ title, description, icon: Icon }, index) => (
-              <SwiperSlide key={index}>
-                <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center gap-2 justify-center md:justify-start flex-wrap md:flex-nowrap">
-                    {title}
-                    <Icon className="text-xl text-green-600 dark:text-green-400" aria-hidden="true" />
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 break-normal leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
+            {windfarmSubdivisions.map(
+              ({ title, description, icon: Icon }, index) => (
+                <SwiperSlide key={index}>
+                  <div className="w-full h-full px-4 py-2 text-center md:text-left mx-auto border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center gap-2 justify-center md:justify-start flex-wrap md:flex-nowrap">
+                      {title}
+                      <Icon
+                        className="text-xl text-green-600 dark:text-green-400"
+                        aria-hidden="true"
+                      />
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 break-normal leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ),
+            )}
           </Swiper>
           <div />
         </div>
