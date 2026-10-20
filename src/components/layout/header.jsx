@@ -16,6 +16,8 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [divisionDropdownOpen, setDivisionDropdownOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [memberDropdownOpen, setMemberDropdownOpen] = useState(false);
+  const [mobileMemberOpen, setMobileMemberOpen] = useState(false);
 
   const divisionLinks = [
     { name: "Electrical", path: "/divisions/electrical" },
@@ -26,11 +28,20 @@ function Header() {
     //{ name: "Wind Farm Dev", path: "/divisions/windfarm" },
   ];
 
+  const memberLinks = [
+    { name: "Electrical", path: "/members/electrical" },
+    { name: "Mechanical", path: "/members/mechanical" },
+    { name: "Software", path: "/members/software" },
+    { name: "Business Operations", path: "/members/business" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setMenuOpen(false);
       setDropdownOpen(false);
       setDivisionDropdownOpen(false);
+      setMemberDropdownOpen(false);
+      setMobileMemberOpen(false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -82,7 +93,10 @@ function Header() {
           {/* Desktop Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setDivisionDropdownOpen(!divisionDropdownOpen)}
+              onClick={() => {
+                setDivisionDropdownOpen(!divisionDropdownOpen);
+                setMemberDropdownOpen(false);
+              }}
               aria-haspopup="menu"
               aria-expanded={divisionDropdownOpen}
               aria-controls="divisions-menu"
@@ -100,7 +114,7 @@ function Header() {
               <div
                 id="divisions-menu"
                 role="menu"
-                className="absolute left-0 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-md ring-1 ring-black/5 dark:ring-white/10 py-2"
+                className="absolute left-1/2 -translate-x-1/2 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-md ring-1 ring-black/5 dark:ring-white/10 py-2"
               >
                 {divisionLinks.map(({ name, path }) => (
                   <Link
@@ -108,6 +122,46 @@ function Header() {
                     to={path}
                     className="block px-4 py-2 hover:bg-gray-100 hover:text-[--primary-green] dark:hover:bg-gray-800 text-lg text-gray-800 dark:text-white hover:font-bold transform transition-all duration-150 ease-in-out"
                     onClick={() => setDivisionDropdownOpen(false)}
+                  >
+                    {name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Desktop Members Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => {
+                setMemberDropdownOpen(!memberDropdownOpen);
+                setDivisionDropdownOpen(false);
+              }}
+              aria-haspopup="menu"
+              aria-expanded={memberDropdownOpen}
+              aria-controls="members-menu"
+              className="nav-link text-gray-800 dark:text-white hover:underline flex items-center gap-1"
+            >
+              Members
+              <MdExpandMore
+                className={`transition-transform ${
+                  memberDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {memberDropdownOpen && (
+              <div
+                id="members-menu"
+                role="menu"
+                className="absolute left-1/2 -translate-x-1/2 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-md ring-1 ring-black/5 dark:ring-white/10 py-2"
+              >
+                {memberLinks.map(({ name, path }) => (
+                  <Link
+                    key={name}
+                    to={path}
+                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[--primary-green] dark:hover:bg-gray-800 text-lg text-gray-800 dark:text-white hover:font-bold transform transition-all duration-150 ease-in-out"
+                    onClick={() => setMemberDropdownOpen(false)}
                   >
                     {name}
                   </Link>
@@ -226,6 +280,40 @@ function Header() {
                     onClick={() => {
                       setMenuOpen(false);
                       setDropdownOpen(false);
+                    }}
+                    className="block w-full px-4 py-2 text-sm dark:text-white border border-gray-200 dark:border-gray-700 shadow-md"
+                  >
+                    {name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          <div>
+            <button
+              onClick={() => setMobileMemberOpen(!mobileMemberOpen)}
+              aria-haspopup="menu"
+              aria-expanded={mobileMemberOpen}
+              aria-controls="members-menu-mobile"
+              className="w-full py-2 flex justify-center items-center gap-1"
+            >
+              <span className="dark:text-white">Members </span>
+              <MdExpandMore
+                className={`text-lg transition-transform ${
+                  mobileMemberOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {mobileMemberOpen && (
+              <div id="members-menu-mobile" role="menu">
+                {memberLinks.map(({ name, path }) => (
+                  <Link
+                    key={name}
+                    to={path}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setMobileMemberOpen(false);
                     }}
                     className="block w-full px-4 py-2 text-sm dark:text-white border border-gray-200 dark:border-gray-700 shadow-md"
                   >

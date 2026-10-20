@@ -2,16 +2,27 @@
 /* Legacy home.css code, now we used tailwind, but some divs are still being costumized by 
     pure css, until a brave warrior with nothing to lose changes everything x2 */
 .desktop-nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     width: 100%;
+}
+
+.desktop-nav .pes-logo {
+    justify-self: end;
 }
 
 .middle-section {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+}
+
+.middle-section > * {
+    min-width: 110px;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-link {
