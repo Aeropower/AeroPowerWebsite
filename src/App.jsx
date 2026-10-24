@@ -12,6 +12,10 @@ import MechanicalDiv from "./components/pages/divisions/MechanicalDiv";
 import SoftwareDiv from "./components/pages/divisions/SoftwareDiv";
 import BusinessOpsDiv from "./components/pages/divisions/BusinessOpsDiv";
 import ProjectManagementDiv from "./components/pages/divisions/ProjectManagementDiv";
+import ElectricalMembers from "./components/pages/members/ElectricalMembers";
+import MechanicalMembers from "./components/pages/members/MechanicalMembers";
+import SoftwareMembers from "./components/pages/members/SoftwareMembers";
+import BusinessMembers from "./components/pages/members/BusinessMembers";
 import SponsorPage from "./components/pages/sponsors/sponsorpage";
 import "./styles/general.css";
 import "./styles/home.css";
@@ -31,6 +35,10 @@ const router = createBrowserRouter(
           path="/divisions/project_management"
           element={<ProjectManagementDiv />}
         />
+        <Route path="/members/electrical" element={<ElectricalMembers />} />
+        <Route path="/members/mechanical" element={<MechanicalMembers />} />
+        <Route path="/members/software" element={<SoftwareMembers />} />
+        <Route path="/members/business" element={<BusinessMembers />} />
         {/* <Route path="/divisions/windfarm" element={<WindFarmDevDiv />} /> */}
       </Route>
 
